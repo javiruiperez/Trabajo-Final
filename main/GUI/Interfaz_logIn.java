@@ -82,22 +82,14 @@ public class Interfaz_logIn extends JFrame {
         @Override
         public void actionPerformed (ActionEvent e){
             String usuarioText = usuario.getText();
-            System.out.println(usuarioText);
-
-           String contraseñaText = new String(contraseña.getPassword());
-
-           Boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
-
-            if (correcto){
+            String contraseñaText = new String(contraseña.getPassword());
+            Boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
+            if (correcto == true){
                 Interfaz_SignIn.main();
                 dispose();
             }else {
-
+                JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
             }
-
         }
     }
-
-
-
 }

@@ -2,7 +2,6 @@ package main.GUI;
 
 import main.utils.Acceso;
 import main.utils.Registro;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -95,7 +94,7 @@ public class Interfaz_SignIn extends JFrame {
     private class BotonRegistrarse implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Boolean correcto = Registro.registro();
+            //Boolean correcto = Registro.registro();
 
             Interfaz1.main();
         }

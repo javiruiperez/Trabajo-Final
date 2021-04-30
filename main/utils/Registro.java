@@ -11,7 +11,7 @@ public class Registro {
     static final String User = "root";
     static final String Pass = "Nicolevante21";
 
-    public static String registro(String usuario, String correo, String contraseña) {
+    public static boolean registro(String usuario, String correo, String contraseña) {
         Connection conn = null;
         Statement stmt = null;
 
@@ -24,7 +24,7 @@ public class Registro {
                     + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
             stmt.executeUpdate(sql);
 
-            System.out.println("\n¡Cuenta Creada con Éxito!");
+            return true;
 
         } catch (SQLException | ClassNotFoundException se) {
             se.printStackTrace();
@@ -42,6 +42,6 @@ public class Registro {
             } catch (SQLException se) {
             }
         }
-        return registro(usuario, correo, contraseña);
+        return true;
     }
 }
