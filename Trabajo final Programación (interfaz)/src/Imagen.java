@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("ALL")
 class Imagen extends javax.swing.JPanel {
 
     public Imagen() {
