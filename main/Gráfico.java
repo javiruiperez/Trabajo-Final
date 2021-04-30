@@ -12,7 +12,7 @@ public class Gráfico extends JFrame{
     JPanel panel;
 
     public Gráfico(){
-        setTitle("Grafico");
+        setTitle("Graficote");
         setSize(800,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
