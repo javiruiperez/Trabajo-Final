@@ -1,3 +1,8 @@
+package main.GUI;
+
+import main.utils.Acceso;
+import main.utils.Registro;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -60,12 +65,12 @@ public class Interfaz_SignIn extends JFrame {
         cancelar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(cancelar);
         cancelar.setBackground(rojitoresulon);
-        cancelar.addActionListener(new Interfaz_SignIn.ListenerButton());
+        cancelar.addActionListener(new Interfaz_SignIn.BotonCancelar());
         registrarse = new JButton("REGISTRARSE");
         registrarse.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(asulitoresulon);
-        registrarse.addActionListener(new Interfaz_SignIn.ListenerButton2());
+        registrarse.addActionListener(new Interfaz_SignIn.BotonRegistrarse());
 
 
 
@@ -79,7 +84,7 @@ public class Interfaz_SignIn extends JFrame {
         Interfaz_SignIn i = new Interfaz_SignIn();
     }
 
-    private class ListenerButton implements ActionListener {
+    private class BotonCancelar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Entrada.main();
@@ -87,11 +92,14 @@ public class Interfaz_SignIn extends JFrame {
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class BotonRegistrarse implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            Boolean correcto = Registro.registro();
+
             Interfaz1.main();
         }
+
     }
 
 }

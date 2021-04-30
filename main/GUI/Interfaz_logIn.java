@@ -1,5 +1,7 @@
 package main.GUI;
 
+import main.utils.Acceso;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +14,7 @@ public class Interfaz_logIn extends JFrame {
     JButton registrarse;
     JTextField usuario;
 
-    String contraseña;
+    JPasswordField contraseña;
 
     Color asulitoresulon = new Color(49, 112, 255);
     Color rojitoresulon = new Color(255, 43, 43);
@@ -38,7 +40,7 @@ public class Interfaz_logIn extends JFrame {
         JLabel l3 = new JLabel("Contraseña");
         l3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l3);
-        JTextField contraseña = new JPasswordField();
+       contraseña = new JPasswordField();
         panelPrincipal.add(contraseña);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -82,15 +84,16 @@ public class Interfaz_logIn extends JFrame {
             String usuarioText = usuario.getText();
             System.out.println(usuarioText);
 
-            new String(contraseña.getPassword());
+           String contraseñaText = new String(contraseña.getPassword());
 
-            /*Boolean correcto = Acceder.comprobarUsuario(usuario, contraseña);
+           Boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
+
             if (correcto){
                 Interfaz_SignIn.main();
                 dispose();
             }else {
 
-            }*/
+            }
 
         }
     }
