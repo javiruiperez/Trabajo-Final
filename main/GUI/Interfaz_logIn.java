@@ -1,5 +1,3 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +8,6 @@ public class Interfaz_logIn extends JFrame {
 
     JButton confirmar;
     JButton registrarse;
-    JTextField usuario;
 
     String contraseña;
 
@@ -30,7 +27,7 @@ public class Interfaz_logIn extends JFrame {
         JLabel l2 = new JLabel("Nombre de usuario");
         l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l2);
-        usuario = new JTextField();
+        JTextField usuario = new JTextField();
         panelPrincipal.add(usuario);
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -50,13 +47,13 @@ public class Interfaz_logIn extends JFrame {
         registrarse.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(rojitoresulon);
-        registrarse.addActionListener(new BotonCrearCuenta());
+        registrarse.addActionListener(new Interfaz_logIn.ListenerButton());
 
         confirmar = new JButton("CONFIRMAR");
         confirmar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(confirmar);
-        confirmar.addActionListener(new BotonInicioSesion());
         confirmar.setBackground(asulitoresulon);
+        confirmar.addActionListener(new Interfaz_logIn.ListenerButton2());
 
 
         panelPrincipal.add(panel2);
@@ -64,37 +61,23 @@ public class Interfaz_logIn extends JFrame {
         setSize(400, 400);
         setVisible(true);
     }
-    public static void main(String[] args) {
+
+    public static void main() {
         Interfaz_logIn i = new Interfaz_logIn();
     }
 
-    private class BotonCrearCuenta implements ActionListener {
+    private class ListenerButton implements ActionListener {
         @Override
-            public void actionPerformed (ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
             Interfaz_SignIn.main();
             dispose();
         }
     }
 
-    private class BotonInicioSesion implements ActionListener {
+    private class ListenerButton2 implements ActionListener {
         @Override
-        public void actionPerformed (ActionEvent e){
-            String usuarioText = usuario.getText();
-            System.out.println(usuarioText);
-
-            new String(contraseña.getPassword());
-
-            /*Boolean correcto = Acceder.comprobarUsuario(usuario, contraseña);
-            if (correcto){
-                Interfaz_SignIn.main();
-                dispose();
-            }else {
-
-            }*/
-
+        public void actionPerformed(ActionEvent e) {
+            Interfaz1.main();
         }
     }
-
-
-
 }

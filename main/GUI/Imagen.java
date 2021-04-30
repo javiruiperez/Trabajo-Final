@@ -1,10 +1,7 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
 
-@SuppressWarnings("ALL")
-class Imagen extends JPanel {
+class Imagen extends javax.swing.JPanel {
 
     public Imagen() {
         this.setSize(250, 500);

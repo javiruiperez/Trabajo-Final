@@ -1,5 +1,3 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
 

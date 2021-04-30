@@ -1,16 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 
-class Imagen2 extends javax.swing.JPanel {
-
-    public Imagen2() {
+public class Imagen_logo extends javax.swing.JPanel {
+    public Imagen_logo() {
         this.setSize(250, 500);
     }
 
     public void paint(Graphics grafico) {
         Dimension heigth = getSize();
 
-        ImageIcon Img = new ImageIcon(getClass().getResource("tarjeta.png"));
+        ImageIcon Img = new ImageIcon(getClass().getResource("logo prog.png"));
 
         grafico.drawImage(Img.getImage(), 0, 0, heigth.width, heigth.height, null);
 

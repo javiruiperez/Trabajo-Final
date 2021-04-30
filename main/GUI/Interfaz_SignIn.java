@@ -1,15 +1,15 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Interfaz_SignIn extends JFrame {
 
     JButton cancelar;
     JButton registrarse;
 
-    Color asulitoresulon = new Color(49, 112, 255);
-    Color rojitoresulon = new Color(255, 43, 43);
+    Color asulitoresulon = new Color(70, 117, 246);
+    Color rojitoresulon = new Color(212, 41, 41, 255);
 
     Interfaz_SignIn() {
         setLayout(new FlowLayout());
@@ -60,10 +60,13 @@ public class Interfaz_SignIn extends JFrame {
         cancelar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(cancelar);
         cancelar.setBackground(rojitoresulon);
+        cancelar.addActionListener(new Interfaz_SignIn.ListenerButton());
         registrarse = new JButton("REGISTRARSE");
         registrarse.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(asulitoresulon);
+        registrarse.addActionListener(new Interfaz_SignIn.ListenerButton2());
+
 
 
         panelPrincipal.add(panel2);
@@ -74,6 +77,21 @@ public class Interfaz_SignIn extends JFrame {
 
     public static void main() {
         Interfaz_SignIn i = new Interfaz_SignIn();
+    }
+
+    private class ListenerButton implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Interfaz_Entrada.main();
+            dispose();
+        }
+    }
+
+    private class ListenerButton2 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Interfaz1.main();
+        }
     }
 
 }

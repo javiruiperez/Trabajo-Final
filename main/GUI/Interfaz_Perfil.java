@@ -1,5 +1,3 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -42,13 +40,13 @@ public class Interfaz_Perfil extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new ListenerButton());
+        menuItem_inicio.addActionListener(new Interfaz_Perfil.ListenerButton());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new ListenerButton1());
+        menuItem_saldo.addActionListener(new Interfaz_Perfil.ListenerButton1());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new ListenerButton2());
+        menuItem_configuracion.addActionListener(new Interfaz_Perfil.ListenerButton2());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new ListenerButton3());
+        menuItem_info.addActionListener(new Interfaz_Perfil.ListenerButton3());
 
         menu_perfil.add(menuItem_configuracion);
         menu_perfil.addSeparator();
