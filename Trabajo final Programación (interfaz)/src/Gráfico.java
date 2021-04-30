@@ -4,6 +4,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import javax.swing.*;
 
+@SuppressWarnings("WrongPackageStatement")
 public class Gráfico extends JFrame{
     JPanel panel;
 
