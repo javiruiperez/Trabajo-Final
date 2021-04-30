@@ -1,5 +1,7 @@
 package PFP;
 
+import main.utils.Encriptación;
+
 import java.sql.*;
 import java.util.Scanner;
 
