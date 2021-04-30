@@ -14,6 +14,8 @@ public class Interfaz_Saldo extends JFrame {
     JMenuItem menuItem_info;
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
+    JMenuItem menuItem_inicio2;
+
 
     private JButton uno;
     private JButton dos;

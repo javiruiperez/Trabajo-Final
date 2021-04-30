@@ -1,5 +1,7 @@
 package main.GUI;
 
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +17,8 @@ public class Interfaz1 extends JFrame {
     JMenuItem menuItem_info;
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
+    JMenuItem menuItem_inicio2;
+
 
     JTable encuestas;
 
