@@ -1,9 +1,7 @@
-package main.GUI;
-
 import javax.swing.*;
 import java.awt.*;
 
-class Imagen2 extends JPanel {
+class Imagen2 extends javax.swing.JPanel {
 
     public Imagen2() {
         this.setSize(250, 500);
