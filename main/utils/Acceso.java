@@ -7,7 +7,8 @@ public class Acceso {
     static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/prueba";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
-   public static String acceso(String usuario, String contraseña){
+
+   public static boolean acceso(String usuario, String contraseña){
        Connection conn = null;
        Statement stmt = null;
 
@@ -22,7 +23,7 @@ public class Acceso {
            prpStatement.setString(2, usuario);
            ResultSet rs = prpStatement.executeQuery();
            if (rs.next()) {
-               return acceso(usuario,contraseña);
+               return true;
            } else {
 
            }
@@ -43,7 +44,7 @@ public class Acceso {
            } catch (SQLException se) {
            }
        }
-       return acceso(usuario,contraseña);
+       return false;
    }
 
 }
