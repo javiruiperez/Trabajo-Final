@@ -139,7 +139,6 @@ public class Interfaz_Saldo extends JFrame {
     private class ListenerButton1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Saldo.main();
             dispose();
         }
     }

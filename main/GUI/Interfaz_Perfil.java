@@ -82,7 +82,6 @@ public class Interfaz_Perfil extends JFrame {
     private class ListenerButton2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Perfil.main();
             dispose();
         }
     }

@@ -19,6 +19,7 @@ public class Interfaz1 extends JFrame {
     JMenuItem menuItem_inicio;
     JMenuItem menuItem_inicio2;
 
+    String encuesta1 = "Encuesta disponible";
 
     JTable encuestas;
 
@@ -102,7 +103,7 @@ public class Interfaz1 extends JFrame {
         String[] columnNames = {"Encuesta", "Recompensa"};
 
         Object[][] data = {
-                {"Encuesta disponible", "0.50$"},
+                {encuesta1, "0.50$"},
                 {"Encuesta disponible", "0.25$"},
                 {"Encuesta disponible", "0.50$"},
                 {"Encuesta disponible", "0.25$"},
@@ -122,9 +123,7 @@ public class Interfaz1 extends JFrame {
                 {"Encuesta disponible", "0.50$"},
                 {"Encuesta disponible", "0.25$"},
                 {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-
-
+                {"Encuesta disponible", "0.25$"}
         };
 
         final JTable table = new JTable(data, columnNames);
@@ -172,6 +171,12 @@ public class Interfaz1 extends JFrame {
     }
 
     private class ListenerButton4 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+    private class seleccionEncuesta implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
 
