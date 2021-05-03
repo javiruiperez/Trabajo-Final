@@ -17,10 +17,10 @@ public class Acceso {
            conn = DriverManager.getConnection(DB_URL, User, Pass);
            stmt = conn.createStatement();
 
-           String sql = "select * from usuario where Contraseña=? AND NombreUsuario=?;";
+           String sql = "select * from usuario where NombreUsuario=? AND Contraseña=?;";
            PreparedStatement prpStatement = conn.prepareStatement(sql);
-           prpStatement.setString(1, contraseña);
-           prpStatement.setString(2, usuario);
+           prpStatement.setString(1, usuario);
+           prpStatement.setString(2, Encriptación.cifrar(contraseña, 3));
            ResultSet rs = prpStatement.executeQuery();
            if (rs.next()) {
                return true;

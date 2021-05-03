@@ -85,6 +85,7 @@ public class Interfaz_logIn extends JFrame {
             String usuarioText = usuario.getText();
             String contraseñaText = new String(contraseña.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
+            System.out.println(correcto);
             if (correcto){
                 JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
                 dispose();
