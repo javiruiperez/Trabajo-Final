@@ -21,10 +21,15 @@ public class Interfaz_Creador extends JFrame {
     Interfaz_Creador(){
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("¿QUIERES CREAR UNA ENCUESTA?");
+        panelPrincipal.setLayout(new GridLayout(3, 1));
+        JLabel l1 = new JLabel("CREA TU ENCUESTA");
         l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
         panelPrincipal.add(l1);
+
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(new GridLayout());
+
+        panelPrincipal.add(panel2);
 
         add(panelPrincipal);
         crearMenu();
