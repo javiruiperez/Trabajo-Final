@@ -40,7 +40,7 @@ public class Interfaz_logIn extends JFrame {
         JLabel l3 = new JLabel("Contraseña");
         l3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l3);
-       contraseña = new JPasswordField();
+        contraseña = new JPasswordField();
         panelPrincipal.add(contraseña);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -63,7 +63,8 @@ public class Interfaz_logIn extends JFrame {
 
         panelPrincipal.add(panel2);
         add(panelPrincipal);
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
     }
     public static void main() {
@@ -83,12 +84,12 @@ public class Interfaz_logIn extends JFrame {
         public void actionPerformed (ActionEvent e){
             String usuarioText = usuario.getText();
             String contraseñaText = new String(contraseña.getPassword());
-            Boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
+            boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
             if (correcto){
                 JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
                 dispose();
                 Interfaz1.main();
-            }else {
+            }else{
                 JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
             }
         }

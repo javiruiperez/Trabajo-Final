@@ -81,7 +81,8 @@ public class Interfaz_SignIn extends JFrame {
 
         panelPrincipal.add(panel2);
         add(panelPrincipal);
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
     }
 

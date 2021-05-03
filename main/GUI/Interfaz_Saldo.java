@@ -76,15 +76,15 @@ public class Interfaz_Saldo extends JFrame {
         uno.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panel3.add(uno);
         uno.setBackground(Color.white);
-        //Imagen Imagen = new Imagen();
-       //uno.add(Imagen);
+        Imagen Imagen = new Imagen();
+        uno.add(Imagen);
         uno.addActionListener(new ListenerButton3());
         dos = new JButton();
         dos.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panel3.add(dos);
         dos.setBackground(Color.white);
-        //Imagen2 Imagen2 = new Imagen2();
-        //dos.add(Imagen2);
+        Imagen2 Imagen2 = new Imagen2();
+        dos.add(Imagen2);
         dos.addActionListener(new ListenerButton4());
         panelPrincipal.add(panel3);
 
@@ -92,7 +92,8 @@ public class Interfaz_Saldo extends JFrame {
         crearMenu();
         setJMenuBar(barra);
         add(panelPrincipal);
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
     }
 
