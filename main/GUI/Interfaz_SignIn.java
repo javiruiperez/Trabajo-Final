@@ -1,7 +1,8 @@
 package main.GUI;
 
-import main.utils.Acceso;
 import main.utils.Registro;
+
+import javax.lang.model.util.SimpleTypeVisitor7;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,11 @@ public class Interfaz_SignIn extends JFrame {
 
     JButton cancelar;
     JButton registrarse;
+
+    JTextField usuario;
+    JTextField correo;
+    JPasswordField contraseña;
+    JPasswordField contraseña_ok;
 
     Color asulitoresulon = new Color(70, 117, 246);
     Color rojitoresulon = new Color(212, 41, 41, 255);
@@ -28,7 +34,7 @@ public class Interfaz_SignIn extends JFrame {
         JLabel l2 = new JLabel("Nombre de usuario");
         l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l2);
-        JTextField usuario = new JTextField();
+        usuario = new JTextField();
         panelPrincipal.add(usuario);
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -36,7 +42,7 @@ public class Interfaz_SignIn extends JFrame {
         JLabel l3 = new JLabel("Correo electronico");
         l3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l3);
-        JTextField correo = new JTextField();
+        correo = new JTextField();
         panelPrincipal.add(correo);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -44,7 +50,7 @@ public class Interfaz_SignIn extends JFrame {
         JLabel l4 = new JLabel("Contraseña");
         l4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l4);
-        JTextField contraseña = new JPasswordField();
+        contraseña = new JPasswordField();
         panelPrincipal.add(contraseña);
         JLabel vacio6 = new JLabel("");
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -52,7 +58,7 @@ public class Interfaz_SignIn extends JFrame {
         JLabel l5 = new JLabel("Repita la contraseña");
         l5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l5);
-        JTextField contraseña_ok = new JPasswordField();
+        contraseña_ok = new JPasswordField();
         panelPrincipal.add(contraseña_ok);
         JLabel vacio7 = new JLabel("");
         vacio7.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -94,11 +100,19 @@ public class Interfaz_SignIn extends JFrame {
     private class BotonRegistrarse implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //Boolean correcto = Registro.registro();
+            String usuarioText = usuario.getText();
+            String correoText = correo.getText();
+            String contraseñaText = new String(contraseña.getPassword());
+            String verifica = new String(contraseña_ok.getPassword());
 
-            Interfaz1.main();
+            if (contraseñaText.equals(verifica)){
+                Registro.registro(usuarioText, correoText, contraseñaText);
+                JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
+                dispose();
+                Interfaz1.main();
+            }else{
+                JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
+            }
         }
-
     }
-
 }

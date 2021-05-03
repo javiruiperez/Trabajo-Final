@@ -3,8 +3,8 @@ package main.utils;
 import java.sql.*;
 
 public class Acceso {
-    static final String JDBC_Driver = "org.mariadb.jdbc.Driver";
-    static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/prueba";
+    static final String JDBC_Driver = "com.mysql.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/prueba";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
 
@@ -25,7 +25,7 @@ public class Acceso {
            if (rs.next()) {
                return true;
            } else {
-
+               return false;
            }
 
        } catch (SQLException throwables) {

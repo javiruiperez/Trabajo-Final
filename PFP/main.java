@@ -17,7 +17,7 @@ public class main {
             ResponderEncuestaDemo.main();
             break;
             case 2:
-            Registrarse.main();
+            //Registrarse.main();
             break;
         }
     }

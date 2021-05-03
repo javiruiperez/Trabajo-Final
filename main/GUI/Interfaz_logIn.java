@@ -66,7 +66,7 @@ public class Interfaz_logIn extends JFrame {
         setSize(400, 400);
         setVisible(true);
     }
-    public static void main(String[] args) {
+    public static void main() {
         Interfaz_logIn i = new Interfaz_logIn();
     }
 
@@ -84,9 +84,10 @@ public class Interfaz_logIn extends JFrame {
             String usuarioText = usuario.getText();
             String contraseñaText = new String(contraseña.getPassword());
             Boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
-            if (correcto == true){
-                Interfaz_SignIn.main();
+            if (correcto){
+                JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
                 dispose();
+                Interfaz1.main();
             }else {
                 JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
             }
