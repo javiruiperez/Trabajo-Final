@@ -13,7 +13,7 @@ public class Registrarse {
     static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/prueba";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
-    public static void main() {
+    public static void main(String[]args) {
         Connection conn = null;
         Statement stmt = null;
         Scanner sc = new Scanner(System.in);

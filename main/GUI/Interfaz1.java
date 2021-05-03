@@ -54,8 +54,8 @@ public class Interfaz1 extends JFrame {
         add(panel2, BorderLayout.SOUTH);
         crearMenu();
         setJMenuBar(barra);
-
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
 
     }

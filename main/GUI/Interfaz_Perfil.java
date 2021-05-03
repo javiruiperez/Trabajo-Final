@@ -26,7 +26,8 @@ public class Interfaz_Perfil extends JFrame {
         crearMenu();
         setJMenuBar(barra);
         add(panelPrincipal);
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
     }
 

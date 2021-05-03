@@ -17,8 +17,8 @@ public class Interfaz_Entrada extends JFrame {
         logo.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panelPrincipal.add(logo);
         logo.setBackground(Color.white);
-        //Imagen_logo Imagen = new Imagen_logo();
-        //logo.add(Imagen);
+        Imagen_logo Imagen = new Imagen_logo();
+        logo.add(Imagen);
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 1));
@@ -31,15 +31,16 @@ public class Interfaz_Entrada extends JFrame {
 
         add(panelPrincipal, BorderLayout.CENTER);
         add(panel2, BorderLayout.SOUTH);
-        setSize(400, 400);
+        this.setResizable(false);
+        setSize(2100, 2100);
         setVisible(true);
     }
 
     private class ListenerButton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-           // Interfaz_logIn.main();
-            dispose();
+           Interfaz_logIn.main();
+           dispose();
         }
     }
 
