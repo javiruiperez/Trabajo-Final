@@ -43,15 +43,15 @@ public class Interfaz_Creador extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new Interfaz_Creador.ListenerButton());
+        menuItem_inicio.addActionListener(new ListenerButton());
         menuItem_inicio2 = new JMenuItem("Crear Encuestas");
-        menuItem_inicio2.addActionListener(new Interfaz_Creador.ListenerButton1());
+        menuItem_inicio2.addActionListener(new ListenerButton1());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new Interfaz_Creador.ListenerButton2());
+        menuItem_saldo.addActionListener(new ListenerButton2());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new Interfaz_Creador.ListenerButton3());
+        menuItem_configuracion.addActionListener(new ListenerButton3());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new Interfaz_Creador.ListenerButton4());
+        menuItem_info.addActionListener(new ListenerButton4());
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
@@ -60,12 +60,14 @@ public class Interfaz_Creador extends JFrame {
         menu_perfil.addSeparator();
         menu_perfil.add(menuItem_info);
         menu_inicio.add(menuItem_inicio);
+        menu_inicio.addSeparator();
+        menu_inicio.add(menuItem_inicio2);
         menu_saldo.add(menuItem_saldo);
 
 
     }
 
-    public static void main(String[] args) {
+     public static void main() {
         Interfaz_Creador i = new Interfaz_Creador();
     }
 
