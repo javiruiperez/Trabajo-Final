@@ -15,8 +15,8 @@ public class Interfaz_SignIn extends JFrame {
 
     JTextField usuario;
     JTextField correo;
-    JPasswordField contraseña;
-    JPasswordField contraseña_ok;
+    JPasswordField contrasenya;
+    JPasswordField contrasenya_ok;
 
     Color asulitoresulon = new Color(70, 117, 246);
     Color rojitoresulon = new Color(212, 41, 41, 255);
@@ -50,16 +50,16 @@ public class Interfaz_SignIn extends JFrame {
         JLabel l4 = new JLabel("Contraseña");
         l4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l4);
-        contraseña = new JPasswordField();
-        panelPrincipal.add(contraseña);
+        contrasenya = new JPasswordField();
+        panelPrincipal.add(contrasenya);
         JLabel vacio6 = new JLabel("");
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio6);
         JLabel l5 = new JLabel("Repita la contraseña");
         l5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l5);
-        contraseña_ok = new JPasswordField();
-        panelPrincipal.add(contraseña_ok);
+        contrasenya_ok = new JPasswordField();
+        panelPrincipal.add(contrasenya_ok);
         JLabel vacio7 = new JLabel("");
         vacio7.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio7);
@@ -103,11 +103,11 @@ public class Interfaz_SignIn extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String usuarioText = usuario.getText();
             String correoText = correo.getText();
-            String contraseñaText = new String(contraseña.getPassword());
-            String verifica = new String(contraseña_ok.getPassword());
+            String contrasenyaText = new String(contrasenya.getPassword());
+            String verifica = new String(contrasenya_ok.getPassword());
 
-            if (contraseñaText.equals(verifica)){
-                Registro.registro(usuarioText, correoText, contraseñaText);
+            if (contrasenyaText.equals(verifica)){
+                Registro.registro(usuarioText, correoText, contrasenyaText);
                 JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
                 dispose();
                 Interfaz1.main();

@@ -12,9 +12,9 @@ public class Interfaz_logIn extends JFrame {
 
     JButton confirmar;
     JButton registrarse;
-    JTextField usuario;
+    JTextField correo;
 
-    JPasswordField contraseña;
+    JPasswordField contrasenya;
 
     Color asulitoresulon = new Color(49, 112, 255);
     Color rojitoresulon = new Color(255, 43, 43);
@@ -29,19 +29,19 @@ public class Interfaz_logIn extends JFrame {
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio3);
-        JLabel l2 = new JLabel("Nombre de usuario");
+        JLabel l2 = new JLabel("Correo Electrónico");
         l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l2);
-        usuario = new JTextField();
-        panelPrincipal.add(usuario);
+        correo = new JTextField();
+        panelPrincipal.add(correo);
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio4);
         JLabel l3 = new JLabel("Contraseña");
         l3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l3);
-        contraseña = new JPasswordField();
-        panelPrincipal.add(contraseña);
+        contrasenya = new JPasswordField();
+        panelPrincipal.add(contrasenya);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio5);
@@ -82,12 +82,12 @@ public class Interfaz_logIn extends JFrame {
     private class BotonInicioSesion implements ActionListener {
         @Override
         public void actionPerformed (ActionEvent e){
-            String usuarioText = usuario.getText();
-            String contraseñaText = new String(contraseña.getPassword());
-            boolean correcto = Acceso.acceso(usuarioText, contraseñaText);
+            String usuarioText = correo.getText();
+            String contrasenyaText = new String(contrasenya.getPassword());
+            boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
             System.out.println(correcto);
             if (correcto){
-                JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
+                JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + correo.getText());
                 dispose();
                 Interfaz1.main();
             }else{

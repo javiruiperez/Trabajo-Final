@@ -1,27 +1,25 @@
 package main.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Registro {
     static final String JDBC_Driver = "org.mariadb.jdbc.Driver";
-    static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/prueba";
+    static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/encuestas";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
 
-    public static boolean registro(String usuario, String correo, String contraseña) {
+    public static boolean registro(String usuario, String correo, String contrasenya) {
         Connection conn = null;
         Statement stmt = null;
-
+        double saldo = 0;
+        
         try {
             Class.forName(JDBC_Driver);
             conn = DriverManager.getConnection(DB_URL, User, Pass);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO usuario "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
+            String sql = "INSERT INTO creador ()"
+                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya, 3) + "','" + saldo +"')";
             stmt.executeUpdate(sql);
 
             return true;
