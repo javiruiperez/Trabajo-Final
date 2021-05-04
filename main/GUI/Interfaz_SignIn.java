@@ -3,7 +3,6 @@ package main.GUI;
 import main.utils.Registro;
 import main.utils.Verificar;
 
-import javax.lang.model.util.SimpleTypeVisitor7;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -83,7 +82,7 @@ public class Interfaz_SignIn extends JFrame {
         panelPrincipal.add(panel2);
         add(panelPrincipal);
         this.setResizable(false);
-        setSize(2100, 2100);
+        setSize(2000, 2000);
         setVisible(true);
     }
 
@@ -106,15 +105,23 @@ public class Interfaz_SignIn extends JFrame {
             String correoText = correo.getText();
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
-            boolean comprobación = Verificar.verificar(usuarioText,correoText);
+            boolean comprobacion = Verificar.verificar(usuarioText, correoText);
 
-            if (contrasenyaText.equals(verifica)){
-                Registro.registro(usuarioText, correoText, contrasenyaText);
-                JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
-                dispose();
-                Interfaz1.main();
+            if (!usuarioText.equals("") && !correoText.equals("") && !contrasenyaText.equals("") && !verifica.equals("")) {
+                if (!comprobacion) {
+                    if (contrasenyaText.equals(verifica)) {
+                        Registro.registro(usuarioText, correoText, contrasenyaText);
+                        JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
+                        dispose();
+                        Interfaz1.main();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Este nombre de Usuario o Correo ya están en uso");
+                }
             }else{
-                JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
+                JOptionPane.showMessageDialog(null, "Introduzca los datos");
             }
         }
     }

@@ -1,19 +1,17 @@
 package main.GUI;
 
 import main.utils.Acceso;
-import main.utils.Verificar;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class Interfaz_logIn extends JFrame {
 
     JButton confirmar;
     JButton registrarse;
-    JTextField correo;
+    JTextField usuario;
 
     JPasswordField contrasenya;
 
@@ -30,11 +28,11 @@ public class Interfaz_logIn extends JFrame {
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio3);
-        JLabel l2 = new JLabel("Correo Electrónico");
+        JLabel l2 = new JLabel("Nombre de Usuario");
         l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         panelPrincipal.add(l2);
-        correo = new JTextField();
-        panelPrincipal.add(correo);
+        usuario = new JTextField();
+        panelPrincipal.add(usuario);
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio4);
@@ -82,17 +80,20 @@ public class Interfaz_logIn extends JFrame {
 
     private class BotonInicioSesion implements ActionListener {
         @Override
-        public void actionPerformed (ActionEvent e){
-            String usuarioText = correo.getText();
+        public void actionPerformed (ActionEvent e) {
+            String usuarioText = usuario.getText();
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
-
-            if (correcto){
-                JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + correo.getText());
-                dispose();
-                Interfaz1.main();
+            if (!usuarioText.equals("") && !contrasenyaText.equals("")) {
+                if (correcto) {
+                    JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
+                    dispose();
+                    Interfaz1.main();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
+                }
             }else{
-                JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
+                JOptionPane.showMessageDialog(null, "Introduzca los datos");
             }
         }
     }
