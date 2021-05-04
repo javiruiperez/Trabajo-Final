@@ -1,6 +1,7 @@
 package main.GUI;
 
 import main.utils.Acceso;
+import main.utils.Verificar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -85,7 +86,7 @@ public class Interfaz_logIn extends JFrame {
             String usuarioText = correo.getText();
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
-            System.out.println(correcto);
+
             if (correcto){
                 JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + correo.getText());
                 dispose();

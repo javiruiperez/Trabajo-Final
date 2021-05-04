@@ -1,6 +1,7 @@
 package main.GUI;
 
 import main.utils.Registro;
+import main.utils.Verificar;
 
 import javax.lang.model.util.SimpleTypeVisitor7;
 import javax.swing.*;
@@ -105,6 +106,7 @@ public class Interfaz_SignIn extends JFrame {
             String correoText = correo.getText();
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
+            boolean comprobación = Verificar.verificar(usuarioText,correoText);
 
             if (contrasenyaText.equals(verifica)){
                 Registro.registro(usuarioText, correoText, contrasenyaText);
