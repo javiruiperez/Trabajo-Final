@@ -1,6 +1,7 @@
 package main.GUI;
 
 import main.utils.Acceso;
+import main.utils.Saldo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.awt.event.ActionListener;
 
 public class Interfaz_logIn extends JFrame {
 
+    public static double saldo;
     JButton confirmar;
     JButton registrarse;
     JTextField usuario;
@@ -82,6 +84,7 @@ public class Interfaz_logIn extends JFrame {
         @Override
         public void actionPerformed (ActionEvent e) {
             String usuarioText = usuario.getText();
+            saldo = Saldo.saldo(usuarioText);
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {

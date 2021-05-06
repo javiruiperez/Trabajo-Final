@@ -1,13 +1,14 @@
 package main.GUI;
 
 import main.utils.Encriptación;
+import main.utils.Saldo;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfaz_Saldo extends JFrame {
+public class Interfaz_Saldo<saldo> extends JFrame {
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_saldo;
@@ -45,7 +46,7 @@ public class Interfaz_Saldo extends JFrame {
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio4);
-        saldo = new JButton();
+        saldo = new JButton(String.valueOf(Interfaz_logIn.saldo));
         saldo.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);
@@ -80,14 +81,14 @@ public class Interfaz_Saldo extends JFrame {
         uno.setBackground(Color.white);
         Imagen Imagen = new Imagen();
         uno.add(Imagen);
-        uno.addActionListener(new ListenerButton3());
+        uno.addActionListener(new imagen1());
         dos = new JButton();
         dos.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panel3.add(dos);
         dos.setBackground(Color.white);
         Imagen2 Imagen2 = new Imagen2();
         dos.add(Imagen2);
-        dos.addActionListener(new ListenerButton4());
+        dos.addActionListener(new imagen2());
         panelPrincipal.add(panel3);
 
 
@@ -111,13 +112,13 @@ public class Interfaz_Saldo extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new Interfaz_Saldo.ListenerButton());
+        menuItem_inicio.addActionListener(new Interfaz_Saldo.encuestas());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new Interfaz_Saldo.ListenerButton1());
+        menuItem_saldo.addActionListener(new Interfaz_Saldo.saldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new Interfaz_Saldo.ListenerButton2());
+        menuItem_configuracion.addActionListener(new Interfaz_Saldo.configuracion());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new Interfaz_Saldo.ListenerButton5());
+        menuItem_info.addActionListener(new Interfaz_Saldo.informacion());
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
@@ -129,7 +130,7 @@ public class Interfaz_Saldo extends JFrame {
         menu_saldo.add(menuItem_saldo);
     }
 
-    private class ListenerButton implements ActionListener {
+    private class encuestas implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -138,14 +139,14 @@ public class Interfaz_Saldo extends JFrame {
         }
     }
 
-    private class ListenerButton1 implements ActionListener {
+    private class saldo implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             dispose();
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Perfil.main();
@@ -153,24 +154,26 @@ public class Interfaz_Saldo extends JFrame {
         }
     }
 
-    private class ListenerButton3 implements ActionListener {
+    private class imagen1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton4 implements ActionListener {
+    private class imagen2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton5 implements ActionListener {
+    private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
+                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
+                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
 }

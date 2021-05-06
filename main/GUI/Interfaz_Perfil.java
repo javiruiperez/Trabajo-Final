@@ -43,13 +43,13 @@ public class Interfaz_Perfil extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new Interfaz_Perfil.ListenerButton());
+        menuItem_inicio.addActionListener(new Interfaz_Perfil.encuesta());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new Interfaz_Perfil.ListenerButton1());
+        menuItem_saldo.addActionListener(new Interfaz_Perfil.saldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new Interfaz_Perfil.ListenerButton2());
+        menuItem_configuracion.addActionListener(new Interfaz_Perfil.configuracion());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new Interfaz_Perfil.ListenerButton3());
+        menuItem_info.addActionListener(new Interfaz_Perfil.informacion());
 
         menu_perfil.add(menuItem_configuracion);
         menu_perfil.addSeparator();
@@ -63,7 +63,7 @@ public class Interfaz_Perfil extends JFrame {
         menu_saldo.add(menuItem_saldo);
     }
 
-    private class ListenerButton implements ActionListener {
+    private class encuesta implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz1.main();
@@ -71,7 +71,7 @@ public class Interfaz_Perfil extends JFrame {
         }
     }
 
-    private class ListenerButton1 implements ActionListener {
+    private class saldo implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Saldo.main();
@@ -79,17 +79,19 @@ public class Interfaz_Perfil extends JFrame {
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             dispose();
         }
     }
 
-    private class ListenerButton3 implements ActionListener {
+    private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
+                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
+                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
 }

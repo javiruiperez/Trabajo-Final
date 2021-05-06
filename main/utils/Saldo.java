@@ -1,6 +1,7 @@
 package main.utils;
 
 import java.sql.*;
+import main.GUI.Interfaz_logIn;
 
 public class Saldo {
     static final String JDBC_Driver = "com.mysql.jdbc.Driver";
@@ -8,7 +9,7 @@ public class Saldo {
     static final String User = "root";
     static final String Pass = "Nicolevante21";
 
-    public void saldo(double saldo){
+    public static double saldo(String usuario ){
         Connection conn = null;
         Statement stmt = null;
 
@@ -17,9 +18,9 @@ public class Saldo {
             conn = DriverManager.getConnection(DB_URL, User, Pass);
             stmt = conn.createStatement();
 
-            String sql = "select Saldo from creador";
+            String sql = "select Saldo from creador where Nombre_Usuario =?";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
-            prpStatement.setString(1, String.valueOf(saldo));
+            prpStatement.setString(1, usuario);
             ResultSet rs = prpStatement.executeQuery();
 
         } catch (SQLException throwables) {
@@ -38,5 +39,6 @@ public class Saldo {
             } catch (SQLException se) {
             }
         }
+        return 0;
     }
 }
