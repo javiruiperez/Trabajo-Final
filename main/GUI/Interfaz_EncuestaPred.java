@@ -328,4 +328,4 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         }
     }
-}
+}+
