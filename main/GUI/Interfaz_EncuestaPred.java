@@ -27,16 +27,28 @@ public class Interfaz_EncuestaPred extends JFrame {
     JCheckBox r14 = new JCheckBox("RESPUESTA 2");
     JCheckBox r15 = new JCheckBox("RESPUESTA 3");
 
+
+    JButton preg2;
+    JButton preg3;
+    JButton preg4;
+    JButton preg5;
+    JButton enviar;
+
+    Color asulitoresulon = new Color(49, 112, 255);
+
     Interfaz_EncuestaPred(){
-        setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new GridLayout(7, 1));
+        panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("CREA TU ENCUESTA");
         l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio1);
+
+
+        JPanel panelPrincipal2 = new JPanel();
+        panelPrincipal2.setLayout(new GridLayout(5, 1));
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(5, 1));
@@ -51,7 +63,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio2);
-        panelPrincipal.add(panel2);
+        panelPrincipal2.add(panel2);
 
 
         JPanel panel3 = new JPanel();
@@ -67,7 +79,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel3.add(vacio3);
-        panelPrincipal.add(panel3);
+        panelPrincipal2.add(panel3);
 
 
         JPanel panel4 = new JPanel();
@@ -83,7 +95,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel4.add(vacio4);
-        panelPrincipal.add(panel4);
+        panelPrincipal2.add(panel4);
 
 
         JPanel panel5 = new JPanel();
@@ -99,7 +111,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel5.add(vacio5);
-        panelPrincipal.add(panel5);
+        panelPrincipal2.add(panel5);
 
 
         JPanel panel6 = new JPanel();
@@ -112,17 +124,48 @@ public class Interfaz_EncuestaPred extends JFrame {
         r13.addActionListener(new ListenerButton12());
         r14.addActionListener(new ListenerButton13());
         r15.addActionListener(new ListenerButton14());
-        panelPrincipal.add(panel6);
+        panelPrincipal2.add(panel6);
+
+        JPanel panelbotones = new JPanel();
+        panelbotones.setLayout(new GridLayout(1, 4));
+        enviar = new JButton("CONTINUAR");
+        enviar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        enviar.setPreferredSize(new Dimension(100, 50));
+        panel2.add(enviar);
+        enviar.addActionListener(new ListenerButton15());
+        enviar.setBackground(asulitoresulon);
+        /*preg2 = new JButton("CONTINUAR");
+        preg2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        preg2.setPreferredSize(new Dimension(100, 50));
+        panelbotones.add(preg2);
+        //preg2.addActionListener(new Interfaz1.ListenerButton3());
+
+        preg3 = new JButton("CONTINUAR");
+        preg3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        preg3.setPreferredSize(new Dimension(100, 50));
+        panelbotones.add(preg3);
+        //preg3.addActionListener(new Interfaz1.ListenerButton3());
+
+        preg4 = new JButton("CONTINUAR");
+        preg4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        preg4.setPreferredSize(new Dimension(100, 50));
+        panelbotones.add(preg4);
+        //preg4.addActionListener(new Interfaz1.ListenerButton3());
+
+        preg5 = new JButton("CONTINUAR");
+        preg5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        preg5.setPreferredSize(new Dimension(100, 50));
+        panelbotones.add(preg5);
+        //preg5.addActionListener(new Interfaz1.ListenerButton3());*/
 
 
-        //add(panelPrincipal);
-        JScrollPane deslizador = new JScrollPane(panelPrincipal);
-        //deslizador.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_NEEDED );
-        //deslizador.setViewportView(panelPrincipal);
-        add( deslizador );
+        add(panelPrincipal, BorderLayout.NORTH);
+        add(panelPrincipal2, BorderLayout.CENTER);
+        add(panelbotones, BorderLayout.SOUTH);
         setSize(400, 400);
         setVisible(true);
     }
+
 
     public static void main(String[] args) {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
@@ -279,4 +322,10 @@ public class Interfaz_EncuestaPred extends JFrame {
     }
 
 
+    private class ListenerButton15 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
 }
