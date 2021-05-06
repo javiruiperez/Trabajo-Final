@@ -16,7 +16,7 @@ public class encuestapred {
             conn = DriverManager.getConnection(DB_URL, User, Pass);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO usuario "
+            String sql = "INSERT INTO respuesta "
                     + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
             stmt.executeUpdate(sql);
         }
