@@ -2,8 +2,7 @@ package main.GUI;
 import java.sql.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 
 public class Interfaz_EncuestaPred extends JFrame {
@@ -64,7 +63,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel3.add(r4);
         panel3.add(r5);
         panel3.add(r6);
-        r4.addActionListener(new ListenerButton4());
+        r4.addActionListener(new ListenerButton3());
         r5.addActionListener(new ListenerButton4());
         r6.addActionListener(new ListenerButton5());
         JLabel vacio3 = new JLabel("");
