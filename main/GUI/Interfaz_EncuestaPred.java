@@ -127,7 +127,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 

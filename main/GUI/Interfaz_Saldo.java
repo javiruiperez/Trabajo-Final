@@ -1,8 +1,5 @@
 package main.GUI;
 
-import main.utils.Encriptación;
-import main.utils.Saldo;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -56,9 +53,9 @@ public class Interfaz_Saldo<saldo> extends JFrame {
         JLabel vacio6 = new JLabel("");
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio6);
-        JLabel vacio7 = new JLabel("");
-        vacio7.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel2.add(vacio7);
+        JLabel l2= new JLabel("");
+        l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        panel2.add(l2);
         JLabel vacio8 = new JLabel("");
         vacio8.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio8);

@@ -11,14 +11,14 @@ public class encuestapred {
         Connection conn = null;
         Statement stmt = null;
 
-        try {
-            Class.forName(JDBC_Driver);
-            conn = DriverManager.getConnection(DB_URL, User, Pass);
-            stmt = conn.createStatement();
+       // try {
+            //Class.forName(JDBC_Driver);
+            //conn = DriverManager.getConnection(DB_URL, User, Pass);
+            //stmt = conn.createStatement();
 
-            String sql = "INSERT INTO respuesta "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
-            stmt.executeUpdate(sql);
+            //String sql = "INSERT INTO respuesta "
+                    //+ "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
+            //stmt.executeUpdate(sql);
         }
     }
-}
+//}
