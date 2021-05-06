@@ -130,8 +130,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelbotones.setLayout(new GridLayout(1, 4));
         enviar = new JButton("CONTINUAR");
         enviar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
-        enviar.setPreferredSize(new Dimension(100, 50));
-        panel2.add(enviar);
+        panelbotones.add(enviar);
         enviar.addActionListener(new ListenerButton15());
         enviar.setBackground(asulitoresulon);
         /*preg2 = new JButton("CONTINUAR");
@@ -320,7 +319,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             }
         }
     }
-
 
     private class ListenerButton15 implements ActionListener {
         @Override
