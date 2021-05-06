@@ -1,5 +1,5 @@
 package main.GUI;
-import java.sql.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,9 +48,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel2.add(r1);
         panel2.add(r2);
         panel2.add(r3);
-        r1.addActionListener(new ListenerButton());
-        r2.addActionListener(new ListenerButton1());
-        r3.addActionListener(new ListenerButton2());
+        r1.addActionListener(new r1());
+        r2.addActionListener(new r2());
+        r3.addActionListener(new r3());
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio2);
@@ -64,9 +64,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel3.add(r4);
         panel3.add(r5);
         panel3.add(r6);
-        r4.addActionListener(new ListenerButton4());
-        r5.addActionListener(new ListenerButton4());
-        r6.addActionListener(new ListenerButton5());
+        r4.addActionListener(new r4());
+        r5.addActionListener(new r5());
+        r6.addActionListener(new r6());
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel3.add(vacio3);
@@ -80,9 +80,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel4.add(r7);
         panel4.add(r8);
         panel4.add(r9);
-        r7.addActionListener(new ListenerButton6());
-        r8.addActionListener(new ListenerButton7());
-        r9.addActionListener(new ListenerButton8());
+        r7.addActionListener(new r7());
+        r8.addActionListener(new r8());
+        r9.addActionListener(new r9());
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel4.add(vacio4);
@@ -96,9 +96,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel5.add(r10);
         panel5.add(r11);
         panel5.add(r12);
-        r10.addActionListener(new ListenerButton9());
-        r11.addActionListener(new ListenerButton10());
-        r12.addActionListener(new ListenerButton11());
+        r10.addActionListener(new r10());
+        r11.addActionListener(new r11());
+        r12.addActionListener(new r12());
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel5.add(vacio5);
@@ -112,16 +112,16 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel6.add(r13);
         panel6.add(r14);
         panel6.add(r15);
-        r13.addActionListener(new ListenerButton12());
-        r14.addActionListener(new ListenerButton13());
-        r15.addActionListener(new ListenerButton14());
+        r13.addActionListener(new r13());
+        r14.addActionListener(new r14());
+        r15.addActionListener(new r15());
         panelPrincipal.add(panel6);
 
 
-        //add(panelPrincipal);
+        add(panelPrincipal);
         JScrollPane deslizador = new JScrollPane(panelPrincipal);
         //deslizador.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_NEEDED );
-        //deslizador.setViewportView(panelPrincipal);
+        deslizador.setViewportView(panelPrincipal);
         add( deslizador );
         setSize(400, 400);
         setVisible(true);
@@ -131,7 +131,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 
-    private class ListenerButton implements ActionListener {
+    private class r1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r1.isSelected()) {
@@ -141,7 +141,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton1 implements ActionListener {
+    private class r2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r2.isSelected()) {
@@ -151,7 +151,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class r3 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r3.isSelected()) {
@@ -161,7 +161,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton3 implements ActionListener{
+    private class r4 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r4.isSelected()) {
@@ -171,7 +171,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton4 implements ActionListener{
+    private class r5 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r5.isSelected()) {
@@ -181,7 +181,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton5 implements ActionListener{
+    private class r6 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r6.isSelected()) {
@@ -191,7 +191,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton6 implements ActionListener{
+    private class r7 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r7.isSelected()) {
@@ -201,7 +201,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton7 implements ActionListener{
+    private class r8 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r8.isSelected()) {
@@ -211,7 +211,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton8 implements ActionListener{
+    private class r9 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r9.isSelected()) {
@@ -221,7 +221,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton9 implements ActionListener{
+    private class r10 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r10.isSelected()) {
@@ -231,7 +231,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton10 implements ActionListener{
+    private class r11 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r11.isSelected()) {
@@ -241,7 +241,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton11 implements ActionListener{
+    private class r12 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r12.isSelected()) {
@@ -251,7 +251,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton12 implements ActionListener{
+    private class r13 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r13.isSelected()) {
@@ -261,7 +261,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton13 implements ActionListener{
+    private class r14 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r14.isSelected()) {
@@ -271,7 +271,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private class ListenerButton14 implements ActionListener{
+    private class r15 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (r15.isSelected()) {
