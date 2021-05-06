@@ -1,11 +1,14 @@
 package main.GUI;
-
+import java.sql.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Interfaz_EncuestaPred extends JFrame {
+
+
 
     JCheckBox r1 = new JCheckBox("RESPUESTA 1");
     JCheckBox r2 = new JCheckBox("RESPUESTA 2");

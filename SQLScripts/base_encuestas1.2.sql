@@ -30,8 +30,9 @@ CREATE TABLE `pregunta` (
 
 CREATE TABLE `respuesta` (
   `ID_Respuesta` int NOT NULL,
-  `ID_Encuesta` varchar(45) DEFAULT NULL,
-  `ID_Usuario` varchar(45) DEFAULT NULL,
+  `ID_Encuesta` int DEFAULT NULL,
+  `ID_Usuario` int DEFAULT NULL,
+  ''
   PRIMARY KEY (`ID_Respuesta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
