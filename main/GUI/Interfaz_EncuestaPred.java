@@ -115,11 +115,11 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelPrincipal.add(panel6);
 
 
-        add(panelPrincipal);
-        //JScrollPane deslizador = new JScrollPane();
+        //add(panelPrincipal);
+        JScrollPane deslizador = new JScrollPane(panelPrincipal);
         //deslizador.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_NEEDED );
         //deslizador.setViewportView(panelPrincipal);
-        //getContentPane().add( deslizador );
+        add( deslizador );
         setSize(400, 400);
         setVisible(true);
     }
@@ -141,98 +141,140 @@ public class Interfaz_EncuestaPred extends JFrame {
     private class ListenerButton1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r2.isSelected()) {
+                r1.setSelected(false);
+                r3.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r3.isSelected()) {
+                r1.setSelected(false);
+                r2.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton3 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r4.isSelected()) {
+                r5.setSelected(false);
+                r6.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton4 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r5.isSelected()) {
+                r4.setSelected(false);
+                r6.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton5 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r6.isSelected()) {
+                r4.setSelected(false);
+                r5.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton6 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r7.isSelected()) {
+                r8.setSelected(false);
+                r9.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton7 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r8.isSelected()) {
+                r7.setSelected(false);
+                r9.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton8 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r9.isSelected()) {
+                r7.setSelected(false);
+                r8.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton9 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r10.isSelected()) {
+                r11.setSelected(false);
+                r12.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton10 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r11.isSelected()) {
+                r10.setSelected(false);
+                r12.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton11 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r12.isSelected()) {
+                r10.setSelected(false);
+                r11.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton12 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r13.isSelected()) {
+                r14.setSelected(false);
+                r15.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton13 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r14.isSelected()) {
+                r13.setSelected(false);
+                r15.setSelected(false);
+            }
         }
     }
 
     private class ListenerButton14 implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (r15.isSelected()) {
+                r13.setSelected(false);
+                r14.setSelected(false);
+            }
         }
     }
 
