@@ -20,7 +20,7 @@ public class Interfaz_Perfil extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("Estas son las encuestas disponibles");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 
         crearMenu();
