@@ -9,7 +9,7 @@ public class Saldo {
     static final String User = "root";
     static final String Pass = "Nicolevante21";
 
-    public static double saldo(String usuario ){
+    public static double verSaldo(String usuario ){
         Connection conn = null;
         Statement stmt = null;
 

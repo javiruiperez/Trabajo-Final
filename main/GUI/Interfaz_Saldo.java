@@ -1,14 +1,11 @@
 package main.GUI;
 
-import main.utils.Encriptación;
-import main.utils.Saldo;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfaz_Saldo<saldo> extends JFrame {
+public class Interfaz_Saldo extends JFrame {
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_saldo;
@@ -29,7 +26,7 @@ public class Interfaz_Saldo<saldo> extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
         JLabel l1 = new JLabel("                   SALDO                    ");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
@@ -47,7 +44,7 @@ public class Interfaz_Saldo<saldo> extends JFrame {
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio4);
         saldo = new JButton(String.valueOf(Interfaz_logIn.saldo));
-        saldo.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);
         JLabel vacio5 = new JLabel("");
@@ -56,9 +53,9 @@ public class Interfaz_Saldo<saldo> extends JFrame {
         JLabel vacio6 = new JLabel("");
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio6);
-        JLabel vacio7 = new JLabel("");
-        vacio7.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel2.add(vacio7);
+        JLabel l2= new JLabel("Elige metodo de retirada");
+        l2.setFont(new Font("Calibri", Font.PLAIN, 20));
+        panel2.add(l2);
         JLabel vacio8 = new JLabel("");
         vacio8.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio8);
@@ -76,14 +73,14 @@ public class Interfaz_Saldo<saldo> extends JFrame {
         JPanel panel3 = new JPanel();
         panel3.setLayout(new GridLayout(1, 2, 150, 400));
         uno = new JButton();
-        uno.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        uno.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel3.add(uno);
         uno.setBackground(Color.white);
         Imagen Imagen = new Imagen();
         uno.add(Imagen);
         uno.addActionListener(new imagen1());
         dos = new JButton();
-        dos.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        dos.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel3.add(dos);
         dos.setBackground(Color.white);
         Imagen2 Imagen2 = new Imagen2();
@@ -149,8 +146,7 @@ public class Interfaz_Saldo<saldo> extends JFrame {
     private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Perfil.main();
-            dispose();
+
         }
     }
 
