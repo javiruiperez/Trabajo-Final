@@ -24,17 +24,17 @@ public class Gráfico extends JFrame{
 
 
         DefaultPieDataset data = new DefaultPieDataset();
-        data.setValue("Nico", 99);
-        data.setValue("Javi", 0.5);
-        data.setValue("Lucas", 0.5);
+        data.setValue("Grupo Sergio, Angel, Antonio", 35);
+        data.setValue("Grupo Nico, Lucas, Javi", 50);
+        data.setValue("Grupo Salva, Lucia, Carmen", 15);
 
-        JFreeChart chart = ChartFactory.createPieChart("Quien es mas tonto", data, true, true, false);
+        JFreeChart chart = ChartFactory.createPieChart("A quien le vas a poner mejor nota en el trabajo", data, true, true, false);
 
         ChartPanel chartPanel = new ChartPanel(chart);
         panel.add(chartPanel);
     }
 
-    public static void main(String args[]){
+    public static void main(){
         new Gráfico().setVisible(true);
     }
 }
