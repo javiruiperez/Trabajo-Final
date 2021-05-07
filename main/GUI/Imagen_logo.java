@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Imagen_logo extends javax.swing.JPanel {
+
+    // Este codigo hace que se pueda añadir una imagen a un boton
+
     public Imagen_logo() {
         this.setSize(250, 500);
     }

@@ -22,6 +22,8 @@ public class Interfaz_SignIn extends JFrame {
     Color rojitoresulon = new Color(248, 105, 105);
 
     Interfaz_SignIn() {
+        // Este metodo es la interfaz
+
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(15, 1));

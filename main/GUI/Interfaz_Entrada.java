@@ -11,6 +11,8 @@ public class Interfaz_Entrada extends JFrame {
     JButton entrar;
 
     Interfaz_Entrada() {
+        // Este metodo es la interfaz
+
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(1, 1));
         logo = new JButton();

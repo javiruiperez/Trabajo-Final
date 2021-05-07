@@ -22,6 +22,8 @@ public class Interfaz_Saldo extends JFrame {
     private JButton saldo;
 
     Interfaz_Saldo(){
+        // Este metodo es la interfaz
+
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));

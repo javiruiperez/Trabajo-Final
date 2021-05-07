@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 public class Gráfico extends JFrame{
     JPanel panel;
 
+    // Esta clase es para generar un grafico de tarta para las respuestas de las encuestas
+
     public Gráfico(){
         setTitle("Grafico");
         setSize(800,600);
@@ -31,6 +33,7 @@ public class Gráfico extends JFrame{
         data.setValue("Grupo Sergio, Angel, Antonio", 35);
         data.setValue("Grupo Nico, Lucas, Javi", 50);
         data.setValue("Grupo Salva, Lucia, Carmen", 15);
+
 
         JFreeChart chart = ChartFactory.createPieChart("A quien le vas a poner mejor nota en el trabajo", data, true, true, false);
 
