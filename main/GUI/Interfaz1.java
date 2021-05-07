@@ -24,7 +24,7 @@ public class Interfaz1 extends JFrame {
     JTable encuestas;
 
     JButton comfirmar;
-    Color asulitoresulon = new Color(49, 112, 255);
+    Color asulitoresulon = new Color(88, 148, 255);
 
     Interfaz1() {
         JPanel panelPrincipal = new JPanel();

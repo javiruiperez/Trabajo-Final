@@ -17,8 +17,8 @@ public class Interfaz_logIn extends JFrame {
 
     JPasswordField contrasenya;
 
-    Color asulitoresulon = new Color(49, 112, 255);
-    Color rojitoresulon = new Color(255, 43, 43);
+    Color asulitoresulon = new Color(88, 148, 255);
+    Color rojitoresulon = new Color(248, 105, 105);
 
     Interfaz_logIn() {
         setLayout(new FlowLayout());

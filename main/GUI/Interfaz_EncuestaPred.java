@@ -34,7 +34,7 @@ public class Interfaz_EncuestaPred extends JFrame {
     JButton preg5;
     JButton enviar;
 
-    Color asulitoresulon = new Color(49, 112, 255);
+    Color asulitoresulon = new Color(88, 148, 255);
 
     Interfaz_EncuestaPred(){
         JPanel panelPrincipal = new JPanel();
