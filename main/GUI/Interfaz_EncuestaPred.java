@@ -161,12 +161,13 @@ public class Interfaz_EncuestaPred extends JFrame {
         add(panelPrincipal, BorderLayout.NORTH);
         add(panelPrincipal2, BorderLayout.CENTER);
         add(panelbotones, BorderLayout.SOUTH);
-        setSize(400, 400);
+        setSize(2000, 2000);
+        this.setResizable(false);
         setVisible(true);
     }
 
 
-    public static void main(String[] args) {
+    public static void main() {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 
@@ -325,7 +326,8 @@ public class Interfaz_EncuestaPred extends JFrame {
         public void actionPerformed(ActionEvent e) {
 
            JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
-
+           Interfaz1.main();
+            dispose();
         }
     }
-}+
+}
