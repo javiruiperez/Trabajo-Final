@@ -21,6 +21,8 @@ public class Interfaz_logIn extends JFrame {
     Color rojitoresulon = new Color(248, 105, 105);
 
     Interfaz_logIn() {
+        // Este metodo es la interfaz
+
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(13, 1));

@@ -16,6 +16,8 @@ public class Interfaz_Perfil extends JFrame {
     JMenuItem menuItem_inicio;
 
     Interfaz_Perfil(){
+        // Este metodo es la interfaz
+
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));

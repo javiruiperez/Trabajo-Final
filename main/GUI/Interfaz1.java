@@ -27,9 +27,11 @@ public class Interfaz1 extends JFrame {
     Color asulitoresulon = new Color(88, 148, 255);
 
     Interfaz1() {
+        // Este metodo es la interfaz
+
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("                            ESTAS SON LAS ENCUESTAS DISPONIBLES");
+        JLabel l1 = new JLabel("ESTAS SON LAS ENCUESTAS DISPONIBLES");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 
@@ -68,6 +70,8 @@ public class Interfaz1 extends JFrame {
 
 
     private void crearMenu() {
+        // Este metodo es para generar un menu en la interfaz
+
         barra = new JMenuBar();
 
         menu_inicio = new JMenu("Inicio");
@@ -100,6 +104,8 @@ public class Interfaz1 extends JFrame {
     }
 
     private void Tabla() {
+        // Este metodo es para generar una tabla en la interfaz
+
         encuestas = new JTable();
 
         String[] columnNames = {"Encuesta", "Recompensa"};
