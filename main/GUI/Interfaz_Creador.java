@@ -23,7 +23,7 @@ public class Interfaz_Creador extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
         JLabel l1 = new JLabel("CREA TU ENCUESTA");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();

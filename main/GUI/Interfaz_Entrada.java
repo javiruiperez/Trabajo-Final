@@ -14,7 +14,7 @@ public class Interfaz_Entrada extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(1, 1));
         logo = new JButton();
-        logo.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        logo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panelPrincipal.add(logo);
         logo.setBackground(Color.white);
         Imagen_logo Imagen = new Imagen_logo();
@@ -23,7 +23,7 @@ public class Interfaz_Entrada extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 1));
         entrar = new JButton("ENTRAR");
-        entrar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
+        entrar.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(entrar);
         entrar.setBackground(Color.white);
         entrar.addActionListener(new Interfaz_Entrada.acceso());

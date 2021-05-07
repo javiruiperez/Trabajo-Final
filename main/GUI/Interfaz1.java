@@ -30,7 +30,7 @@ public class Interfaz1 extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("                            ESTAS SON LAS ENCUESTAS DISPONIBLES");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
@@ -39,13 +39,13 @@ public class Interfaz1 extends JFrame {
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio1);
         comfirmar = new JButton("CONTINUAR");
-        comfirmar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        comfirmar.setFont(new Font("Calibri", Font.PLAIN, 20));
         comfirmar.setPreferredSize(new Dimension(100, 50));
         panel2.add(comfirmar);
         comfirmar.addActionListener(new continuar());
         comfirmar.setBackground(asulitoresulon);
         JLabel vacio2 = new JLabel("");
-        vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
 
 

@@ -25,13 +25,13 @@ public class Interfaz_logIn extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(13, 1));
         JLabel l1 = new JLabel("Inicio de sesión");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 35));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 35));
         panelPrincipal.add(l1);
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio3);
         JLabel l2 = new JLabel("Nombre de Usuario");
-        l2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        l2.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelPrincipal.add(l2);
         usuario = new JTextField();
         panelPrincipal.add(usuario);
@@ -39,7 +39,7 @@ public class Interfaz_logIn extends JFrame {
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio4);
         JLabel l3 = new JLabel("Contraseña");
-        l3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        l3.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelPrincipal.add(l3);
         contrasenya = new JPasswordField();
         panelPrincipal.add(contrasenya);
@@ -50,13 +50,13 @@ public class Interfaz_logIn extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 2, 75, 0));
         registrarse = new JButton("Crear cuenta");
-        registrarse.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
+        registrarse.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(rojitoresulon);
         registrarse.addActionListener(new BotonCrearCuenta());
 
         confirmar = new JButton("CONFIRMAR");
-        confirmar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 15));
+        confirmar.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(confirmar);
         confirmar.addActionListener(new BotonInicioSesion());
         confirmar.setBackground(asulitoresulon);

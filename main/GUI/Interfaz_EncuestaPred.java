@@ -40,7 +40,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("CREA TU ENCUESTA");
-        l1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 40));
+        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -129,7 +129,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         JPanel panelbotones = new JPanel();
         panelbotones.setLayout(new GridLayout(1, 4));
         enviar = new JButton("ENVIAR");
-        enviar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
+        enviar.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
