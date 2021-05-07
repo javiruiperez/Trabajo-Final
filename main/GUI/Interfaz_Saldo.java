@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfaz_Saldo<saldo> extends JFrame {
+public class Interfaz_Saldo extends JFrame {
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_saldo;
@@ -146,8 +146,7 @@ public class Interfaz_Saldo<saldo> extends JFrame {
     private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Perfil.main();
-            dispose();
+
         }
     }
 
