@@ -19,6 +19,8 @@ public class Interfaz_Creador extends JFrame {
 
 
     Interfaz_Creador(){
+        // Este metodo es la interfaz
+
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
@@ -41,6 +43,8 @@ public class Interfaz_Creador extends JFrame {
     }
 
     private void crearMenu() {
+        // Este metodo es para crear un menu en la interfaz
+
         barra = new JMenuBar();
 
         menu_inicio = new JMenu("Inicio");

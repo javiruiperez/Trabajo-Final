@@ -37,6 +37,8 @@ public class Interfaz_EncuestaPred extends JFrame {
     Color asulitoresulon = new Color(88, 148, 255);
 
     Interfaz_EncuestaPred(){
+        // Este metodo es la interfaz
+
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("CREA TU ENCUESTA");
