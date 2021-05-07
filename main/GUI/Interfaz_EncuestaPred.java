@@ -327,7 +327,7 @@ public class Interfaz_EncuestaPred extends JFrame {
 
            JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
            Gráfico.main();
-            dispose();
+           dispose();
         }
     }
 }

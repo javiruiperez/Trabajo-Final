@@ -9,9 +9,9 @@ public class Registro {
     static final String JDBC_Driver = "org.mariadb.jdbc.Driver";
     static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/encuestas";
     static final String User = "root";
-    static final String Pass = "Lgz-05112002";
+    static final String Pass = "Nicolevante21";
 
-    public static boolean registro(String usuario, String correo, String contraseña) {
+    public static boolean registro(String usuario, String correo, String contrasenya) {
         Connection conn = null;
         Statement stmt = null;
 
@@ -21,7 +21,7 @@ public class Registro {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO creador "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contraseña, 3) + "')";
+                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya, 3) + "')";
             stmt.executeUpdate(sql);
 
             return true;
