@@ -9,8 +9,8 @@ public class pruebaControladores {
     public static void main(String[] args) {
         //PruebaRespuestas();
         //PruebaPreguntas();
-        PruebaEncuesta();
-        //PruebaEntradas();
+        //PruebaEncuesta();
+        PruebaEntradas();
     }
 
     private static void PruebaEntradas(){
