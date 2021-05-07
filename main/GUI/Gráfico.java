@@ -5,6 +5,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Gráfico extends JFrame{
     JPanel panel;
@@ -16,6 +18,8 @@ public class Gráfico extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         init();
+
+
     }
 
     private void init() {
@@ -32,9 +36,21 @@ public class Gráfico extends JFrame{
 
         ChartPanel chartPanel = new ChartPanel(chart);
         panel.add(chartPanel);
+
+        JButton volver = new JButton("VOlVER");
+        panel.add(volver);
+        volver.addActionListener(new ListenerButton());
     }
 
     public static void main(){
         new Gráfico().setVisible(true);
+    }
+
+    private class ListenerButton implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Interfaz1.main();
+            dispose();
+        }
     }
 }
