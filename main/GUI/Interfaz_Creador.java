@@ -79,7 +79,8 @@ public class Interfaz_Creador extends JFrame {
     private class encuestas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+        Interfaz1.main();
+        dispose();
         }
     }
 

@@ -42,7 +42,7 @@ public class Interfaz1 extends JFrame {
         comfirmar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         comfirmar.setPreferredSize(new Dimension(100, 50));
         panel2.add(comfirmar);
-        comfirmar.addActionListener(new confirmar());
+        comfirmar.addActionListener(new continuar());
         comfirmar.setBackground(asulitoresulon);
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -81,7 +81,7 @@ public class Interfaz1 extends JFrame {
         menuItem_saldo = new JMenuItem("Mis chukydolares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new seleccionEncuesta());
+        menuItem_configuracion.addActionListener(new configuracion());
         menuItem_info = new JMenuItem("Información");
         menuItem_info.addActionListener(new informacion());
 
@@ -165,11 +165,11 @@ public class Interfaz1 extends JFrame {
         }
     }
 
-    private class confirmar implements ActionListener {
+    private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_EncuestaPred.main();
-            dispose();
+        Interfaz_EncuestaPred.main();
+        dispose();
         }
     }
 
@@ -181,7 +181,7 @@ public class Interfaz1 extends JFrame {
                     "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
-    private class seleccionEncuesta implements ActionListener{
+    private class configuracion implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
 
