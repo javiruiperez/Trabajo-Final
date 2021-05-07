@@ -57,9 +57,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel2.add(r1);
         panel2.add(r2);
         panel2.add(r3);
-        //r1.addActionListener(new s1());
-        //r2.addActionListener(new s2());
-        //r3.addActionListener(new s3());
+        r1.addActionListener(new s1());
+        r2.addActionListener(new s2());
+        r3.addActionListener(new s3());
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio2);
@@ -73,9 +73,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel3.add(r4);
         panel3.add(r5);
         panel3.add(r6);
-        //r4.addActionListener(new s4());
-        //r5.addActionListener(new s5());
-        //r6.addActionListener(new s6());
+        r4.addActionListener(new s4());
+        r5.addActionListener(new s5());
+        r6.addActionListener(new s6());
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel3.add(vacio3);
@@ -89,9 +89,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel4.add(r7);
         panel4.add(r8);
         panel4.add(r9);
-        //r7.addActionListener(new s7());
-        //r8.addActionListener(new s8());
-        //r9.addActionListener(new s9());
+        r7.addActionListener(new s7());
+        r8.addActionListener(new s8());
+        r9.addActionListener(new s9());
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel4.add(vacio4);
@@ -105,9 +105,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel5.add(r10);
         panel5.add(r11);
         panel5.add(r12);
-        //r10.addActionListener(new s10());
-        //r11.addActionListener(new s11());
-        //r12.addActionListener(new s12());
+        r10.addActionListener(new s10());
+        r11.addActionListener(new s11());
+        r12.addActionListener(new s12());
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel5.add(vacio5);
@@ -121,9 +121,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         panel6.add(r13);
         panel6.add(r14);
         panel6.add(r15);
-        //r13.addActionListener(new s13());
-        //r14.addActionListener(new s14());
-        //r15.addActionListener(new s15());
+        r13.addActionListener(new s13());
+        r14.addActionListener(new s14());
+        r15.addActionListener(new s15());
         panelPrincipal2.add(panel6);
 
         JPanel panelbotones = new JPanel();
@@ -171,18 +171,163 @@ public class Interfaz_EncuestaPred extends JFrame {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 
+    private class s1 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r1.isSelected()) {
+                r2.setSelected(false);
+                r3.setSelected(false);
+            }
+        }
+    }
+
+    private class s2 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r2.isSelected()) {
+                r1.setSelected(false);
+                r3.setSelected(false);
+            }
+        }
+    }
+
+    private class s3 implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r3.isSelected()) {
+                r1.setSelected(false);
+                r2.setSelected(false);
+            }
+        }
+    }
+
+    private class s4 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r4.isSelected()) {
+                r5.setSelected(false);
+                r6.setSelected(false);
+            }
+        }
+    }
+
+    private class s5 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r5.isSelected()) {
+                r4.setSelected(false);
+                r6.setSelected(false);
+            }
+        }
+    }
+
+    private class s6 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r6.isSelected()) {
+                r4.setSelected(false);
+                r5.setSelected(false);
+            }
+        }
+    }
+
+    private class s7 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r7.isSelected()) {
+                r8.setSelected(false);
+                r9.setSelected(false);
+            }
+        }
+    }
+
+    private class s8 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r8.isSelected()) {
+                r7.setSelected(false);
+                r9.setSelected(false);
+            }
+        }
+    }
+
+    private class s9 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r9.isSelected()) {
+                r7.setSelected(false);
+                r8.setSelected(false);
+            }
+        }
+    }
+
+    private class s10 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r10.isSelected()) {
+                r11.setSelected(false);
+                r12.setSelected(false);
+            }
+        }
+    }
+
+    private class s11 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r11.isSelected()) {
+                r10.setSelected(false);
+                r12.setSelected(false);
+            }
+        }
+    }
+
+    private class s12 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r12.isSelected()) {
+                r10.setSelected(false);
+                r11.setSelected(false);
+            }
+        }
+    }
+
+    private class s13 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r13.isSelected()) {
+                r14.setSelected(false);
+                r15.setSelected(false);
+            }
+        }
+    }
+
+    private class s14 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r14.isSelected()) {
+                r13.setSelected(false);
+                r15.setSelected(false);
+            }
+        }
+    }
+
+    private class s15 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (r15.isSelected()) {
+                r13.setSelected(false);
+                r14.setSelected(false);
+            }
+        }
+    }
+
     private class enviar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (!r1.isSelected() || !r2.isSelected() || !r3.isSelected() || !r4.isSelected() || !r5.isSelected()
-                    || !r6.isSelected() || !r7.isSelected() || !r8.isSelected() || !r9.isSelected() || !r10.isSelected()
-                    ||r11.isSelected() || !r12.isSelected() || !r13.isSelected() || !r14.isSelected() || !r15.isSelected()){
-                JOptionPane.showMessageDialog(null, "Seleccione las respuestas");
-            }else{
-                JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
-                Interfaz1.main();
-                dispose();
-            }
+
+           JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
+           Gráfico.main();
+            dispose();
         }
     }
 }
