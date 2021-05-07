@@ -42,7 +42,7 @@ public class Interfaz1 extends JFrame {
         comfirmar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         comfirmar.setPreferredSize(new Dimension(100, 50));
         panel2.add(comfirmar);
-        comfirmar.addActionListener(new ListenerButton3());
+        comfirmar.addActionListener(new configuracion());
         comfirmar.setBackground(asulitoresulon);
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -79,11 +79,11 @@ public class Interfaz1 extends JFrame {
         menuItem_inicio2 = new JMenuItem("Crear Encuestas");
         menuItem_inicio2.addActionListener(new ListenerButton1());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new ListenerButton2());
+        menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new ListenerButton3());
+        menuItem_configuracion.addActionListener(new configuracion());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new ListenerButton4());
+        menuItem_info.addActionListener(new informacion());
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
@@ -157,25 +157,27 @@ public class Interfaz1 extends JFrame {
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class versaldo implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Perfil.main();
+            Interfaz_Saldo.main();
             dispose();
         }
     }
 
-    private class ListenerButton3 implements ActionListener {
+    private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton4 implements ActionListener {
+    private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
+                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
+                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
     private class seleccionEncuesta implements ActionListener{

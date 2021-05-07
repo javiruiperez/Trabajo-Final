@@ -26,7 +26,7 @@ public class Interfaz_Entrada extends JFrame {
         entrar.setFont(new Font("Comic Sans Ms", Font.PLAIN, 25));
         panel2.add(entrar);
         entrar.setBackground(Color.white);
-        entrar.addActionListener(new Interfaz_Entrada.ListenerButton());
+        entrar.addActionListener(new Interfaz_Entrada.acceso());
 
 
         add(panelPrincipal, BorderLayout.CENTER);
@@ -36,7 +36,7 @@ public class Interfaz_Entrada extends JFrame {
         setVisible(true);
     }
 
-    private class ListenerButton implements ActionListener {
+    private class acceso implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
            Interfaz_logIn.main();

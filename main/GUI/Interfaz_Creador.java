@@ -48,15 +48,15 @@ public class Interfaz_Creador extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new ListenerButton());
+        menuItem_inicio.addActionListener(new encuestas());
         menuItem_inicio2 = new JMenuItem("Crear Encuestas");
-        menuItem_inicio2.addActionListener(new ListenerButton1());
+        menuItem_inicio2.addActionListener(new crearEncuesta());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new ListenerButton2());
+        menuItem_saldo.addActionListener(new saldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new ListenerButton3());
+        menuItem_configuracion.addActionListener(new configuracion());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new ListenerButton4());
+        menuItem_info.addActionListener(new informacion());
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
@@ -76,38 +76,40 @@ public class Interfaz_Creador extends JFrame {
         Interfaz_Creador i = new Interfaz_Creador();
     }
 
-    private class ListenerButton implements ActionListener {
+    private class encuestas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton1 implements ActionListener {
+    private class crearEncuesta implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton2 implements ActionListener {
+    private class saldo implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton3 implements ActionListener {
+    private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     }
 
-    private class ListenerButton4 implements ActionListener {
+    private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
+                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
+                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
 }

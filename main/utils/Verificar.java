@@ -7,7 +7,7 @@ public class Verificar {
     static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
-    public static boolean verificar (String correo, String nombreUsuario){
+    public static boolean verificar (String nombreUsuario, String correo){
         Connection conn = null;
         Statement stmt = null;
 
@@ -19,12 +19,12 @@ public class Verificar {
             String sql = "select * from creador where Nombre_Usuario=? AND Correo=?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             prpStatement.setString(1, nombreUsuario);
-            prpStatement.setString(2, Encriptación.cifrar(correo, 3));
+            prpStatement.setString(2, correo);
             ResultSet rs = prpStatement.executeQuery();
             if (rs.next()) {
-                return false;
-            } else {
                 return true;
+            } else {
+                return false;
             }
 
         } catch (SQLException throwables) {
