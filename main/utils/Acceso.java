@@ -1,7 +1,8 @@
 package main.utils;
 
 import java.sql.*;
-
+//Esta es la interfaz de inicio de sesión
+//El usuario mete su nombre y la contraseña
 public class Acceso {
     static final String JDBC_Driver = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
@@ -20,7 +21,7 @@ public class Acceso {
            String sql = "select * from creador where Nombre_Usuario=? AND Contrasenya=?;";
            PreparedStatement prpStatement = conn.prepareStatement(sql);
            prpStatement.setString(1, usuario);
-           prpStatement.setString(2, Encriptación.cifrar(contrasenya, 3));
+           prpStatement.setString(2, Encriptación.cifrar(contrasenya));
            ResultSet rs = prpStatement.executeQuery();
            if (rs.next()) {
                return true;

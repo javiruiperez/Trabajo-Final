@@ -1,6 +1,7 @@
 package main.GUI;
 
-
+//Esta es la que podríamos llamar la pantalla principal.
+// En esta pantalla se muestran las encuestas disponibles
 
 import javax.swing.*;
 import java.awt.*;
