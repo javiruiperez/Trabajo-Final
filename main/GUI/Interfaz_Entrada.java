@@ -19,8 +19,8 @@ public class Interfaz_Entrada extends JFrame {
         logo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panelPrincipal.add(logo);
         logo.setBackground(Color.white);
-        Imagen_logo Imagen = new Imagen_logo();
-        logo.add(Imagen);
+        //Imagen_logo Imagen = new Imagen_logo();
+        //logo.add(Imagen);
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 1));

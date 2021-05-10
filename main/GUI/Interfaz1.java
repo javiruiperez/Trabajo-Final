@@ -5,6 +5,7 @@ import main.models.Encuesta;
 import main.models.EntradaTablaEncuesta;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -107,27 +108,29 @@ public class Interfaz1 extends JFrame {
     private void Tabla() {
         // Este metodo es para generar una tabla en la interfaz
 
+        ArrayList<EntradaTablaEncuesta> entradasTabla = ControladorEncuesta.getEntradas();
         encuestas = new JTable();
 
 
+        String col[] = {"Encuestas Disponibles", "Recompensa"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
 
-        String[] columnNames = {"Encuesta", "Recompensa"};
-
-        Object[][] data = {
-                {encuesta1},
-
-        };
-
-        final JTable table = new JTable(data, columnNames);
-        table.setPreferredScrollableViewportSize(new Dimension(950, 100));
-
-        JScrollPane scrollPane = new JScrollPane(table);
+        encuestas = new JTable(tableModel);
+        encuestas.setPreferredScrollableViewportSize(new Dimension(950, 100));
+        JScrollPane scrollPane = new JScrollPane(encuestas);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-        for (int c = 0; c < table.getColumnCount(); c++)
-        {
-            Class<?> col_class = table.getColumnClass(c);
-            table.setDefaultEditor(col_class, null); // remove editor
+        for (int i = 0; i < entradasTabla.size(); i++) {
+            String titulo = entradasTabla.get(i).getTitulo();
+            double remuneracion = entradasTabla.get(i).getRemuneracion();
+
+
+            Object[] data = {titulo, remuneracion + "€"};
+            tableModel.addRow(data);
+        }
+        for (int c = 0; c < encuestas.getColumnCount(); c++) {
+            Class<?> col_class = encuestas.getColumnClass(c);
+            encuestas.setDefaultEditor(col_class, null); // remove editor
         }
     }
 
@@ -158,8 +161,8 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        Interfaz_EncuestaPred.main();
-        dispose();
+        //Interfaz_EncuestaPred.main();
+        //dispose();
         }
     }
 

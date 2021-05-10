@@ -14,6 +14,7 @@ public class Registro {
     public static boolean registro(String usuario, String correo, String contrasenya) {
         Connection conn = null;
         Statement stmt = null;
+        double saldo = 0;
 
         try {
             Class.forName(JDBC_Driver);
@@ -21,7 +22,7 @@ public class Registro {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO creador "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya) + "')";
+                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya) + "','" + saldo + "')";
             stmt.executeUpdate(sql);
 
             return true;

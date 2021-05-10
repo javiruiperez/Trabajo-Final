@@ -1,7 +1,5 @@
 package main.utils;
 
-import PFP.main;
-
 import java.util.Base64;
 
 public class Encriptación {
