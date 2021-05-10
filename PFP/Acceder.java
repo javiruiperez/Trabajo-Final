@@ -6,9 +6,13 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Acceder {
+    //Conexión con la base de datos
     static final String JDBC_Driver = "org.mariadb.jdbc.Driver";
+    //Dirección de la URL
     static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/prueba";
+    //Usuario
     static final String User = "root";
+   //Contraseña para acceder a la base
     static final String Pass = "Nicolevante21";
     public static void main() {
         Connection conn = null;

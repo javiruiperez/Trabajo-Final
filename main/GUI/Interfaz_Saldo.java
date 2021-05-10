@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+//Aquí se muestra el saldo disponible ganado en las encuestas
+//puedes sacar los fondos por tarjeta o por paypal
 public class Interfaz_Saldo extends JFrame {
     JMenuBar barra;
     JMenu menu_inicio;

@@ -125,7 +125,8 @@ public class respondedor {
 
 
     }
-
+//esta es la versión para responder, originalmente pensamos en hacer 3 usuarios, perfil respuesta, perfil creador y perfil empresa
+//decidimos concentrar todas las funciones en un usuario.
 
 
 

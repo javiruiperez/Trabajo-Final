@@ -21,7 +21,7 @@ public class Registro {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO creador "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya, 3) + "')";
+                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya) + "')";
             stmt.executeUpdate(sql);
 
             return true;

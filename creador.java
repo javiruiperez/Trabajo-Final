@@ -1,3 +1,4 @@
+//Primera versión del programa sin interfaz, hecho a consola
 import java.util.Scanner;
 public class creador {
 
@@ -141,3 +142,8 @@ public class creador {
         }
     }
 }
+//En esta versión podemos apreciar que las preguntas están hechas a hardcode, es decir, únicamente se introducen los textos en forma de scanner
+//sin un bucle que regule el número de preguntas.
+//pusimos un if que regulase las preguntas para que las respuestas fuesen válidas
+//El programa consiste en que al creador se le solicita mediante println que introduzca una serie de preguntas con sus respuestas (5 pregs y 4 respuestas cada una
+//una vez el usuario las ha introducido el programa le pregunta si quiere continuar o por el contrario desea salir.
