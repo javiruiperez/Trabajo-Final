@@ -54,7 +54,7 @@ public class ControladorEncuesta {
         return null;
     }
 
-    private static ArrayList<Pregunta> getPreguntas(int ID_Encuesta) {
+    public static ArrayList<Pregunta> getPreguntas(int ID_Encuesta) {
         ArrayList<Pregunta> resultado = new ArrayList<Pregunta>();
         Connection conn = DBConnection.getConnection();
         String sql = "SELECT ID_Pregunta, Texto FROM pregunta WHERE ID_Encuesta = ?";
@@ -76,7 +76,7 @@ public class ControladorEncuesta {
         return null;
     }
 
-    private static ArrayList<Respuesta> getRespuestas(int ID_Pregunta) {
+    public static ArrayList<Respuesta> getRespuestas(int ID_Pregunta) {
         ArrayList<Respuesta> resultado = new ArrayList<Respuesta>();
         Connection conn = DBConnection.getConnection();
         String sql = "SELECT ID_Respuesta, Texto FROM respuesta WHERE ID_Pregunta = ?";

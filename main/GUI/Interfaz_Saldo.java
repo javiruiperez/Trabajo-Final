@@ -27,7 +27,7 @@ public class Interfaz_Saldo extends JFrame {
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
-        JLabel l1 = new JLabel("                   SALDO                    ");
+        JLabel l1 = new JLabel("                            SALDO                    ");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
 

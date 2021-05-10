@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class pruebaControladores {
     public static void main(String[] args) {
-        //PruebaRespuestas();
+        PruebaEncuesta();
+        //PruebaEntradas();
         //PruebaPreguntas();
-        //PruebaEncuesta();
-        PruebaEntradas();
+        //PruebaRespuestas();
     }
 
     private static void PruebaEntradas(){
@@ -22,11 +22,11 @@ public class pruebaControladores {
     }
 
     private static void PruebaEncuesta(){
-        Encuesta enc = ControladorEncuesta.getEncuesta(2);
+        Encuesta enc = ControladorEncuesta.getEncuesta(1);
         System.out.println(enc.toString());
     }
 
-   /* private static void PruebaPreguntas(){
+   private static void PruebaPreguntas(){
         ArrayList<Pregunta> preguntas = ControladorEncuesta.getPreguntas(1);
         for (int i = 0; i < preguntas.size(); i++) {
             Pregunta pre = preguntas.get(i);
@@ -40,5 +40,5 @@ public class pruebaControladores {
             Respuesta res = respuestas.get(i);
             System.out.println(res.toString());
         }
-    }*/
+    }
 }

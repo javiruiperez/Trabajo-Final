@@ -1,11 +1,14 @@
 package main.GUI;
 
-
+import main.controladores.ControladorEncuesta;
+import main.models.Encuesta;
+import main.models.EntradaTablaEncuesta;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Interfaz1 extends JFrame {
 
@@ -19,7 +22,7 @@ public class Interfaz1 extends JFrame {
     JMenuItem menuItem_inicio;
     JMenuItem menuItem_inicio2;
 
-    String encuesta1 = "Encuesta disponible";
+    ArrayList<EntradaTablaEncuesta> encuesta1 = ControladorEncuesta.getEntradas();
 
     JTable encuestas;
 
@@ -67,8 +70,6 @@ public class Interfaz1 extends JFrame {
         Interfaz1 i = new Interfaz1();
     }
 
-
-
     private void crearMenu() {
         // Este metodo es para generar un menu en la interfaz
 
@@ -108,30 +109,13 @@ public class Interfaz1 extends JFrame {
 
         encuestas = new JTable();
 
+
+
         String[] columnNames = {"Encuesta", "Recompensa"};
 
         Object[][] data = {
-                {encuesta1, "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"},
-                {"Encuesta disponible", "0.50$"},
-                {"Encuesta disponible", "0.25$"}
+                {encuesta1},
+
         };
 
         final JTable table = new JTable(data, columnNames);
