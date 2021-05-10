@@ -92,8 +92,8 @@ public class Interfaz_logIn extends JFrame {
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {
                 if (correcto) {
                     JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
-                    dispose();
                     Interfaz1.main();
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");
                 }

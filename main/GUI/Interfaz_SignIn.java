@@ -105,22 +105,27 @@ public class Interfaz_SignIn extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String usuarioText = usuario.getText();
             String correoText = correo.getText();
+            boolean comprobacionCorreo = Verificar.verificarCorreo(correoText);
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
-            boolean comprobacion = Verificar.verificar(usuarioText, correoText);
+            boolean comprobacionContrasenya = Verificar.verificarContrasenya(usuarioText, correoText);
 
             if (!usuarioText.equals("") && !correoText.equals("") && !contrasenyaText.equals("") && !verifica.equals("")) {
-                if (!comprobacion) {
-                    if (contrasenyaText.equals(verifica)) {
+                if (comprobacionCorreo){
+                    if (!comprobacionContrasenya) {
+                        if (contrasenyaText.equals(verifica)) {
                         Registro.registro(usuarioText, correoText, contrasenyaText);
                         JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
                         dispose();
                         Interfaz1.main();
-                    } else {
+                     } else {
                         JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
                     }
                 }else{
                     JOptionPane.showMessageDialog(null, "Este nombre de Usuario o Correo ya están en uso");
+                }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Introduzca una dirección de correo válida");
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Introduzca los datos");
