@@ -23,9 +23,11 @@ public class Saldo {
             prpStatement.setString(1, usuario);
             ResultSet rs = prpStatement.executeQuery();
 
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
+            
         }
         return 0;
     }

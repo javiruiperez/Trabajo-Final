@@ -39,6 +39,7 @@ public class Interfaz_Creador extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         setSize(2100, 2100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
     }
