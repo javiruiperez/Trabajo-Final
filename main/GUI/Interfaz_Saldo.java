@@ -15,7 +15,6 @@ public class Interfaz_Saldo extends JFrame {
     JMenuItem menuItem_info;
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
-    JMenuItem menuItem_inicio2;
 
 
     private JButton uno;
@@ -46,7 +45,7 @@ public class Interfaz_Saldo extends JFrame {
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio4);
-        saldo = new JButton(String.valueOf(Interfaz_logIn.saldo));
+        saldo = new JButton();
         saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);
@@ -108,26 +107,22 @@ public class Interfaz_Saldo extends JFrame {
         barra = new JMenuBar();
 
         menu_inicio = new JMenu("Inicio");
-        menu_saldo = new JMenu("Saldo");
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new Interfaz_Saldo.encuestas());
-        menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new Interfaz_Saldo.saldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
         menuItem_configuracion.addActionListener(new Interfaz_Saldo.configuracion());
         menuItem_info = new JMenuItem("Información");
         menuItem_info.addActionListener(new Interfaz_Saldo.informacion());
 
         barra.add(menu_inicio);
-        barra.add(menu_saldo);
         barra.add(menu_perfil);
         menu_perfil.add(menuItem_configuracion);
         menu_perfil.addSeparator();
         menu_perfil.add(menuItem_info);
         menu_inicio.add(menuItem_inicio);
-        menu_saldo.add(menuItem_saldo);
+
     }
 
     private class encuestas implements ActionListener {
@@ -139,17 +134,11 @@ public class Interfaz_Saldo extends JFrame {
         }
     }
 
-    private class saldo implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            dispose();
-        }
-    }
-
     private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            Interfaz_Perfil.main();
+            dispose();
         }
     }
 

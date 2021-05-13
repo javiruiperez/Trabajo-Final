@@ -11,7 +11,6 @@ public class Interfaz_Perfil extends JFrame {
     JMenu menu_inicio;
     JMenu menu_saldo;
     JMenu menu_perfil;
-    JMenuItem menuItem_configuracion;
     JMenuItem menuItem_informacion;
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
@@ -76,21 +75,17 @@ public class Interfaz_Perfil extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new Interfaz_Perfil.encuesta());
+        menuItem_inicio.addActionListener(new encuesta());
         menuItem_saldo = new JMenuItem("Mis chukydolares");
-        menuItem_saldo.addActionListener(new Interfaz_Perfil.saldo());
-        menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new Interfaz_Perfil.configuracion());
+        menuItem_saldo.addActionListener(new saldo());
         menuItem_informacion = new JMenuItem("Información");
-        menuItem_informacion.addActionListener(new Interfaz_Perfil.informacion());
+        menuItem_informacion.addActionListener(new informacion());
 
-        menu_perfil.add(menuItem_configuracion);
         menu_perfil.add(menuItem_informacion);
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
         barra.add(menu_perfil);
-        menu_perfil.add(menuItem_configuracion);
         menu_inicio.add(menuItem_inicio);
         menu_saldo.add(menuItem_saldo);
     }
@@ -107,13 +102,6 @@ public class Interfaz_Perfil extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Saldo.main();
-            dispose();
-        }
-    }
-
-    private class configuracion implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
             dispose();
         }
     }
