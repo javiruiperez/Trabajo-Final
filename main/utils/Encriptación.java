@@ -8,7 +8,6 @@ public class Encriptación {
         String entradaOriginal = contrasenya;
         String cadenaCodificada = Base64.getEncoder().encodeToString(entradaOriginal.getBytes());
 
-        System.out.println(cadenaCodificada);
         return cadenaCodificada;
     }
 }

@@ -8,7 +8,7 @@ public class Verificar {
     static final String JDBC_Driver = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
     static final String User = "root";
-    static final String Pass = "Lgz-05112002";
+    static final String Pass = "Nicolevante21";
     public static boolean verificarContrasenya (String nombreUsuario, String correo){
         Connection conn = null;
         Statement stmt = null;

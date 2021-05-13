@@ -14,7 +14,9 @@ class Imagen2 extends javax.swing.JPanel {
     public void paint(Graphics grafico) {
         Dimension heigth = getSize();
 
-        ImageIcon Img = new ImageIcon(getClass().getResource("tarjeta.png"));
+        java.net.URL imgURL = getClass().getResource("tarjeta.png");
+
+        ImageIcon Img = new ImageIcon(imgURL);
 
         grafico.drawImage(Img.getImage(), 0, 0, heigth.width, heigth.height, null);
 
