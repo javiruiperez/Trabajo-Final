@@ -6,8 +6,8 @@ import java.sql.*;
 public class Acceso {
     static final String JDBC_Driver = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
-    static final String User = "root";
-    static final String Pass = "Nicolevante21";
+    static final String User = "admin";
+    static final String Pass = "JaviNicoLucas1";
 
    public static boolean acceso(String usuario, String contrasenya){
        Connection conn = null;

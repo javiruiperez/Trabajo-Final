@@ -12,8 +12,8 @@ public class DBConnection {
     private DBConnection() {
         JDBC_Driver = "com.mysql.jdbc.Driver";
         DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
-        User = "root";
-        Pass = "Nicolevante21";
+        User = "admin";
+        Pass = "JaviNicoLucas1";
 
         try {
             Class.forName(JDBC_Driver);
