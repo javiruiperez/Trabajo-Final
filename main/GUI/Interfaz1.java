@@ -125,8 +125,8 @@ public class Interfaz1 extends JFrame {
             double remuneracion = entradasTabla.get(i).getRemuneracion();
 
 
-            Object[] data = {titulo, remuneracion + "€"};
-            tableModel.addRow(data);
+            Object[] encuesta = {titulo, remuneracion + "€"};
+            tableModel.addRow(encuesta);
         }
         for (int c = 0; c < encuestas.getColumnCount(); c++) {
             Class<?> col_class = encuestas.getColumnClass(c);

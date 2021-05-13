@@ -1,13 +1,12 @@
 package main.utils;
 
+import main.DbConnections.DBConnection;
+
 import java.sql.*;
 //Esta es la interfaz de inicio de sesión
 //El usuario mete su nombre y la contraseña
 public class Acceso {
-    static final String JDBC_Driver = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
-    static final String User = "admin";
-    static final String Pass = "JaviNicoLucas1";
+
 
    public static boolean acceso(String usuario, String contrasenya){
        Connection conn = null;
@@ -15,7 +14,7 @@ public class Acceso {
 
        try {
 
-           conn = DriverManager.getConnection(DB_URL, User, Pass);
+           conn = DBConnection.getConnection();
            stmt = conn.createStatement();
 
            String sql = "select * from creador where Nombre_Usuario=? AND Contrasenya=?;";
@@ -32,18 +31,6 @@ public class Acceso {
        } catch (SQLException throwables) {
            throwables.printStackTrace();
        } finally {
-           try {
-               if (stmt != null) {
-                   conn.close();
-               }
-           } catch (SQLException se) {
-           }
-           try {
-               if (conn != null) {
-                   conn.close();
-               }
-           } catch (SQLException se) {
-           }
        }
        return false;
    }
