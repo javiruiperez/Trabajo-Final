@@ -1,5 +1,9 @@
 package main.GUI;
 
+import main.controladores.ControladorUsuario;
+import main.models.Usuario;
+import main.utils.SesionUsuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,8 +19,11 @@ public class Interfaz_Perfil extends JFrame {
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
 
-    String nombreUsuario = "puto";
-    String correo = "nico_es_tontisimo@gay.cum";
+    SesionUsuario sesion = SesionUsuario.getInstance();
+    Usuario usr = sesion.getUsr();
+
+    String nombreUsuario = usr.getNombre_usuario();
+    String correo = usr.getCorreo();
 
     JButton cerrarSesion;
 
@@ -60,9 +67,6 @@ public class Interfaz_Perfil extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        Interfaz_Perfil i = new Interfaz_Perfil();
-    }
     public static void main() {
         Interfaz_Perfil i = new Interfaz_Perfil();
     }
@@ -118,6 +122,7 @@ public class Interfaz_Perfil extends JFrame {
     private class cerrar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            SesionUsuario.cerrarSesion();
             Interfaz_logIn.main();
             dispose();
         }
