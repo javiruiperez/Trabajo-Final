@@ -30,7 +30,6 @@ public class Interfaz_Perfil extends JFrame {
         JLabel l1 = new JLabel("BIENVENIDO " + nombreUsuario);
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
-        JLabel vacio = new JLabel("");
         JLabel l2 = new JLabel(correo);
         l2.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelPrincipal.add(l2);
