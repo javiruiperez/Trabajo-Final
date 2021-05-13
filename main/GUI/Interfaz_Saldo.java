@@ -156,7 +156,7 @@ public class Interfaz_Saldo extends JFrame {
     private class configuracion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+        Interfaz_Perfil.main();
         }
     }
 

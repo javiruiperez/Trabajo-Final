@@ -11,9 +11,7 @@ public class SesionUsuario {
     }
 
     public static void cerrarSesion(){
-        if (usr != null) {
-            usr = null;
-        }
+            SUsr = null;
     }
 
     public static SesionUsuario iniciarSesion(Usuario usuario){
