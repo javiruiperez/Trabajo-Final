@@ -33,6 +33,7 @@ public class Interfaz_Entrada extends JFrame {
 
         add(panelPrincipal, BorderLayout.CENTER);
         add(panel2, BorderLayout.SOUTH);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         setSize(2100, 2100);
         setVisible(true);

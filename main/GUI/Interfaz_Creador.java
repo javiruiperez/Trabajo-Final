@@ -36,6 +36,7 @@ public class Interfaz_Creador extends JFrame {
         add(panelPrincipal);
         crearMenu();
         setJMenuBar(barra);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         setSize(2100, 2100);
         setVisible(true);

@@ -60,6 +60,7 @@ public class Interfaz1 extends JFrame {
         Tabla();
         add(panel2, BorderLayout.SOUTH);
         crearMenu();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setJMenuBar(barra);
         this.setResizable(false);
         setSize(2100, 2100);

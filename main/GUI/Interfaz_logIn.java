@@ -69,6 +69,7 @@ public class Interfaz_logIn extends JFrame {
 
         panelPrincipal.add(panel2);
         add(panelPrincipal);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         setSize(2100, 2100);
         setVisible(true);
