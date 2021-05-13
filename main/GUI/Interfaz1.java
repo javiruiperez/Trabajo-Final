@@ -54,10 +54,10 @@ public class Interfaz1 extends JFrame {
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
 
-        JScrollPane scrollPane = new JScrollPane(panelPrincipal);
+        /*JScrollPane scrollPane = new JScrollPane(panelPrincipal);
         scrollPane.setBounds(50,50,300,300);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        add(scrollPane);
+        add(scrollPane);*/
 
         add(panelPrincipal, BorderLayout.NORTH);
         Tabla();
@@ -67,7 +67,6 @@ public class Interfaz1 extends JFrame {
         setJMenuBar(barra);
         this.setResizable(false);
         setSize(2100, 2100);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
     }
