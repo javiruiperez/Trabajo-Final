@@ -21,7 +21,7 @@ public class Interfaz_logIn extends JFrame {
     Color rojitoresulon = new Color(248, 105, 105);
 
     Interfaz_logIn() {
-        // Este metodo es la interfaz
+        //Este metodo es la interfaz
 
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
@@ -86,6 +86,7 @@ public class Interfaz_logIn extends JFrame {
         @Override
         public void actionPerformed (ActionEvent e) {
             String usuarioText = usuario.getText();
+
             saldo = Saldo.verSaldo(usuarioText);
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);

@@ -1,13 +1,12 @@
 package main.utils;
 
 import java.sql.*;
+
+import main.DbConnections.DBConnection;
 import main.GUI.Interfaz_logIn;
 
 public class Saldo {
-    static final String JDBC_Driver = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
-    static final String User = "root";
-    static final String Pass = "Nicolevante21";
+
 
     public static double verSaldo(String usuario ){
         Connection conn = null;
@@ -16,7 +15,7 @@ public class Saldo {
 
         try {
 
-            conn = DriverManager.getConnection(DB_URL, User, Pass);
+            conn = DBConnection.getConnection();
             stmt = conn.createStatement();
 
             String sql = "select Saldo from creador where Nombre_Usuario =?";
@@ -27,18 +26,6 @@ public class Saldo {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            try {
-                if (stmt != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            }
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            }
         }
         return 0;
     }
