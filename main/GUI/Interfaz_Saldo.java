@@ -1,5 +1,8 @@
 package main.GUI;
 
+import main.models.Usuario;
+import main.utils.SesionUsuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,7 +49,11 @@ public class Interfaz_Saldo extends JFrame {
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio4);
-        saldo = new JButton(String.valueOf(Interfaz_logIn.saldo));
+
+        SesionUsuario sesion = SesionUsuario.getInstance();
+        Usuario usr = sesion.getUsr();
+
+        saldo = new JButton(String.valueOf(usr.getSaldo()));
         saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);

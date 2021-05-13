@@ -1,7 +1,10 @@
 package main.GUI;
 
+import main.controladores.ControladorUsuario;
+import main.models.Usuario;
 import main.utils.Acceso;
 import main.utils.Saldo;
+import main.utils.SesionUsuario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -92,6 +95,8 @@ public class Interfaz_logIn extends JFrame {
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {
                 if (correcto) {
+                    Usuario usr = ControladorUsuario.getUsuario(usuarioText);
+                    SesionUsuario.iniciarSesion(usr);
                     JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
                     Interfaz1.main();
                     dispose();
