@@ -1,10 +1,5 @@
 package main.GUI;
 
-import main.models.EntradaTablaEncuesta;
-import main.models.Usuario;
-import main.utils.GuardarResp;
-import main.utils.SesionUsuario;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Interfaz_EncuestaPred extends JFrame {
 
+    private JPanel panelPrincipal2;
     JCheckBox r1 = new JCheckBox("RESPUESTA 1");
     JCheckBox r2 = new JCheckBox("RESPUESTA 2");
     JCheckBox r3 = new JCheckBox("RESPUESTA 3");
@@ -46,16 +42,18 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("CREA TU ENCUESTA");
+        JLabel l1 = new JLabel("                CREA TU ENCUESTA");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio1);
 
-
-        JPanel panelPrincipal2 = new JPanel();
-        panelPrincipal2.setLayout(new GridLayout(5, 1));
+        SpringLayout layout = new SpringLayout();
+        panelPrincipal2 = new JPanel();
+        //panelPrincipal2.setLayout(new GridLayout(5, 1));
+        panelPrincipal2.setLayout(layout);
+        panelPrincipal2.setPreferredSize(new Dimension(panelPrincipal2.getHeight(), 1500));
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(5, 1));
@@ -140,8 +138,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
-
-        /*preg2 = new JButton("CONTINUAR");
+        preg2 = new JButton("CONTINUAR");
         preg2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         preg2.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg2);
@@ -164,19 +161,28 @@ public class Interfaz_EncuestaPred extends JFrame {
         preg5.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg5);
         //preg5.addActionListener(new Interfaz1.ListenerButton3());
-*/
+
+
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setBounds(20,80,1490,650);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setViewportView(panelPrincipal2);
+        add(scrollPane);
 
         add(panelPrincipal, BorderLayout.NORTH);
         add(panelPrincipal2, BorderLayout.CENTER);
         add(panelbotones, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(2000, 2000);
+        setSize(2100, 2100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         setVisible(true);
     }
 
+    public static void main(String[] args) {
+        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
 
+    }
     public static void main() {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
@@ -187,11 +193,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r1.isSelected()) {
                 r2.setSelected(false);
                 r3.setSelected(false);
-
-                int idpregunta = 1;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
-
             }
         }
     }
@@ -202,11 +203,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r2.isSelected()) {
                 r1.setSelected(false);
                 r3.setSelected(false);
-
-                int idpregunta = 1;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-
             }
         }
     }
@@ -217,10 +213,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r3.isSelected()) {
                 r1.setSelected(false);
                 r2.setSelected(false);
-
-                int idpregunta = 1;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -231,10 +223,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r4.isSelected()) {
                 r5.setSelected(false);
                 r6.setSelected(false);
-
-                int idpregunta = 2;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -245,10 +233,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r5.isSelected()) {
                 r4.setSelected(false);
                 r6.setSelected(false);
-
-                int idpregunta = 2;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -259,10 +243,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r6.isSelected()) {
                 r4.setSelected(false);
                 r5.setSelected(false);
-
-                int idpregunta = 2;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -273,10 +253,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r7.isSelected()) {
                 r8.setSelected(false);
                 r9.setSelected(false);
-
-                int idpregunta = 3;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -287,10 +263,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r8.isSelected()) {
                 r7.setSelected(false);
                 r9.setSelected(false);
-
-                int idpregunta = 3;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -301,10 +273,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r9.isSelected()) {
                 r7.setSelected(false);
                 r8.setSelected(false);
-
-                int idpregunta = 3;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -315,10 +283,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r10.isSelected()) {
                 r11.setSelected(false);
                 r12.setSelected(false);
-
-                int idpregunta = 4;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -329,10 +293,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r11.isSelected()) {
                 r10.setSelected(false);
                 r12.setSelected(false);
-
-                int idpregunta = 4;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -343,10 +303,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r12.isSelected()) {
                 r10.setSelected(false);
                 r11.setSelected(false);
-
-                int idpregunta = 4;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -357,10 +313,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r13.isSelected()) {
                 r14.setSelected(false);
                 r15.setSelected(false);
-
-                int idpregunta = 5;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -371,10 +323,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r14.isSelected()) {
                 r13.setSelected(false);
                 r15.setSelected(false);
-
-                int idpregunta = 5;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -385,10 +333,6 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (r15.isSelected()) {
                 r13.setSelected(false);
                 r14.setSelected(false);
-
-                int idpregunta = 5;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
             }
         }
     }
@@ -397,15 +341,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            SesionUsuario sesion = SesionUsuario.getInstance();
-            Usuario usr = sesion.getUsr();
-
-            JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
-            SesionUsuario.getInstance().actualizarSaldo(0.2 + usr.getSaldo());
-
-            Interfaz1.main();
-            //Gráfico.main();
-            dispose();
+           JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
+           Gráfico.main();
+           dispose();
         }
     }
 }

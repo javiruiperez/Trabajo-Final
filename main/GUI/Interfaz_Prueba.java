@@ -18,7 +18,7 @@ public class Interfaz_Prueba extends JFrame{
 
     public Interfaz_Prueba(){
 
-        URL imagen = getClass().getResource("main/GUI/logo_prog.png");
+        //URL imagen = getClass().getResource("main/GUI/logo_prog.png");
 
         JTextPane text = new JTextPane(); //Incializamos el textPane
         setLayout(null); //Layout absoluto
@@ -42,10 +42,10 @@ public class Interfaz_Prueba extends JFrame{
 		del texto al final, sin seleccionar nada. Eso se hace con el método setCaretPosition().
 		Después generamos el icono desde la imagen y lo añadimos con insertIcon
 		*/
-        text.setCaretPosition(text.getStyledDocument().getLength());
-        ImageIcon icono = new ImageIcon(imagen);
-        text.insertIcon(icono);
-        nuevaLinea(text);
+        //text.setCaretPosition(text.getStyledDocument().getLength());
+        //ImageIcon icono = new ImageIcon(imagen);
+        //text.insertIcon(icono);
+        //nuevaLinea(text);
 
 		/*INSERTAR UN BOTÓN *************************************************************************
 		El método es insertComponent() y, al igual que en el caso anterior, reemplaza el texto que
@@ -59,6 +59,7 @@ public class Interfaz_Prueba extends JFrame{
 
         //Incializamos el scrollPane y le añadimos el editor
         JScrollPane scrollPane = new JScrollPane(text);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setBounds(50,50,300,300);
         add(scrollPane);
 
@@ -122,10 +123,8 @@ public class Interfaz_Prueba extends JFrame{
 
         Interfaz_Prueba formulario = new Interfaz_Prueba();
         formulario.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        formulario.setBounds(0,0,400,400);
+        formulario.setBounds(0, 0, 400, 400);
         formulario.setTitle("Ejemplo JTextPane");
         formulario.setVisible(true);
-
     }
-
 }

@@ -54,6 +54,7 @@ public class Interfaz1 extends JFrame {
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
 
+
         add(panelPrincipal, BorderLayout.NORTH);
         Tabla();
         add(panel2, BorderLayout.SOUTH);
@@ -63,6 +64,7 @@ public class Interfaz1 extends JFrame {
         this.setResizable(false);
         setSize(2100, 2100);
         setVisible(true);
+
     }
 
     public static void main() {
@@ -70,7 +72,7 @@ public class Interfaz1 extends JFrame {
     }
 
     private void crearMenu() {
-        // Este metodo es para generar un menu en la interfaz
+        //Este metodo es para generar un menu en la interfaz
 
         barra = new JMenuBar();
 
@@ -82,7 +84,7 @@ public class Interfaz1 extends JFrame {
         menuItem_inicio.addActionListener(new ListenerButton());
         menuItem_inicio2 = new JMenuItem("Crear Encuestas");
         menuItem_inicio2.addActionListener(new ListenerButton1());
-        menuItem_saldo = new JMenuItem("Mis chukydolares");
+        menuItem_saldo = new JMenuItem("Mis chukydol ares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
         menuItem_configuracion.addActionListener(new configuracion());
