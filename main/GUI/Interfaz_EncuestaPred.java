@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Interfaz_EncuestaPred extends JFrame {
 
+    private JPanel panelPrincipal2;
     JCheckBox r1 = new JCheckBox("RESPUESTA 1");
     JCheckBox r2 = new JCheckBox("RESPUESTA 2");
     JCheckBox r3 = new JCheckBox("RESPUESTA 3");
@@ -41,16 +42,18 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("CREA TU ENCUESTA");
+        JLabel l1 = new JLabel("                CREA TU ENCUESTA");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio1);
 
-
-        JPanel panelPrincipal2 = new JPanel();
-        panelPrincipal2.setLayout(new GridLayout(5, 1));
+        SpringLayout layout = new SpringLayout();
+        panelPrincipal2 = new JPanel();
+        //panelPrincipal2.setLayout(new GridLayout(5, 1));
+        panelPrincipal2.setLayout(layout);
+        panelPrincipal2.setPreferredSize(new Dimension(panelPrincipal2.getHeight(), 1500));
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(5, 1));
@@ -135,7 +138,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
-        /*preg2 = new JButton("CONTINUAR");
+        preg2 = new JButton("CONTINUAR");
         preg2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         preg2.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg2);
@@ -157,20 +160,29 @@ public class Interfaz_EncuestaPred extends JFrame {
         preg5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         preg5.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg5);
-        //preg5.addActionListener(new Interfaz1.ListenerButton3());*/
+        //preg5.addActionListener(new Interfaz1.ListenerButton3());
 
+
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setBounds(20,80,1490,650);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setViewportView(panelPrincipal2);
+        add(scrollPane);
 
         add(panelPrincipal, BorderLayout.NORTH);
         add(panelPrincipal2, BorderLayout.CENTER);
         add(panelbotones, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(2000, 2000);
+        setSize(2100, 2100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         setVisible(true);
     }
 
+    public static void main(String[] args) {
+        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
 
+    }
     public static void main() {
         Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
