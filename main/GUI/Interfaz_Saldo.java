@@ -1,6 +1,7 @@
 package main.GUI;
 
 import main.models.Usuario;
+import main.utils.RetirarSaldo;
 import main.utils.SesionUsuario;
 
 import javax.swing.*;
@@ -10,6 +11,10 @@ import java.awt.event.ActionListener;
 //Aquí se muestra el saldo disponible ganado en las encuestas
 //puedes sacar los fondos por tarjeta o por paypal
 public class Interfaz_Saldo extends JFrame {
+
+    SesionUsuario sesion = SesionUsuario.getInstance();
+    Usuario usr = sesion.getUsr();
+
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_perfil;
@@ -51,7 +56,7 @@ public class Interfaz_Saldo extends JFrame {
         SesionUsuario sesion = SesionUsuario.getInstance();
         Usuario usr = sesion.getUsr();
 
-        saldo = new JButton(String.valueOf(usr.getSaldo()));
+        saldo = new JButton(usr.getSaldo() + "€");
         saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);
@@ -151,14 +156,28 @@ public class Interfaz_Saldo extends JFrame {
     private class imagen1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (usr.getSaldo() != 0) {
+                RetirarSaldo.outSaldo();
+                SesionUsuario.getInstance().actualizarSaldo(0.0);
+                JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
+                Interfaz1.main();
+            }else{
+                JOptionPane.showMessageDialog(null, "No tienes saldo disponible para retirar");
+            }
         }
     }
 
     private class imagen2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            if (usr.getSaldo() != 0) {
+                RetirarSaldo.outSaldo();
+                SesionUsuario.getInstance().actualizarSaldo(0.0);
+                JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
+                Interfaz1.main();
+            }else{
+                JOptionPane.showMessageDialog(null, "No tienes saldo disponible para retirar");
+            }
         }
     }
 

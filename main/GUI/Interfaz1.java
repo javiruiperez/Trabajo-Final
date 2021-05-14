@@ -54,10 +54,11 @@ public class Interfaz1 extends JFrame {
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
 
-        JScrollPane scrollPane = new JScrollPane(panelPrincipal);
+        /*JScrollPane scrollPane = new JScrollPane(panelPrincipal);
         scrollPane.setBounds(50,50,300,300);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(scrollPane);
+        scrollPane.setViewportView(panel2);*/
 
         add(panelPrincipal, BorderLayout.NORTH);
         Tabla();
@@ -166,8 +167,8 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        //Interfaz_EncuestaPred.main();
-        //dispose();
+        Interfaz_EncuestaPred.main();
+        dispose();
         }
     }
 
