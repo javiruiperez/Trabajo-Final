@@ -52,5 +52,4 @@ public class Interfaz_Entrada extends JFrame {
         Interfaz_Entrada i = new Interfaz_Entrada();
     }
 
-
 }
