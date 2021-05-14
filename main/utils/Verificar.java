@@ -9,7 +9,7 @@ public class Verificar {
     static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
     static final String User = "root";
     static final String Pass = "Nicolevante21";
-    public static boolean verificarContrasenya (String nombreUsuario, String correo){
+    public static boolean verificarUsuarioCorreo (String nombreUsuario, String correo){
         Connection conn = null;
         Statement stmt = null;
 
@@ -18,7 +18,7 @@ public class Verificar {
             conn = DriverManager.getConnection(DB_URL, User, Pass);
             stmt = conn.createStatement();
 
-            String sql = "select * from creador where Nombre_Usuario=? AND Correo=?;";
+            String sql = "select * from creador where Nombre_Usuario=? or Correo=?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             prpStatement.setString(1, nombreUsuario);
             prpStatement.setString(2, correo);

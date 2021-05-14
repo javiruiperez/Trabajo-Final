@@ -110,11 +110,11 @@ public class Interfaz_SignIn extends JFrame {
             boolean comprobacionCorreo = Verificar.verificarCorreo(correoText);
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
-            boolean comprobacionContrasenya = Verificar.verificarContrasenya(usuarioText, correoText);
+            boolean comprobacionUsuarioCorreo = Verificar.verificarUsuarioCorreo(usuarioText, correoText);
 
             if (!usuarioText.equals("") && !correoText.equals("") && !contrasenyaText.equals("") && !verifica.equals("")) {
                 if (comprobacionCorreo){
-                    if (!comprobacionContrasenya) {
+                    if (!comprobacionUsuarioCorreo) {
                         if (contrasenyaText.equals(verifica)) {
                         Registro.registro(usuarioText, correoText, contrasenyaText);
                         JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
