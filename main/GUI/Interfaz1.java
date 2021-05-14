@@ -56,9 +56,8 @@ public class Interfaz1 extends JFrame {
 
         /*JScrollPane scrollPane = new JScrollPane(panelPrincipal);
         scrollPane.setBounds(50,50,300,300);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        add(scrollPane);
-        scrollPane.setViewportView(panel2);*/
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(scrollPane);*/
 
         add(panelPrincipal, BorderLayout.NORTH);
         Tabla();
@@ -68,7 +67,6 @@ public class Interfaz1 extends JFrame {
         setJMenuBar(barra);
         this.setResizable(false);
         setSize(2100, 2100);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
     }
@@ -167,8 +165,8 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        Interfaz_EncuestaPred.main();
-        dispose();
+        //Interfaz_EncuestaPred.main();
+        //dispose();
         }
     }
 
