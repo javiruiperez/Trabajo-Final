@@ -1,7 +1,7 @@
 package main.GUI;
 
 import main.models.Usuario;
-import main.utils.RetirarSaldo;
+import main.utils.Saldo;
 import main.utils.SesionUsuario;
 
 import javax.swing.*;
@@ -157,7 +157,7 @@ public class Interfaz_Saldo extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (usr.getSaldo() != 0) {
-                RetirarSaldo.outSaldo();
+                Saldo.outSaldo();
                 SesionUsuario.getInstance().actualizarSaldo(0.0);
                 JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
                 Interfaz1.main();
@@ -171,7 +171,7 @@ public class Interfaz_Saldo extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (usr.getSaldo() != 0) {
-                RetirarSaldo.outSaldo();
+                Saldo.outSaldo();
                 SesionUsuario.getInstance().actualizarSaldo(0.0);
                 JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
                 Interfaz1.main();

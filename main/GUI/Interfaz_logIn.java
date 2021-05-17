@@ -90,7 +90,6 @@ public class Interfaz_logIn extends JFrame {
         @Override
         public void actionPerformed (ActionEvent e) {
             String usuarioText = usuario.getText();
-
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {

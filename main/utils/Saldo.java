@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class RetirarSaldo {
+public class Saldo {
     public static void outSaldo() {
         Connection conn = null;
         Statement stmt = null;
