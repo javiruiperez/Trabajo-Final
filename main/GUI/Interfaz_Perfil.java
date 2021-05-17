@@ -1,13 +1,12 @@
 package main.GUI;
 
-import main.controladores.ControladorUsuario;
+
 import main.models.Usuario;
 import main.utils.SesionUsuario;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class Interfaz_Perfil extends JFrame {
 
@@ -33,11 +32,11 @@ public class Interfaz_Perfil extends JFrame {
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
-        JLabel l1 = new JLabel("BIENVENIDO " + nombreUsuario);
+        JLabel l1 = new JLabel("Nombre de Usuario:  " + nombreUsuario);
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
-        JLabel l2 = new JLabel(correo);
-        l2.setFont(new Font("Calibri", Font.PLAIN, 20));
+        JLabel l2 = new JLabel("Correo Electrónico: " + correo);
+        l2.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l2);
 
         JPanel panel2 = new JPanel();
@@ -115,9 +114,9 @@ public class Interfaz_Perfil extends JFrame {
     private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
-                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
-                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en crear o contestar " +
+                    "encuestas para así ganar dinero. Para poder retirar el saldo necesitaras un saldo mínimo retirable de 3€." +
+                    " Si tienes alguna duda,no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
 

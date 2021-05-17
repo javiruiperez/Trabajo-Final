@@ -60,7 +60,6 @@ public class Saldo {
             prpStatement2.setString(2, nombre);
             prpStatement2.setDouble(1, newsaldo);
             int rows = prpStatement2.executeUpdate();
-            System.out.println(rows);
 
         } catch (SQLException se) {
             se.printStackTrace();

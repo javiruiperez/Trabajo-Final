@@ -43,6 +43,9 @@ public class Interfaz_EncuestaPred extends JFrame {
 
     Color asulitoresulon = new Color(88, 148, 255);
 
+    SesionUsuario sesion = SesionUsuario.getInstance();
+    Usuario usr = sesion.getUsr();
+
     Interfaz_EncuestaPred(){
         // Este metodo es la interfaz
 
@@ -395,13 +398,13 @@ public class Interfaz_EncuestaPred extends JFrame {
 
             Saldo.actualizarSaldo();
             double remuneracion = ControladorEncuesta.getEncuesta(1).getRemuneracion();
-
-            SesionUsuario sesion = SesionUsuario.getInstance();
-            Usuario usr = sesion.getUsr();
             double saldo = usr.getSaldo();
 
-            JOptionPane.showMessageDialog(null, "!Gracias por responder esta encuesta¡ Has conseguido " + remuneracion + "€");
+            JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
            SesionUsuario.getInstance().actualizarSaldo(remuneracion + saldo);
+           if (saldo == 3){
+               JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
+           }
            Interfaz1.main();
            //Gráfico.main();
            dispose();
