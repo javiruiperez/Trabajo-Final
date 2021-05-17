@@ -10,12 +10,8 @@ import java.util.List;
 
 public class EjemploCSV {
 
-
-
-
-
         public static void main(String[] args) {
-            List<Pregunta> preguntas = new ArrayList<Pregunta>();
+           /* List<Pregunta> preguntas = new ArrayList<Pregunta>();
 
             preguntas.add(new Pregunta("¿Qué opinas de la superliga?","Messirve","No messirve","Croacia","A" ));
             preguntas.add(new Pregunta("¿Cuál es tu dios?", "Yo","Cristo Rey","Vegeta777", "Doctor Manhattan"));
@@ -99,7 +95,7 @@ public class EjemploCSV {
                 e.printStackTrace();
             } catch(IOException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
     }
 

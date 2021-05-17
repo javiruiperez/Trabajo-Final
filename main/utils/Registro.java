@@ -3,7 +3,7 @@ package main.utils;
 import main.DbConnections.DBConnection;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,10 +19,15 @@ public class Registro {
 
             conn = DBConnection.getConnection();
             stmt = conn.createStatement();
+            String newcontrasenya = Encriptación.cifrar(contrasenya);
 
-            String sql = "INSERT INTO creador "
-                    + "VALUES('" + usuario + "','" + correo + "','" + Encriptación.cifrar(contrasenya) + "','" + saldo + "')";
-            stmt.executeUpdate(sql);
+            String sql = "insert into creador values (?,?,?,?);";
+            PreparedStatement prpStatement = conn.prepareStatement(sql);
+            prpStatement.setString(1, usuario);
+            prpStatement.setString(2, correo);
+            prpStatement.setString(3, newcontrasenya);
+            prpStatement.setDouble(4, saldo);
+            int row = prpStatement.executeUpdate();
 
             return true;
 

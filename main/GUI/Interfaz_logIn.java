@@ -3,7 +3,6 @@ package main.GUI;
 import main.controladores.ControladorUsuario;
 import main.models.Usuario;
 import main.utils.Acceso;
-import main.utils.Saldo;
 import main.utils.SesionUsuario;
 
 import javax.swing.*;
@@ -91,8 +90,6 @@ public class Interfaz_logIn extends JFrame {
         @Override
         public void actionPerformed (ActionEvent e) {
             String usuarioText = usuario.getText();
-
-            saldo = Saldo.verSaldo(usuarioText);
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {

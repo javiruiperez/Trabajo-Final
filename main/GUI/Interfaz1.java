@@ -161,8 +161,8 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        //Interfaz_EncuestaPred.main();
-        //dispose();
+        Interfaz_EncuestaPred.main();
+        dispose();
         }
     }
 
