@@ -63,6 +63,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelPrincipal2.setLayout(new GridLayout(5, 1));
         panelPrincipal2.setPreferredSize(new Dimension(panelPrincipal2.getHeight(), 1500));
 
+
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(5, 1));
         JLabel p1 = new JLabel("¿Qué opinas de la superliga?");
@@ -139,6 +140,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         r15.addActionListener(new s15());
         panelPrincipal2.add(panel6);
 
+
         JPanel panelbotones = new JPanel();
         panelbotones.setLayout(new GridLayout(1, 4));
         enviar = new JButton("ENVIAR");
@@ -168,20 +170,19 @@ public class Interfaz_EncuestaPred extends JFrame {
         preg5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         preg5.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg5);
-        //preg5.addActionListener(new Interfaz1.ListenerButton3());
+        //preg5.addActionListener(new Interfaz1.ListenerButton3());*/
 
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(20,80,1490,650);
+        scrollPane.setBounds(80,80,1100,650);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setViewportView(panelPrincipal2);
-        add(scrollPane);*/
+        add(scrollPane);
 
         add(panelPrincipal, BorderLayout.NORTH);
-        add(panelPrincipal2, BorderLayout.CENTER);
         add(panelbotones, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(2100, 2100);
+        setSize(2090, 2100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         setVisible(true);
