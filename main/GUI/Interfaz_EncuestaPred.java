@@ -1,8 +1,10 @@
 package main.GUI;
 
 import main.controladores.ControladorEncuesta;
+import main.models.Usuario;
 import main.utils.GuardarResp;
 import main.utils.Saldo;
+import main.utils.SesionUsuario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -392,7 +394,13 @@ public class Interfaz_EncuestaPred extends JFrame {
 
             Saldo.actualizarSaldo();
             double remuneracion = ControladorEncuesta.getEncuesta(1).getRemuneracion();
-           JOptionPane.showMessageDialog(null, "!Gracias por responder esta encuesta¡ Has conseguido " + remuneracion + "€");
+
+            SesionUsuario sesion = SesionUsuario.getInstance();
+            Usuario usr = sesion.getUsr();
+            double saldo = usr.getSaldo();
+
+            JOptionPane.showMessageDialog(null, "!Gracias por responder esta encuesta¡ Has conseguido " + remuneracion + "€");
+           SesionUsuario.getInstance().actualizarSaldo(remuneracion + saldo);
            Interfaz1.main();
            //Gráfico.main();
            dispose();
