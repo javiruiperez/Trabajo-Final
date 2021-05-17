@@ -189,12 +189,8 @@ public class Interfaz_EncuestaPred extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
-
-    }
     public static void main() {
-        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
+        //Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 
     private class s1 implements ActionListener {
