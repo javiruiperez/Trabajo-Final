@@ -1,14 +1,12 @@
 package main.GUI;
 
 import main.controladores.ControladorEncuesta;
-import main.models.Encuesta;
 import main.models.EntradaTablaEncuesta;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class Interfaz1 extends JFrame {
@@ -127,6 +125,7 @@ public class Interfaz1 extends JFrame {
 
             Object[] encuesta = {titulo, remuneracion + "€"};
             tableModel.addRow(encuesta);
+
         }
         for (int c = 0; c < encuestas.getColumnCount(); c++) {
             Class<?> col_class = encuestas.getColumnClass(c);

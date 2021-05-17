@@ -171,10 +171,14 @@ public class Interfaz_Saldo extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (usr.getSaldo() != 0) {
-                Saldo.sacarSaldo();
-                SesionUsuario.getInstance().actualizarSaldo(0.0);
-                JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
-                Interfaz1.main();
+                if (usr.getSaldo() > 3) {
+                    Saldo.sacarSaldo();
+                    SesionUsuario.getInstance().actualizarSaldo(0.0);
+                    JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
+                    Interfaz1.main();
+                }else{
+                    JOptionPane.showMessageDialog(null, "No has alcanzado el saldo mínimo retirable");
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "No tienes saldo disponible para retirar");
             }
