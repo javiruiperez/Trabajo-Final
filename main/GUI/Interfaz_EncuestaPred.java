@@ -48,7 +48,7 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("                CREA TU ENCUESTA");
+        JLabel l1 = new JLabel("                                  CREA TU ENCUESTA");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
