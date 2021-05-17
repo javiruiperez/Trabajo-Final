@@ -49,10 +49,9 @@ public class Interfaz_EncuestaPred extends JFrame {
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio1);
 
-        SpringLayout layout = new SpringLayout();
+
         panelPrincipal2 = new JPanel();
-        //panelPrincipal2.setLayout(new GridLayout(5, 1));
-        panelPrincipal2.setLayout(layout);
+        panelPrincipal2.setLayout(new GridLayout(5, 1));
         panelPrincipal2.setPreferredSize(new Dimension(panelPrincipal2.getHeight(), 1500));
 
         JPanel panel2 = new JPanel();
