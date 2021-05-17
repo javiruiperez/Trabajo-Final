@@ -15,6 +15,9 @@ public class Interfaz_Saldo extends JFrame {
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
 
+    double mostrarsaldo = usr.getSaldo();
+    double redondeo = Math.round(mostrarsaldo * 100.0) / 100.0;
+
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_perfil;
@@ -53,10 +56,7 @@ public class Interfaz_Saldo extends JFrame {
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio4);
 
-        SesionUsuario sesion = SesionUsuario.getInstance();
-        Usuario usr = sesion.getUsr();
-
-        saldo = new JButton(usr.getSaldo() + "€");
+        saldo = new JButton(redondeo + "€");
         saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
         saldo.setBackground(Color.white);
