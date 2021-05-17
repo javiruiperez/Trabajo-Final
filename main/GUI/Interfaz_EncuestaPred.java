@@ -1,6 +1,8 @@
 package main.GUI;
 
+import main.controladores.ControladorEncuesta;
 import main.utils.GuardarResp;
+import main.utils.Saldo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -140,7 +142,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
-        preg2 = new JButton("CONTINUAR");
+        /*preg2 = new JButton("CONTINUAR");
         preg2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
         preg2.setPreferredSize(new Dimension(100, 50));
         panelbotones.add(preg2);
@@ -169,7 +171,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         scrollPane.setBounds(20,80,1490,650);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setViewportView(panelPrincipal2);
-        add(scrollPane);
+        add(scrollPane);*/
 
         add(panelPrincipal, BorderLayout.NORTH);
         add(panelPrincipal2, BorderLayout.CENTER);
@@ -388,8 +390,11 @@ public class Interfaz_EncuestaPred extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-           JOptionPane.showMessageDialog(null, "Sus respuestas han sido enviadas");
-           Gráfico.main();
+            Saldo.actualizarSaldo();
+            double remuneracion = ControladorEncuesta.getEncuesta(1).getRemuneracion();
+           JOptionPane.showMessageDialog(null, "!Gracias por responder esta encuesta¡ Has conseguido " + remuneracion + "€");
+           Interfaz1.main();
+           //Gráfico.main();
            dispose();
         }
     }
