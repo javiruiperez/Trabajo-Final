@@ -60,6 +60,7 @@ public class Interfaz1 extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setJMenuBar(barra);
         this.setResizable(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setSize(2100, 2100);
         setVisible(true);
 

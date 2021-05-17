@@ -182,7 +182,8 @@ public class Interfaz_EncuestaPred extends JFrame {
         add(panelPrincipal, BorderLayout.NORTH);
         add(panelbotones, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(2090, 2100);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(1650,1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         setVisible(true);
