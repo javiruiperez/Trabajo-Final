@@ -49,7 +49,9 @@
           <root url="jar://$MODULE_DIR$/libs/javacsv.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/libs/javacsv.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

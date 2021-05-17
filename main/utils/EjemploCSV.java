@@ -11,12 +11,12 @@ import java.util.List;
 public class EjemploCSV {
 
         public static void main(String[] args) {
-           /* List<Pregunta> preguntas = new ArrayList<Pregunta>();
+           List<Pregunta> preguntas = new ArrayList<Pregunta>();
 
             preguntas.add(new Pregunta("¿Qué opinas de la superliga?","Messirve","No messirve","Croacia","A" ));
             preguntas.add(new Pregunta("¿Cuál es tu dios?", "Yo","Cristo Rey","Vegeta777", "Doctor Manhattan"));
 
-            //ExportarCSV(usuarios);
+            ExportarCSV(preguntas);
 
             ImportarCSV();
         }
@@ -45,7 +45,7 @@ public class EjemploCSV {
                 salidaCSV.endRecord(); // Deja de escribir en el archivo
 
                 // Recorremos la lista y lo insertamos en el archivo
-                for(Pregunta quest :preguntas ) {
+                for(Pregunta quest : preguntas ) {
                     salidaCSV.write(quest.getTitulo());
                     salidaCSV.write(quest.getR1());
                     salidaCSV.write(quest.getR2());
@@ -95,7 +95,7 @@ public class EjemploCSV {
                 e.printStackTrace();
             } catch(IOException e) {
                 e.printStackTrace();
-            }*/
+            }
         }
     }
 
