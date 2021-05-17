@@ -51,7 +51,7 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("                CREA TU ENCUESTA");
+        JLabel l1 = new JLabel("                                  CREA TU ENCUESTA");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
         panelPrincipal.add(l1);
         JLabel vacio1 = new JLabel("");
@@ -188,12 +188,8 @@ public class Interfaz_EncuestaPred extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
-
-    }
     public static void main() {
-        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
+        //Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
     }
 
     private class s1 implements ActionListener {
