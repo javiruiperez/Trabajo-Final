@@ -169,9 +169,9 @@ public class Interfaz1 extends JFrame {
     private class informacion implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en rellenar o contestar " +
-                    "encuestas (dependiendo del tipo de usuario que seas) para así ganar dinero. Si tienes alguna duda, " +
-                    "no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
+            JOptionPane.showMessageDialog(null, "Esta aplicación consiste en crear o contestar " +
+                    "encuestas para así ganar dinero. Para poder retirar el saldo necesitaras un saldo mínimo retirable de 3€." +
+                    " Si tienes alguna duda,no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
         }
     }
     private class configuracion implements ActionListener{
