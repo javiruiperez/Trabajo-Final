@@ -1,6 +1,7 @@
 package main.utils;
 
 public class Pregunta {
+    private int ID_Encuesta;
     private String titulo;
     private String r1;
     private String r2;
@@ -8,13 +9,22 @@ public class Pregunta {
     private String r4;
 
 
-    public Pregunta(String titulo, String r1, String r2, String r3, String r4) {
+    public Pregunta(int ID_Encuesta, String titulo, String r1, String r2, String r3, String r4) {
+        this.ID_Encuesta = ID_Encuesta;
         this.titulo = titulo;
         this.r1 = r1;
         this.r2 = r2;
         this.r3 = r3;
         this.r4 = r4;
 
+    }
+
+    public int getID_Encuesta() {
+        return ID_Encuesta;
+    }
+
+    public void setID_Encuesta(int ID_Encuesta) {
+        this.ID_Encuesta = ID_Encuesta;
     }
 
     public String getTitulo() {

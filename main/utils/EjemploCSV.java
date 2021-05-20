@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EjemploCSV {
 
-        public static void main(String[] args) {
+        /*public static void main(String[] args) {
            List<pregunta> preguntas = new ArrayList<pregunta>();
 
             preguntas.add(new pregunta("¿qué plato te gusta más?","pizza","hamburguesa","ensalada","pasta"));
@@ -95,6 +95,6 @@ public class EjemploCSV {
             } catch(IOException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 
