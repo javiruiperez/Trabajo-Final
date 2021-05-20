@@ -25,11 +25,11 @@ public class Pregunta {
         this.ID_Pregunta = ID_Pregunta;
     }
 
-    public String getTitulo() {
+    public String getTexto() {
         return titulo;
     }
 
-    public void setTitulo(String Titulo) {
+    public void setTexto(String Titulo) {
         Titulo = titulo;
     }
 

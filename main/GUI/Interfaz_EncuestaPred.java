@@ -103,6 +103,7 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(80, 80, 1100, 650);
+        scrollPane.getVerticalScrollBar().setUnitIncrement(13);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setViewportView(panelPrincipal2);
         add(scrollPane);
