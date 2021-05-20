@@ -11,17 +11,16 @@ import java.util.List;
 public class EjemploCSV {
 
         public static void main(String[] args) {
-           List<Pregunta> preguntas = new ArrayList<Pregunta>();
+           List<pregunta> preguntas = new ArrayList<pregunta>();
 
-            preguntas.add(new Pregunta("¿Qué opinas de la superliga?","Messirve","No messirve","Croacia","A" ));
-            preguntas.add(new Pregunta("¿Cuál es tu dios?", "Yo","Cristo Rey","Vegeta777", "Doctor Manhattan"));
+            preguntas.add(new pregunta("¿qué plato te gusta más?","pizza","hamburguesa","ensalada","pasta"));
 
             ExportarCSV(preguntas);
 
             ImportarCSV();
         }
 
-        public static void ExportarCSV(List<Pregunta> preguntas) {
+        public static void ExportarCSV(List<pregunta> preguntas) {
             String salidaArchivo = "Preguntas.csv"; // Nombre del archivo
             boolean existe = new File(salidaArchivo).exists(); // Verifica si existe
 
@@ -45,7 +44,7 @@ public class EjemploCSV {
                 salidaCSV.endRecord(); // Deja de escribir en el archivo
 
                 // Recorremos la lista y lo insertamos en el archivo
-                for(Pregunta quest : preguntas ) {
+                for(pregunta quest : preguntas ) {
                     salidaCSV.write(quest.getTitulo());
                     salidaCSV.write(quest.getR1());
                     salidaCSV.write(quest.getR2());
@@ -64,7 +63,7 @@ public class EjemploCSV {
 
         public static void ImportarCSV() {
             try{
-                List<Pregunta> preguntas = new ArrayList<Pregunta>(); // Lista donde guardaremos los datos del archivo
+                List<pregunta> preguntas = new ArrayList<pregunta>(); // Lista donde guardaremos los datos del archivo
 
                 CsvReader leerPreguntas = new CsvReader("Preguntas.csv");
                 leerPreguntas.readHeaders();
@@ -76,13 +75,13 @@ public class EjemploCSV {
                     String R2 = leerPreguntas.get(2);
                     String R3 = leerPreguntas.get(3);
                     String R4 = leerPreguntas.get(4);
-                    preguntas.add(new Pregunta(titulo, R1, R2, R3, R4)); // Añade la informacion a la lista
+                    preguntas.add(new pregunta(titulo, R1, R2, R3, R4)); // Añade la informacion a la lista
                 }
 
                 leerPreguntas.close(); // Cierra el archivo
 
                 // Recorremos la lista y la mostramos en la pantalla
-                for(Pregunta pregunta : preguntas) {
+                for(pregunta pregunta : preguntas) {
                     System.out.println(
                             pregunta.getTitulo() + " , "
                             + pregunta.getR1() + " , "
