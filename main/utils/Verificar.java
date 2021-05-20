@@ -1,5 +1,7 @@
 package main.utils;
 
+import main.DbConnections.DBConnection;
+
 import java.sql.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,7 +17,7 @@ public class Verificar {
 
         try {
 
-            conn = DriverManager.getConnection(DB_URL, User, Pass);
+            conn = DBConnection.getConnection();
             stmt = conn.createStatement();
 
             String sql = "select * from creador where Nombre_Usuario=? or Correo=?;";
