@@ -1,8 +1,12 @@
 package main.models;
 
+import main.models.Pregunta;
+
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Encuesta {
+    private static final AtomicInteger count = new AtomicInteger(0);
     int ID_Encuesta;
     String Titulo;
     int Numero_Preguntas;
