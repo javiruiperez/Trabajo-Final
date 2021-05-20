@@ -10,7 +10,6 @@ public class GuardarResp {
         Connection conn = null;
         Statement stmt = null;
 
-
         try {
 
             conn = DBConnection.getConnection();

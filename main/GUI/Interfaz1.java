@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 public class Interfaz1 extends JFrame {
 
+    ArrayList<EntradaTablaEncuesta> entradasTabla;
+
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_saldo;
@@ -79,9 +81,9 @@ public class Interfaz1 extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new ListenerButton());
+        menuItem_inicio.addActionListener(new verencuestas());
         menuItem_inicio2 = new JMenuItem("Crear Encuestas");
-        menuItem_inicio2.addActionListener(new ListenerButton1());
+        menuItem_inicio2.addActionListener(new crearencuestas());
         menuItem_saldo = new JMenuItem("Mis chukydol ares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
@@ -106,7 +108,8 @@ public class Interfaz1 extends JFrame {
     private void Tabla() {
         // Este metodo es para generar una tabla en la interfaz
 
-        ArrayList<EntradaTablaEncuesta> entradasTabla = ControladorEncuesta.getEntradas();
+        entradasTabla = ControladorEncuesta.getEntradas();
+
         encuestas = new JTable();
 
 
@@ -134,7 +137,7 @@ public class Interfaz1 extends JFrame {
         }
     }
 
-    private class ListenerButton implements ActionListener {
+    private class verencuestas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz1.main();
@@ -142,7 +145,7 @@ public class Interfaz1 extends JFrame {
         }
     }
 
-    private class ListenerButton1 implements ActionListener {
+    private class crearencuestas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Creador.main();
@@ -161,7 +164,10 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        Interfaz_EncuestaPred.main(1);
+            int row = encuestas.getSelectedRow();
+            EntradaTablaEncuesta entrada = entradasTabla.get(row);
+            int idEncuesta = entrada.getID_Encuesta();
+        Interfaz_EncuestaPred.main(idEncuesta);
         dispose();
         }
     }
