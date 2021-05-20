@@ -17,6 +17,7 @@ public class Gráfico extends JFrame{
         setTitle("Grafico");
         setSize(800,600);
         setLocationRelativeTo(null);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         init();
@@ -43,6 +44,10 @@ public class Gráfico extends JFrame{
         JButton volver = new JButton("VOlVER");
         panel.add(volver);
         volver.addActionListener(new ListenerButton());
+    }
+
+    public static void main(String[] args) {
+        new Gráfico().setVisible(true);
     }
 
     public static void main(){
