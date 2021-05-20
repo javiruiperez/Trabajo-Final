@@ -9,6 +9,7 @@ public class Respuesta {
         this.texto = texto;
     }
 
+
     public int getID_Respuesta() {
         return ID_Respuesta;
     }

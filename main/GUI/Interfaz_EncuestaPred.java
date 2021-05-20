@@ -1,6 +1,9 @@
 package main.GUI;
 
 import main.controladores.ControladorEncuesta;
+import main.models.Encuesta;
+import main.models.Pregunta;
+import main.models.Respuesta;
 import main.models.Usuario;
 import main.utils.GuardarResp;
 import main.utils.Saldo;
@@ -10,30 +13,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Interfaz_EncuestaPred extends JFrame {
-
+    private static ArrayList<JCheckBox> CheckBoxRespuestas = new ArrayList<JCheckBox>();
+    private ArrayList<JLabel> LabelsPreguntas = new ArrayList<JLabel>();
+    private ArrayList<JPanel> PanelesPreguntas = new ArrayList<JPanel>();
     private JPanel panelPrincipal2;
-    JCheckBox r1 = new JCheckBox("RESPUESTA 1");
-    JCheckBox r2 = new JCheckBox("RESPUESTA 2");
-    JCheckBox r3 = new JCheckBox("RESPUESTA 3");
-
-    JCheckBox r4 = new JCheckBox("RESPUESTA 1");
-    JCheckBox r5 = new JCheckBox("RESPUESTA 2");
-    JCheckBox r6 = new JCheckBox("RESPUESTA 3");
-
-    JCheckBox r7 = new JCheckBox("RESPUESTA 1");
-    JCheckBox r8 = new JCheckBox("RESPUESTA 2");
-    JCheckBox r9 = new JCheckBox("RESPUESTA 3");
-
-    JCheckBox r10 = new JCheckBox("RESPUESTA 1");
-    JCheckBox r11 = new JCheckBox("RESPUESTA 2");
-    JCheckBox r12 = new JCheckBox("RESPUESTA 3");
-
-    JCheckBox r13 = new JCheckBox("RESPUESTA 1");
-    JCheckBox r14 = new JCheckBox("RESPUESTA 2");
-    JCheckBox r15 = new JCheckBox("RESPUESTA 3");
-
+    private static Encuesta encuesta;
 
     JButton preg2;
     JButton preg3;
@@ -46,100 +33,65 @@ public class Interfaz_EncuestaPred extends JFrame {
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
 
-    Interfaz_EncuestaPred(){
+    private void crearPaneles(Encuesta e) {
+        ArrayList<Pregunta> preguntasEncuesta = e.getPreguntas();
+        for (int i = 0; i < preguntasEncuesta.size(); i++) {
+            Pregunta preg = preguntasEncuesta.get(i);
+            JPanel panel = new JPanel();
+            panel.setLayout(new GridLayout(5, 1));
+            JLabel tituloPregunta = new JLabel(preg.getTexto());
+            panel.add(tituloPregunta);
+            //Bucle para acceder a las respuestas de una pregunta siempre van de 3 en 3
+            for (int j = i * 3; j < i * 3 + 3; j++) {
+                panel.add(CheckBoxRespuestas.get(j));
+            }
+            JLabel vacio2 = new JLabel("");
+            vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+            panel.add(vacio2);
+            panelPrincipal2.add(panel);
+        }
+    }
+
+    private static void añadirRespuestas(Encuesta e) {
+        ArrayList<Pregunta> preguntas = e.getPreguntas();
+        for (int i = 0; i < preguntas.size(); i++) {
+            Pregunta pre = preguntas.get(i);
+            ArrayList<Respuesta> resp = pre.getRespuestas();
+            for (int j = 0; j < resp.size(); j++) {
+                Respuesta res = resp.get(j);
+                CheckBoxRespuestas.add(new JCheckBox(res.getTexto()));
+            }
+        }
+    }
+
+    private void añadirPreguntas(Encuesta e) {
+        ArrayList<Pregunta> pregs = e.getPreguntas();
+        for (int i = 0; i < pregs.size(); i++) {
+            Pregunta pre = pregs.get(i);
+            LabelsPreguntas.add(new JLabel(pre.getTexto()));
+        }
+    }
+
+
+    Interfaz_EncuestaPred(Encuesta e) {
         // Este metodo es la interfaz
 
-        JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new GridLayout(2, 1));
+        JPanel panelTitulo = new JPanel();
+        panelTitulo.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("                                  CREA TU ENCUESTA");
         l1.setFont(new Font("Calibri", Font.PLAIN, 40));
-        panelPrincipal.add(l1);
+        panelTitulo.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panelPrincipal.add(vacio1);
+        panelTitulo.add(vacio1);
 
 
         panelPrincipal2 = new JPanel();
-        panelPrincipal2.setLayout(new GridLayout(5, 1));
+        panelPrincipal2.setLayout(new GridLayout(e.getPreguntas().size() + 1, 1));
         panelPrincipal2.setPreferredSize(new Dimension(panelPrincipal2.getHeight(), 1500));
 
-
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(5, 1));
-        JLabel p1 = new JLabel("¿Qué opinas de la superliga?");
-        panel2.add(p1);
-        panel2.add(r1);
-        panel2.add(r2);
-        panel2.add(r3);
-        r1.addActionListener(new s1());
-        r2.addActionListener(new s2());
-        r3.addActionListener(new s3());
-        JLabel vacio2 = new JLabel("");
-        vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel2.add(vacio2);
-        panelPrincipal2.add(panel2);
-
-
-        JPanel panel3 = new JPanel();
-        panel3.setLayout(new GridLayout(5, 1));
-        JLabel p2 = new JLabel("¿Crees que Pedro Sánchez es un buen presidente?");
-        panel3.add(p2);
-        panel3.add(r4);
-        panel3.add(r5);
-        panel3.add(r6);
-        r4.addActionListener(new s4());
-        r5.addActionListener(new s5());
-        r6.addActionListener(new s6());
-        JLabel vacio3 = new JLabel("");
-        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel3.add(vacio3);
-        panelPrincipal2.add(panel3);
-
-
-        JPanel panel4 = new JPanel();
-        panel4.setLayout(new GridLayout(5, 1));
-        JLabel p3 = new JLabel("¿Qué tipo de películas te gustan más?");
-        panel4.add(p3);
-        panel4.add(r7);
-        panel4.add(r8);
-        panel4.add(r9);
-        r7.addActionListener(new s7());
-        r8.addActionListener(new s8());
-        r9.addActionListener(new s9());
-        JLabel vacio4 = new JLabel("");
-        vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel4.add(vacio4);
-        panelPrincipal2.add(panel4);
-
-
-        JPanel panel5 = new JPanel();
-        panel5.setLayout(new GridLayout(5, 1));
-        JLabel p4 = new JLabel("¿A cuál de estos partidos votarías?");
-        panel5.add(p4);
-        panel5.add(r10);
-        panel5.add(r11);
-        panel5.add(r12);
-        r10.addActionListener(new s10());
-        r11.addActionListener(new s11());
-        r12.addActionListener(new s12());
-        JLabel vacio5 = new JLabel("");
-        vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
-        panel5.add(vacio5);
-        panelPrincipal2.add(panel5);
-
-
-        JPanel panel6 = new JPanel();
-        panel6.setLayout(new GridLayout(4, 1));
-        JLabel p5 = new JLabel("¿Esperas el futuro con optimismo?");
-        panel6.add(p5);
-        panel6.add(r13);
-        panel6.add(r14);
-        panel6.add(r15);
-        r13.addActionListener(new s13());
-        r14.addActionListener(new s14());
-        r15.addActionListener(new s15());
-        panelPrincipal2.add(panel6);
-
+        //Metodo para crear los paneles de las preguntas
+        crearPaneles(e);
 
         JPanel panelbotones = new JPanel();
         panelbotones.setLayout(new GridLayout(1, 4));
@@ -148,261 +100,63 @@ public class Interfaz_EncuestaPred extends JFrame {
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
-        /*preg2 = new JButton("CONTINUAR");
-        preg2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
-        preg2.setPreferredSize(new Dimension(100, 50));
-        panelbotones.add(preg2);
-        //preg2.addActionListener(new Interfaz1.ListenerButton3());
-
-        preg3 = new JButton("CONTINUAR");
-        preg3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
-        preg3.setPreferredSize(new Dimension(100, 50));
-        panelbotones.add(preg3);
-        //preg3.addActionListener(new Interfaz1.ListenerButton3());
-
-        preg4 = new JButton("CONTINUAR");
-        preg4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
-        preg4.setPreferredSize(new Dimension(100, 50));
-        panelbotones.add(preg4);
-        //preg4.addActionListener(new Interfaz1.ListenerButton3());
-
-        preg5 = new JButton("CONTINUAR");
-        preg5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 20));
-        preg5.setPreferredSize(new Dimension(100, 50));
-        panelbotones.add(preg5);
-        //preg5.addActionListener(new Interfaz1.ListenerButton3());*/
-
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(80,80,1100,650);
+        scrollPane.setBounds(80, 80, 1100, 650);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setViewportView(panelPrincipal2);
         add(scrollPane);
 
-        add(panelPrincipal, BorderLayout.NORTH);
+        add(panelTitulo, BorderLayout.NORTH);
         add(panelbotones, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setSize(1650,1080);
+        setSize(1650, 1080);
         this.setResizable(false);
         setVisible(true);
     }
 
-    public static void main() {
-        //Interfaz_EncuestaPred i = new Interfaz_EncuestaPred();
+    public static void main(int idEncuesta) {
+        Encuesta e = ControladorEncuesta.getEncuesta(idEncuesta);
+        encuesta = e;
+        añadirRespuestas(e);
+        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred(e);
     }
 
-    private class s1 implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r1.isSelected()) {
-                r2.setSelected(false);
-                r3.setSelected(false);
-                int idpregunta = 1;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
+    private static void guardarRespuestas(){
+        ArrayList<Pregunta> preguntasEncuesta = encuesta.getPreguntas();
+        for (int i = 0; i < preguntasEncuesta.size(); i++) {
+            Pregunta preg = preguntasEncuesta.get(i);
+            ArrayList<Respuesta> respuestas = preg.getRespuestas();
+            int idPregunta = preg.getID_Pregunta();
+            int numeroRespuesta = 0;
+            for (int j = i * 3; j < i * 3 + 3; j++) {
+                if(CheckBoxRespuestas.get(j).isSelected()){
+                    numeroRespuesta = j%3;
+                }
             }
-        }
-    }
-
-    private class s2 implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r2.isSelected()) {
-                r1.setSelected(false);
-                r3.setSelected(false);
-                int idpregunta = 1;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s3 implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r3.isSelected()) {
-                r1.setSelected(false);
-                r2.setSelected(false);
-                int idpregunta = 1;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s4 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r4.isSelected()) {
-                r5.setSelected(false);
-                r6.setSelected(false);
-                int idpregunta = 2;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s5 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r5.isSelected()) {
-                r4.setSelected(false);
-                r6.setSelected(false);
-                int idpregunta = 2;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s6 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r6.isSelected()) {
-                r4.setSelected(false);
-                r5.setSelected(false);
-                int idpregunta = 2;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s7 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r7.isSelected()) {
-                r8.setSelected(false);
-                r9.setSelected(false);
-                int idpregunta = 3;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s8 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r8.isSelected()) {
-                r7.setSelected(false);
-                r9.setSelected(false);
-                int idpregunta = 3;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s9 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r9.isSelected()) {
-                r7.setSelected(false);
-                r8.setSelected(false);
-                int idpregunta = 3;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s10 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r10.isSelected()) {
-                r11.setSelected(false);
-                r12.setSelected(false);
-                int idpregunta = 4;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s11 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r11.isSelected()) {
-                r10.setSelected(false);
-                r12.setSelected(false);
-                int idpregunta = 4;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s12 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r12.isSelected()) {
-                r10.setSelected(false);
-                r11.setSelected(false);
-                int idpregunta = 4;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s13 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r13.isSelected()) {
-                r14.setSelected(false);
-                r15.setSelected(false);
-                int idpregunta = 5;
-                int respuestapreg = 1;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s14 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r14.isSelected()) {
-                r13.setSelected(false);
-                r15.setSelected(false);
-                int idpregunta = 5;
-                int respuestapreg = 2;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
-        }
-    }
-
-    private class s15 implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (r15.isSelected()) {
-                r13.setSelected(false);
-                r14.setSelected(false);
-                int idpregunta = 5;
-                int respuestapreg = 3;
-                GuardarResp.registro(idpregunta, respuestapreg);
-            }
+            Respuesta respuestaSeleccionada = respuestas.get(numeroRespuesta);
+            GuardarResp.registro(idPregunta, respuestaSeleccionada.getID_Respuesta());
         }
     }
 
     private class enviar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            guardarRespuestas();
             Saldo.actualizarSaldo();
-            double remuneracion = ControladorEncuesta.getEncuesta(1).getRemuneracion();
+            double remuneracion = encuesta.getRemuneracion();
             double saldo = usr.getSaldo();
-
+            saldo += remuneracion;
             JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
-           SesionUsuario.getInstance().actualizarSaldo(remuneracion + saldo);
-           if (saldo == 3){
-               JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
-           }
-           Interfaz1.main();
-           //Gráfico.main();
-           dispose();
+            SesionUsuario.getInstance().actualizarSaldo(saldo);
+            if (saldo == 3) {
+                JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
+            }
+            Interfaz1.main();
+            //Gráfico.main();
+            dispose();
+
         }
     }
 }

@@ -21,7 +21,6 @@ public class Interfaz1 extends JFrame {
     JMenuItem menuItem_inicio;
     JMenuItem menuItem_inicio2;
 
-    ArrayList<EntradaTablaEncuesta> encuesta1 = ControladorEncuesta.getEntradas();
 
     JTable encuestas;
 
@@ -111,7 +110,7 @@ public class Interfaz1 extends JFrame {
         encuestas = new JTable();
 
 
-        String col[] = {"Encuestas Disponibles", "Recompensa"};
+        String col[] = {"Encuestas Disponibles", "Número de Preguntas" ,"Recompensa"};
         DefaultTableModel tableModel = new DefaultTableModel(col, 0);
 
         encuestas = new JTable(tableModel);
@@ -122,9 +121,10 @@ public class Interfaz1 extends JFrame {
         for (int i = 0; i < entradasTabla.size(); i++) {
             String titulo = entradasTabla.get(i).getTitulo();
             double remuneracion = entradasTabla.get(i).getRemuneracion();
+            int numpregs = entradasTabla.get(i).getNumero_preguntas();
 
 
-            Object[] encuesta = {titulo, remuneracion + "€"};
+            Object[] encuesta = {titulo, numpregs,remuneracion + "€"};
             tableModel.addRow(encuesta);
 
         }
@@ -161,7 +161,7 @@ public class Interfaz1 extends JFrame {
     private class continuar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-        Interfaz_EncuestaPred.main();
+        Interfaz_EncuestaPred.main(1);
         dispose();
         }
     }

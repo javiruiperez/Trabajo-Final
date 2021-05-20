@@ -13,15 +13,16 @@ public class ControladorEncuesta {
     public static ArrayList<EntradaTablaEncuesta> getEntradas(){
         ArrayList<EntradaTablaEncuesta> entradas = new ArrayList<EntradaTablaEncuesta>();
         Connection conn = DBConnection.getConnection();
-        String sql = "Select ID_Encuesta, Remuneracion, Titulo FROM encuestas";
+        String sql = "Select ID_Encuesta, Numero_Preguntas, Remuneracion, Titulo FROM encuestas";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 int id_encuesta = rs.getInt("ID_Encuesta");
+                int numpregs = rs.getInt("Numero_Preguntas");
                 double remuneracion = rs.getDouble("Remuneracion");
                 String titulo = rs.getString("Titulo");
-                EntradaTablaEncuesta ent = new EntradaTablaEncuesta(id_encuesta, remuneracion, titulo);
+                EntradaTablaEncuesta ent = new EntradaTablaEncuesta(id_encuesta, numpregs, remuneracion, titulo);
                 entradas.add(ent);
             }
             return entradas;
@@ -96,4 +97,23 @@ public class ControladorEncuesta {
         }
         return null;
     }
+    /*public static getSoloPreguntas(int ID_Encuesta, int ID_Pregunta){
+        Connection conn = DBConnection.getConnection();
+        String sql = "SELECT Texto FROM pregunta WHERE ID_Encuesta = ? AND ID_Pregunta = ?;";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, ID_Encuesta);
+            stmt.setInt(2, ID_Pregunta);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+               String texto = rs.getString("Texto");
+                Respuesta res = new Respuesta(texto);
+                resultado.add(res);
+            }
+            return resultado;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }*/
 }

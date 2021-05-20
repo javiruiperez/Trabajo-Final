@@ -13,6 +13,10 @@ public class Pregunta {
         this.respuestas = respuestas;
     }
 
+    /*public SoloPregunta(String texto) {
+        Texto = texto;
+    }*/
+
     public int getID_Pregunta() {
         return ID_Pregunta;
     }
