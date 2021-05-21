@@ -46,7 +46,7 @@ public class ControladorEncuesta {
                 double remuneracion = rs.getDouble("Remuneracion");
                 String nombre_usuario = rs.getString("Nombre_usuario");
                 ArrayList<Pregunta> preguntas = getPreguntas(ID_Encuesta);
-                Encuesta enc = new Encuesta(ID_Encuesta, titulo, numero_preguntas, remuneracion, nombre_usuario, preguntas);
+                Encuesta enc = new Encuesta(titulo, remuneracion, nombre_usuario);
                 return enc;
             }
         } catch (SQLException throwables) {
