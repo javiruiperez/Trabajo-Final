@@ -105,32 +105,21 @@ public class Interfaz_SignIn extends JFrame {
     private class BotonRegistrarse implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+
             String usuarioText = usuario.getText();
             String correoText = correo.getText();
             boolean comprobacionCorreo = Verificar.verificarCorreo(correoText);
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
             boolean comprobacionUsuarioCorreo = Verificar.verificarUsuarioCorreo(usuarioText, correoText);
+            boolean verificarregistro = Registro.comprobacion(comprobacionCorreo, comprobacionUsuarioCorreo, usuarioText, correoText, contrasenyaText, verifica);
+            Registro.comprobacion(comprobacionCorreo, comprobacionUsuarioCorreo, usuarioText, correoText, contrasenyaText, verifica);
 
-            if (!usuarioText.equals("") && !correoText.equals("") && !contrasenyaText.equals("") && !verifica.equals("")) {
-                if (comprobacionCorreo){
-                    if (!comprobacionUsuarioCorreo) {
-                        if (contrasenyaText.equals(verifica)) {
-                        Registro.registro(usuarioText, correoText, contrasenyaText);
-                        JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
-                        dispose();
-                        Interfaz1.main();
-                     } else {
-                        JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
-                    }
-                }else{
-                    JOptionPane.showMessageDialog(null, "Este nombre de Usuario o Correo ya están en uso");
-                }
-                }else{
-                    JOptionPane.showMessageDialog(null, "Introduzca una dirección de correo válida");
-                }
-            }else{
-                JOptionPane.showMessageDialog(null, "Introduzca los datos");
+            if (verificarregistro) {
+                Registro.registro(usuarioText, correoText, contrasenyaText);
+                JOptionPane.showMessageDialog(null, "Su cuenta ha sido creada con éxito");
+                dispose();
+                Interfaz1.main();
             }
         }
     }
