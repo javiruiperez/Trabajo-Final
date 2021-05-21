@@ -7,19 +7,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Verificar {
-    static final String JDBC_Driver = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/encuestas";
-    static final String User = "root";
-    static final String Pass = "Nicolevante21";
     public static boolean verificarUsuarioCorreo (String nombreUsuario, String correo){
         Connection conn = null;
-        Statement stmt = null;
+
 
         try {
-
             conn = DBConnection.getConnection();
-            stmt = conn.createStatement();
-
             String sql = "select * from creador where Nombre_Usuario=? or Correo=?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             prpStatement.setString(1, nombreUsuario);
@@ -33,20 +26,7 @@ public class Verificar {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            }
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            }
-        }
+        } finally {}
         return false;
     }
     public static boolean verificarCorreo(String correo){
