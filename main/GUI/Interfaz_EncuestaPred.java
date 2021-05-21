@@ -8,7 +8,6 @@ import main.models.Usuario;
 import main.utils.GuardarResp;
 import main.utils.Saldo;
 import main.utils.SesionUsuario;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,10 +21,6 @@ public class Interfaz_EncuestaPred extends JFrame {
     private JPanel panelPrincipal2;
     private static Encuesta encuesta;
 
-    JButton preg2;
-    JButton preg3;
-    JButton preg4;
-    JButton preg5;
     JButton enviar;
 
     Color asulitoresulon = new Color(88, 148, 255);

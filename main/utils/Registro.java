@@ -1,7 +1,9 @@
 package main.utils;
 
 import main.DbConnections.DBConnection;
+import main.GUI.Interfaz1;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -34,6 +36,27 @@ public class Registro {
         } catch (SQLException se) {
             se.printStackTrace();
         } finally {
+        }
+        return true;
+    }
+    public static boolean comprobacion(boolean comprobacionCorreo, boolean comprobacionUsuarioCorreo ,String usuarioText, String correoText, String contrasenyaText, String verifica){
+
+        if (!usuarioText.equals("") && !correoText.equals("") && !contrasenyaText.equals("") && !verifica.equals("")) {
+            if (comprobacionCorreo){
+                if (!comprobacionUsuarioCorreo) {
+                    if (contrasenyaText.equals(verifica)) {
+                        return true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Introduzca la contraseña correctamente");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Este nombre de Usuario o Correo ya están en uso");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Introduzca una dirección de correo válida");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Introduzca los datos");
         }
         return true;
     }
