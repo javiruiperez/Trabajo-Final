@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 public class Interfaz_Entrada extends JFrame {
 
+    Color asulitoresulon = new Color(0, 79, 255);
+
     JButton logo;
     JButton entrar;
 
@@ -27,7 +29,8 @@ public class Interfaz_Entrada extends JFrame {
         entrar = new JButton("ENTRAR");
         entrar.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(entrar);
-        entrar.setBackground(Color.white);
+        entrar.setBackground(asulitoresulon);
+        entrar.setForeground(Color.white);
         entrar.addActionListener(new Interfaz_Entrada.acceso());
 
 

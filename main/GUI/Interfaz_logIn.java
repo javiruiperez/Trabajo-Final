@@ -19,8 +19,8 @@ public class Interfaz_logIn extends JFrame {
 
     JPasswordField contrasenya;
 
-    Color asulitoresulon = new Color(88, 148, 255);
-    Color rojitoresulon = new Color(248, 105, 105);
+    Color asulitoresulon = new Color(0, 79, 255);
+    Color rojitoresulon = new Color(255, 0, 0);
 
     Interfaz_logIn() {
         //Este metodo es la interfaz
@@ -64,6 +64,8 @@ public class Interfaz_logIn extends JFrame {
         panel2.add(confirmar);
         confirmar.addActionListener(new BotonInicioSesion());
         confirmar.setBackground(asulitoresulon);
+        confirmar.setForeground(Color.white);
+
 
 
         panelPrincipal.add(panel2);

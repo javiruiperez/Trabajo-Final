@@ -23,7 +23,9 @@ public class Interfaz_EncuestaPred extends JFrame {
 
     JButton enviar;
     JButton cancelar;
-    Color asulitoresulon = new Color(88, 148, 255);
+
+    Color asulitoresulon = new Color(0, 79, 255);
+    Color rojitoresulon = new Color(255, 0, 0);
 
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
@@ -89,12 +91,19 @@ public class Interfaz_EncuestaPred extends JFrame {
         crearPaneles(e);
 
         JPanel panelbotones = new JPanel();
-        panelbotones.setLayout(new GridLayout(1, 4));
+        panelbotones.setLayout(new GridLayout(1, 2));
         enviar = new JButton("ENVIAR");
         enviar.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);
+
+        cancelar = new JButton("CANCELAR");
+        cancelar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        panelbotones.add(cancelar);
+        cancelar.addActionListener(new cancelar());
+        cancelar.setBackground(rojitoresulon);
+        cancelar.setForeground(Color.white);
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(80, 80, 1100, 650);
@@ -152,6 +161,13 @@ public class Interfaz_EncuestaPred extends JFrame {
             Interfaz1.main();
             //Gráfico.main();
             dispose();
+
+        }
+    }
+
+    private class cancelar implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
 
         }
     }
