@@ -1,7 +1,6 @@
 package main.utils;
 
 import main.DbConnections.DBConnection;
-import main.GUI.Interfaz1;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -21,7 +20,7 @@ public class Registro {
 
             conn = DBConnection.getConnection();
             stmt = conn.createStatement();
-            String newcontrasenya = Encriptación.cifrar(contrasenya);
+            String newcontrasenya = encriptacion.cifrar(contrasenya);
 
             String sql = "insert into creador values (?,?,?,?);";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
