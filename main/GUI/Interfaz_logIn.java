@@ -53,7 +53,7 @@ public class Interfaz_logIn extends JFrame {
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 2, 75, 0));
-        registrarse = new JButton("Crear cuenta");
+        registrarse = new JButton("CREAR CUENTA");
         registrarse.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(rojitoresulon);

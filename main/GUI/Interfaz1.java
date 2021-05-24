@@ -120,6 +120,7 @@ public class Interfaz1 extends JFrame {
         encuestas.setPreferredScrollableViewportSize(new Dimension(950, 100));
         JScrollPane scrollPane = new JScrollPane(encuestas);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
+        encuestas.setBounds(780, 422, -612, -284);
 
         for (int i = 0; i < entradasTabla.size(); i++) {
             String titulo = entradasTabla.get(i).getTitulo();
