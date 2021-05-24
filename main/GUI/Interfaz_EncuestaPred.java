@@ -43,6 +43,7 @@ public class Interfaz_EncuestaPred extends JFrame {
             JLabel vacio2 = new JLabel("");
             vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
             panel.add(vacio2);
+            panelPrincipal2.add(panel);
         }
     }
 
