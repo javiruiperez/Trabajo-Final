@@ -2,7 +2,7 @@ package main.utils;
 
 import java.util.Base64;
 
-public class Encriptación {
+public class encriptacion {
 
     public static String cifrar(String contrasenya) {
         String entradaOriginal = contrasenya;

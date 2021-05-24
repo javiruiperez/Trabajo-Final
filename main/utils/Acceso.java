@@ -20,7 +20,7 @@ public class Acceso {
            String sql = "select * from creador where Nombre_Usuario=? AND Contrasenya=?;";
            PreparedStatement prpStatement = conn.prepareStatement(sql);
            prpStatement.setString(1, usuario);
-           prpStatement.setString(2, Encriptación.cifrar(contrasenya));
+           prpStatement.setString(2, encriptacion.cifrar(contrasenya));
            ResultSet rs = prpStatement.executeQuery();
            if (rs.next()) {
                return true;

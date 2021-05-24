@@ -108,12 +108,12 @@ public class Interfaz_SignIn extends JFrame {
 
             String usuarioText = usuario.getText();
             String correoText = correo.getText();
-            boolean comprobacionCorreo = Verificar.verificarCorreo(correoText);
             String contrasenyaText = new String(contrasenya.getPassword());
             String verifica = new String(contrasenya_ok.getPassword());
+
+            boolean comprobacionCorreo = Verificar.verificarCorreo(correoText);
             boolean comprobacionUsuarioCorreo = Verificar.verificarUsuarioCorreo(usuarioText, correoText);
             boolean verificarregistro = Registro.comprobacion(comprobacionCorreo, comprobacionUsuarioCorreo, usuarioText, correoText, contrasenyaText, verifica);
-            Registro.comprobacion(comprobacionCorreo, comprobacionUsuarioCorreo, usuarioText, correoText, contrasenyaText, verifica);
 
             if (verificarregistro) {
                 Registro.registro(usuarioText, correoText, contrasenyaText);

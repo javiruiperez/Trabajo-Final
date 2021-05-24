@@ -6,8 +6,7 @@ import main.utils.SesionUsuario;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 //Aquí se muestra el saldo disponible ganado en las encuestas
 //puedes sacar los fondos por tarjeta o por paypal
 public class Interfaz_Saldo extends JFrame {
@@ -164,6 +163,7 @@ public class Interfaz_Saldo extends JFrame {
                     SesionUsuario.getInstance().actualizarSaldo(0.0);
                     JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
                     Interfaz1.main();
+                    dispose();
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "No tienes saldo disponible para retirar");
@@ -182,6 +182,7 @@ public class Interfaz_Saldo extends JFrame {
                     SesionUsuario.getInstance().actualizarSaldo(0.0);
                     JOptionPane.showMessageDialog(null, "Se ha retirado su saldo correctamente");
                     Interfaz1.main();
+                    dispose();
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "No tienes saldo disponible para retirar");

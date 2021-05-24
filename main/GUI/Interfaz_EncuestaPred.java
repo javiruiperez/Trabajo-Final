@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Interfaz_EncuestaPred extends JFrame {
-    private static ArrayList<JCheckBox> CheckBoxRespuestas = new ArrayList<JCheckBox>();
+    private static ArrayList<JRadioButton> RadioButtonRespuestas;
     private ArrayList<JLabel> LabelsPreguntas = new ArrayList<JLabel>();
     private ArrayList<JPanel> PanelesPreguntas = new ArrayList<JPanel>();
     private JPanel panelPrincipal2;
@@ -38,7 +38,7 @@ public class Interfaz_EncuestaPred extends JFrame {
             panel.add(tituloPregunta);
             //Bucle para acceder a las respuestas de una pregunta siempre van de 3 en 3
             for (int j = i * 3; j < i * 3 + 3; j++) {
-                panel.add(CheckBoxRespuestas.get(j));
+                panel.add(RadioButtonRespuestas.get(j));
             }
             JLabel vacio2 = new JLabel("");
             vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -52,9 +52,12 @@ public class Interfaz_EncuestaPred extends JFrame {
         for (int i = 0; i < preguntas.size(); i++) {
             Pregunta pre = preguntas.get(i);
             ArrayList<Respuesta> resp = pre.getRespuestas();
+            ButtonGroup bgroup = new ButtonGroup();
             for (int j = 0; j < resp.size(); j++) {
                 Respuesta res = resp.get(j);
-                CheckBoxRespuestas.add(new JCheckBox(res.getTexto()));
+                JRadioButton RadioButtonRespuesta = new JRadioButton(res.getTexto());
+                bgroup.add(RadioButtonRespuesta);
+                RadioButtonRespuestas.add(RadioButtonRespuesta);
             }
         }
     }
@@ -113,6 +116,7 @@ public class Interfaz_EncuestaPred extends JFrame {
     }
 
     public static void main(int idEncuesta) {
+        RadioButtonRespuestas = new ArrayList<JRadioButton>();
         Encuesta e = ControladorEncuesta.getEncuesta(idEncuesta);
         encuesta = e;
         añadirRespuestas(e);
@@ -127,7 +131,7 @@ public class Interfaz_EncuestaPred extends JFrame {
             int idPregunta = preg.getID_Pregunta();
             int numeroRespuesta = 0;
             for (int j = i * 3; j < i * 3 + 3; j++) {
-                if(CheckBoxRespuestas.get(j).isSelected()){
+                if(RadioButtonRespuestas.get(j).isSelected()){
                     numeroRespuesta = j%3;
                 }
             }
@@ -146,13 +150,11 @@ public class Interfaz_EncuestaPred extends JFrame {
             saldo += remuneracion;
             JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
             SesionUsuario.getInstance().actualizarSaldo(saldo);
-            if (saldo == 3) {
+            if (saldo >= 3) {
                 JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
             }
             Interfaz1.main();
-            //Gráfico.main();
             dispose();
-
         }
     }
 }

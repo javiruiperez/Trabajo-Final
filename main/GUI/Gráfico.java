@@ -1,5 +1,7 @@
 package main.GUI;
 
+import main.models.Usuario;
+import main.utils.SesionUsuario;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -14,6 +16,7 @@ public class Gráfico extends JFrame{
     // Esta clase es para generar un grafico de tarta para las respuestas de las encuestas
 
     public Gráfico(){
+
         setTitle("Grafico");
         setSize(800,600);
         setLocationRelativeTo(null);
@@ -21,7 +24,6 @@ public class Gráfico extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         init();
-
 
     }
 
@@ -31,12 +33,11 @@ public class Gráfico extends JFrame{
 
 
         DefaultPieDataset data = new DefaultPieDataset();
-        data.setValue("Grupo Sergio, Angel, Antonio", 35);
-        data.setValue("Grupo Nico, Lucas, Javi", 50);
-        data.setValue("Grupo Salva, Lucia, Carmen", 15);
+        data.setValue("Respuesta 1", 33);
+        data.setValue("Respuesta 2", 33);
+        data.setValue("Respuesta 3", 33);
 
-
-        JFreeChart chart = ChartFactory.createPieChart("A quien le vas a poner mejor nota en el trabajo", data, true, true, false);
+        JFreeChart chart = ChartFactory.createPieChart("Respuestas de encuesta 1, pregunta 1", data, true, true, false);
 
         ChartPanel chartPanel = new ChartPanel(chart);
         panel.add(chartPanel);
@@ -46,13 +47,10 @@ public class Gráfico extends JFrame{
         volver.addActionListener(new ListenerButton());
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         new Gráfico().setVisible(true);
     }
 
-    public static void main(){
-        new Gráfico().setVisible(true);
-    }
 
     private class ListenerButton implements ActionListener {
         @Override
