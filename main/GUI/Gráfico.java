@@ -38,6 +38,7 @@ public class Gráfico extends JFrame{
         dataset.setValue(8, "Mujeres", "Respuesta 1");
         dataset.setValue(7, "Hombres", "Respuesta 1");
         dataset.setValue(25, "no binario", "Respuesta 1");
+        dataset.setValue(8, "otro", "Respuesta 1");
 
         dataset.setValue(9, "Mujeres", "Respuesta 2");
         dataset.setValue(4, "Hombres", "Respuesta 2");
@@ -50,6 +51,7 @@ public class Gráfico extends JFrame{
 
         dataset.setValue(7, "Mujeres", "Respuesta 5");
         dataset.setValue(8, "Hombres", "Respuesta 5");
+
         // Creando el Grafico
         JFreeChart chart = ChartFactory.createBarChart3D
                 ("Respuestas pregunta 1","Opción", "Veces respondida",
@@ -58,6 +60,7 @@ public class Gráfico extends JFrame{
         chart.getTitle().setPaint(Color.black);
         CategoryPlot p = chart.getCategoryPlot();
         p.setRangeGridlinePaint(Color.red);
+
         // Mostrar Grafico
         ChartPanel chartPanel = new ChartPanel(chart);
         panel.add(chartPanel);
