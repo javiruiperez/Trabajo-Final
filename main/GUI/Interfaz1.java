@@ -40,7 +40,7 @@ public class Interfaz1 extends JFrame {
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(1, 5, 300, 200));
+        panel2.setLayout(new GridLayout(1, 5, 150, 100));
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio1);
@@ -54,7 +54,7 @@ public class Interfaz1 extends JFrame {
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
-        grafico = new JButton("CONTINUAR");
+        grafico = new JButton("GRAFICO");
         grafico.setFont(new Font("Calibri", Font.PLAIN, 20));
         grafico.setPreferredSize(new Dimension(100, 50));
         panel2.add(grafico);
