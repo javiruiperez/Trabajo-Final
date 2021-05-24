@@ -27,7 +27,7 @@ public class Interfaz1 extends JFrame {
     JTable encuestas;
 
     JButton comfirmar;
-    Color asulitoresulon = new Color(88, 148, 255);
+    Color asulitoresulon = new Color(0, 79, 255);
 
     Interfaz1() {
         // Este metodo es la interfaz
@@ -49,6 +49,8 @@ public class Interfaz1 extends JFrame {
         panel2.add(comfirmar);
         comfirmar.addActionListener(new continuar());
         comfirmar.setBackground(asulitoresulon);
+        comfirmar.setForeground(Color.white);
+
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);

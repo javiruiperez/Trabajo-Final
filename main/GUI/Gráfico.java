@@ -17,14 +17,15 @@ public class Gráfico extends JFrame{
 
     JButton cancelar;
 
-    Color asulitoresulon = new Color(88, 148, 255);
 
+    Color rojitoresulon = new Color(255, 0, 0);
 
     public Gráfico(){
         setTitle("Como Hacer Graficos con Java");
         setSize(800,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
         init();
     }
@@ -37,14 +38,20 @@ public class Gráfico extends JFrame{
         dataset.setValue(8, "Mujeres", "Respuesta 1");
         dataset.setValue(7, "Hombres", "Respuesta 1");
         dataset.setValue(25, "no binario", "Respuesta 1");
+        dataset.setValue(8, "otro", "Respuesta 1");
+
         dataset.setValue(9, "Mujeres", "Respuesta 2");
         dataset.setValue(4, "Hombres", "Respuesta 2");
+
         dataset.setValue(4, "Mujeres", "Respuesta 3");
         dataset.setValue(5, "Hombres", "Respuesta 3");
+
         dataset.setValue(8, "Mujeres", "Respuesta 4");
         dataset.setValue(9, "Hombres", "Respuesta 4");
+
         dataset.setValue(7, "Mujeres", "Respuesta 5");
         dataset.setValue(8, "Hombres", "Respuesta 5");
+
         // Creando el Grafico
         JFreeChart chart = ChartFactory.createBarChart3D
                 ("Respuestas pregunta 1","Opción", "Veces respondida",
@@ -53,15 +60,17 @@ public class Gráfico extends JFrame{
         chart.getTitle().setPaint(Color.black);
         CategoryPlot p = chart.getCategoryPlot();
         p.setRangeGridlinePaint(Color.red);
+
         // Mostrar Grafico
         ChartPanel chartPanel = new ChartPanel(chart);
         panel.add(chartPanel);
 
         cancelar = new JButton("CANCELAR");
         cancelar.setFont(new Font("Calibri", Font.PLAIN, 20));
-        panel.add(cancelar);
         cancelar.addActionListener(new ListenerButton());
-        cancelar.setBackground(asulitoresulon);
+        cancelar.setBackground(rojitoresulon);
+        cancelar.setForeground(Color.white);
+        panel.add(cancelar);
     }
 
     public static void main(String[] args) {

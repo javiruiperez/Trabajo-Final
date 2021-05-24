@@ -18,8 +18,8 @@ public class Interfaz_SignIn extends JFrame {
     JPasswordField contrasenya;
     JPasswordField contrasenya_ok;
 
-    Color asulitoresulon = new Color(88, 148, 255);
-    Color rojitoresulon = new Color(248, 105, 105);
+    Color asulitoresulon = new Color(0, 79, 255);
+    Color rojitoresulon = new Color(255, 0, 0);
 
     Interfaz_SignIn() {
         // Este metodo es la interfaz
@@ -72,11 +72,13 @@ public class Interfaz_SignIn extends JFrame {
         cancelar.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(cancelar);
         cancelar.setBackground(rojitoresulon);
+        cancelar.setForeground(Color.white);
         cancelar.addActionListener(new Interfaz_SignIn.BotonCancelar());
         registrarse = new JButton("REGISTRARSE");
         registrarse.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(asulitoresulon);
+        registrarse.setForeground(Color.white);
         registrarse.addActionListener(new Interfaz_SignIn.BotonRegistrarse());
 
 

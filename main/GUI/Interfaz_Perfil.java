@@ -24,6 +24,9 @@ public class Interfaz_Perfil extends JFrame {
     String nombreUsuario = usr.getNombre_usuario();
     String correo = usr.getCorreo();
 
+    Color asulitoresulon = new Color(0, 79, 255);
+    Color rojitoresulon = new Color(255, 0, 0);
+
     JButton cerrarSesion;
 
     Interfaz_Perfil(){
@@ -54,7 +57,8 @@ public class Interfaz_Perfil extends JFrame {
         cerrarSesion.setFont(new Font("Calibri", Font.PLAIN, 25));
         cerrarSesion.addActionListener(new cerrar());
         panel2.add(cerrarSesion);
-        cerrarSesion.setBackground(Color.white);
+        cerrarSesion.setBackground(rojitoresulon);
+        cerrarSesion.setForeground(Color.white);
         panelPrincipal.add(panel2);
 
 
