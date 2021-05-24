@@ -22,7 +22,7 @@ public class Interfaz_EncuestaPred extends JFrame {
     private static Encuesta encuesta;
 
     JButton enviar;
-
+    JButton cancelar;
     Color asulitoresulon = new Color(88, 148, 255);
 
     SesionUsuario sesion = SesionUsuario.getInstance();
