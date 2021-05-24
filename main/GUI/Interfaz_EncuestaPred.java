@@ -23,7 +23,6 @@ public class Interfaz_EncuestaPred extends JFrame {
 
     JButton enviar;
     JButton cancelar;
-    JButton graficos;
 
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
@@ -106,12 +105,6 @@ public class Interfaz_EncuestaPred extends JFrame {
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);
 
-        graficos = new JButton("CANCELAR");
-        graficos.setFont(new Font("Calibri", Font.PLAIN, 20));
-        panelbotones.add(graficos);
-        graficos.addActionListener(new grafico());
-        graficos.setBackground(asulitoresulon);
-        graficos.setForeground(Color.white);
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(80, 80, 1100, 650);
@@ -174,13 +167,6 @@ public class Interfaz_EncuestaPred extends JFrame {
     }
 
     private class cancelar implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private class grafico implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 

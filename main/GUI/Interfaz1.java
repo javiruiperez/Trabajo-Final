@@ -27,6 +27,7 @@ public class Interfaz1 extends JFrame {
     JTable encuestas;
 
     JButton comfirmar;
+    JButton grafico;
     Color asulitoresulon = new Color(0, 79, 255);
 
     Interfaz1() {
@@ -39,7 +40,7 @@ public class Interfaz1 extends JFrame {
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(1, 3, 300, 200));
+        panel2.setLayout(new GridLayout(1, 5, 300, 200));
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio1);
@@ -50,10 +51,19 @@ public class Interfaz1 extends JFrame {
         comfirmar.addActionListener(new continuar());
         comfirmar.setBackground(asulitoresulon);
         comfirmar.setForeground(Color.white);
-
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
+        grafico = new JButton("CONTINUAR");
+        grafico.setFont(new Font("Calibri", Font.PLAIN, 20));
+        grafico.setPreferredSize(new Dimension(100, 50));
+        panel2.add(grafico);
+        grafico.addActionListener(new graficos());
+        grafico.setBackground(asulitoresulon);
+        grafico.setForeground(Color.white);
+        JLabel vacio3 = new JLabel("");
+        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        panel2.add(vacio3);
 
 
         add(panelPrincipal, BorderLayout.NORTH);
@@ -188,6 +198,13 @@ public class Interfaz1 extends JFrame {
         public void actionPerformed(ActionEvent e) {
         Interfaz_Perfil.main();
         dispose();
+        }
+    }
+
+    private class graficos implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
         }
     }
 }
