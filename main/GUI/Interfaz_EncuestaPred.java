@@ -148,8 +148,15 @@ public class Interfaz_EncuestaPred extends JFrame {
             double remuneracion = encuesta.getRemuneracion();
             double saldo = usr.getSaldo();
             saldo += remuneracion;
-            JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
-            SesionUsuario.getInstance().actualizarSaldo(saldo);
+            int codigo= JOptionPane.showConfirmDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€. ¿Le gustaría ver un Gráfico?", "Respuesta Enviada", JOptionPane.YES_NO_OPTION);
+            if (codigo == JOptionPane.YES_OPTION){
+                Gráfico.main();
+                dispose();
+            }else{
+                Interfaz1.main();
+                dispose();
+            }
+
             if (saldo >= 3) {
                 JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
             }
