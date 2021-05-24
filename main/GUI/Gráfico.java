@@ -25,7 +25,7 @@ public class Gráfico extends JFrame{
         setSize(800,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
         init();
     }

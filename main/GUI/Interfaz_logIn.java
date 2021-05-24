@@ -57,6 +57,7 @@ public class Interfaz_logIn extends JFrame {
         registrarse.setFont(new Font("Calibri", Font.PLAIN, 15));
         panel2.add(registrarse);
         registrarse.setBackground(rojitoresulon);
+        registrarse.setForeground(Color.white);
         registrarse.addActionListener(new BotonCrearCuenta());
 
         confirmar = new JButton("CONFIRMAR");
