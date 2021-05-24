@@ -5,15 +5,18 @@ import java.util.ArrayList;
 public class Encuesta {
     int ID_Encuesta;
     String Titulo;
+    int Numero_Preguntas;
     double Remuneracion;
     String Nombre_Usuario;
     ArrayList<Pregunta> preguntas;
 
-    public Encuesta(String titulo, double remuneracion, String nombre_Usuario) {
+    public Encuesta(int ID_Encuesta, String titulo, int numero_Preguntas, double remuneracion, String nombre_Usuario, ArrayList<Pregunta> preguntas) {
+        this.ID_Encuesta = ID_Encuesta;
         Titulo = titulo;
+        Numero_Preguntas = numero_Preguntas;
         Remuneracion = remuneracion;
         Nombre_Usuario = nombre_Usuario;
-        this.preguntas = this.preguntas;
+        this.preguntas = preguntas;
     }
 
     public int getID_Encuesta() {
@@ -32,7 +35,13 @@ public class Encuesta {
         Titulo = titulo;
     }
 
+    public int getNumero_Preguntas() {
+        return Numero_Preguntas;
+    }
 
+    public void setNumero_Preguntas(int numero_Preguntas) {
+        Numero_Preguntas = numero_Preguntas;
+    }
 
     public double getRemuneracion() {
         return Remuneracion;
@@ -63,6 +72,7 @@ public class Encuesta {
         return "Encuesta{" +
                 "ID_Encuesta=" + ID_Encuesta +
                 ", Titulo='" + Titulo + '\'' +
+                ", Numero_Preguntas=" + Numero_Preguntas +
                 ", Remuneracion=" + Remuneracion +
                 ", Nombre_Usuario='" + Nombre_Usuario + '\'' +
                 ", preguntas=" + preguntas +
