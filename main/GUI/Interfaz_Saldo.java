@@ -30,6 +30,9 @@ public class Interfaz_Saldo extends JFrame {
     private JButton dos;
     private JButton saldo;
 
+    Color asulitoresulon = new Color(0, 79, 255);
+//    Color nuevocolorsitoresulon = new Color(95, 226,)
+
     Interfaz_Saldo(){
         // Este metodo es la interfaz
 
@@ -58,7 +61,8 @@ public class Interfaz_Saldo extends JFrame {
         saldo = new JButton(redondeo + "€");
         saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
         panel2.add(saldo);
-        saldo.setBackground(Color.white);
+        saldo.setBackground(asulitoresulon);
+        saldo.setForeground(Color.white);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio5);
