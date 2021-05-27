@@ -73,13 +73,10 @@ public class Gráfico extends JFrame{
         panel.add(cancelar);
     }
 
-    public static void main(String[] args) {
+    public static void main(int ID_Encuesta) {
         new Gráfico().setVisible(true);
     }
 
-    public static void main(){
-        new Gráfico().setVisible(true);
-    }
 
     private class ListenerButton implements ActionListener {
         @Override

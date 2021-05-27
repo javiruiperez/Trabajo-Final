@@ -204,7 +204,11 @@ public class Interfaz1 extends JFrame {
     private class graficos implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            int row = encuestas.getSelectedRow();
+            EntradaTablaEncuesta entrada = entradasTabla.get(row);
+            int idEncuesta = entrada.getID_Encuesta();
+            Gráfico.main(idEncuesta);
+            dispose();
         }
     }
 }
