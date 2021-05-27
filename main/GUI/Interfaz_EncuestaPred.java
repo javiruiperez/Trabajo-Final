@@ -108,6 +108,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);
 
+
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(80, 80, 1100, 650);
         scrollPane.getVerticalScrollBar().setUnitIncrement(13);
