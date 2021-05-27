@@ -157,19 +157,11 @@ public class Interfaz_EncuestaPred extends JFrame {
             double remuneracion = encuesta.getRemuneracion();
             double saldo = usr.getSaldo();
             saldo += remuneracion;
-            int codigo= JOptionPane.showConfirmDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€. ¿Le gustaría ver un Gráfico?", "Respuesta Enviada", JOptionPane.YES_NO_OPTION);
-            if (codigo == JOptionPane.YES_OPTION){
-                Gráfico.main();
-                dispose();
-            }else{
-                Interfaz1.main();
-                dispose();
-            }
-
+            JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
             if (saldo >= 3) {
                 JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
             }
-            Interfaz1.main();
+           Interfaz1.main();
             dispose();
         }
     }
@@ -177,7 +169,12 @@ public class Interfaz_EncuestaPred extends JFrame {
     private class cancelar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            int seleccion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres salir? Se perderán los cambios", "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if(seleccion == JOptionPane.YES_OPTION) {
+                Interfaz1.main();
+                dispose();
+            }else{
+            }
         }
     }
 }
