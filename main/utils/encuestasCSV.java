@@ -4,13 +4,11 @@ import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import main.controladores.ControladorCSV;
 import main.models.Encuesta;
-import main.models.Pregunta;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class encuestasCSV {
@@ -25,7 +23,7 @@ public class encuestasCSV {
     }
 
     public static void ExportarCSV(List<Encuesta> encuestas) {
-        String salidaArchivo = "Encuesta.csv"; // Nombre del archivo
+        String salidaArchivo = "old/Encuesta.csv"; // Nombre del archivo
         boolean existe = new File(salidaArchivo).exists(); // Verifica si existe
 
         // Si existe un archivo llamado asi lo borra
@@ -65,7 +63,7 @@ public class encuestasCSV {
 
     public static void ImportarCSV() {
         try {
-            CsvReader leerEncuestas = new CsvReader("Encuesta.csv", ',');
+            CsvReader leerEncuestas = new CsvReader("old/Encuesta.csv", ',');
 
             leerEncuestas.readRecord();
             String titulo = leerEncuestas.get(0);
@@ -78,7 +76,7 @@ public class encuestasCSV {
             leerEncuestas.close(); //Cierra el archivo
             int ID_Encuesta = ControladorCSV.añadirEncuesta(titulo, remuneracion, nombre_usuario, numero_preguntas); //Se crea la encuesta en la BD y se obtiene el id encuesta
 
-            leerEncuestas = new CsvReader("Encuesta.csv", ',');
+            leerEncuestas = new CsvReader("old/Encuesta.csv", ',');
             leerEncuestas.readRecord();
             while (leerEncuestas.readRecord()) {
                 String tituloPregunta = leerEncuestas.get(0);
