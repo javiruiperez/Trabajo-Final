@@ -155,7 +155,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             guardarRespuestas();
-            Saldo.actualizarSaldo();
+            Saldo.actualizarSaldo(encuesta.getID_Encuesta());
             double remuneracion = encuesta.getRemuneracion();
             double saldo = usr.getSaldo();
             saldo += remuneracion;

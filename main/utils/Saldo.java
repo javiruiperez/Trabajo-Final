@@ -31,7 +31,7 @@ public class Saldo {
         } finally {
         }
     }
-    public static void actualizarSaldo(){
+    public static void actualizarSaldo(int ID_Encuesta){
         Connection conn = null;
         Statement stmt = null;
         double newsaldo = 0;
@@ -44,7 +44,7 @@ public class Saldo {
             SesionUsuario sesion = SesionUsuario.getInstance();
 
             String nombre = sesion.getUsr().getNombre_usuario();;
-            double remuneracion = ControladorEncuesta.getEncuesta(1).getRemuneracion();
+            double remuneracion = ControladorEncuesta.getEncuesta(ID_Encuesta).getRemuneracion();
 
             String sql = "select Saldo from creador where Nombre_Usuario = ?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
