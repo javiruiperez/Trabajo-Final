@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Interfaz_Entrada extends JFrame {
 
@@ -33,7 +35,6 @@ public class Interfaz_Entrada extends JFrame {
         entrar.setForeground(Color.white);
         entrar.addActionListener(new Interfaz_Entrada.acceso());
 
-
         add(panelPrincipal, BorderLayout.CENTER);
         add(panel2, BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,8 +47,8 @@ public class Interfaz_Entrada extends JFrame {
     private class acceso implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-           Interfaz_logIn.main();
-           dispose();
+            Interfaz_logIn.main();
+            dispose();
         }
     }
 
