@@ -95,18 +95,19 @@ public class Interfaz_EncuestaPred extends JFrame {
 
         JPanel panelbotones = new JPanel();
         panelbotones.setLayout(new GridLayout(1, 2));
-        enviar = new JButton("ENVIAR");
-        enviar.setFont(new Font("Calibri", Font.PLAIN, 20));
-        panelbotones.add(enviar);
-        enviar.addActionListener(new enviar());
-        enviar.setBackground(asulitoresulon);
-
         cancelar = new JButton("CANCELAR");
         cancelar.setFont(new Font("Calibri", Font.PLAIN, 20));
         panelbotones.add(cancelar);
         cancelar.addActionListener(new cancelar());
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);
+
+        enviar = new JButton("ENVIAR");
+        enviar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        panelbotones.add(enviar);
+        enviar.addActionListener(new enviar());
+        enviar.setBackground(asulitoresulon);
+        enviar.setForeground(Color.white);
 
 
         JScrollPane scrollPane = new JScrollPane();
