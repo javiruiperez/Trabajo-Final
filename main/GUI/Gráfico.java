@@ -1,5 +1,7 @@
 package main.GUI;
 
+import main.controladores.ControladorEncuesta;
+import main.controladores.ControladorGrafico;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -20,41 +22,26 @@ public class Gráfico extends JFrame{
 
     Color rojitoresulon = new Color(255, 0, 0);
 
-    public Gráfico(){
+    public Gráfico(int ID_Encuesta){
         setTitle("Como Hacer Graficos con Java");
-        setSize(800,600);
+        setSize(1200,1000);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
-        init();
+        this.setResizable(false);
+        setSize(1650, 1080);
+        init(ID_Encuesta);
     }
 
-    private void init() {
+    private void init(int ID_Encuesta) {
         panel = new JPanel();
         getContentPane().add(panel);
         // Fuente de Datos
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.setValue(8, "Mujeres", "Respuesta 1");
-        dataset.setValue(7, "Hombres", "Respuesta 1");
-        dataset.setValue(25, "no binario", "Respuesta 1");
-        dataset.setValue(8, "otro", "Respuesta 1");
-
-        dataset.setValue(9, "Mujeres", "Respuesta 2");
-        dataset.setValue(4, "Hombres", "Respuesta 2");
-
-        dataset.setValue(4, "Mujeres", "Respuesta 3");
-        dataset.setValue(5, "Hombres", "Respuesta 3");
-
-        dataset.setValue(8, "Mujeres", "Respuesta 4");
-        dataset.setValue(9, "Hombres", "Respuesta 4");
-
-        dataset.setValue(7, "Mujeres", "Respuesta 5");
-        dataset.setValue(8, "Hombres", "Respuesta 5");
-
+        DefaultCategoryDataset dataset = ControladorGrafico.getDataset(ID_Encuesta);
         // Creando el Grafico
         JFreeChart chart = ChartFactory.createBarChart3D
-                ("Respuestas pregunta 1","Opción", "Veces respondida",
+                ("Respuestas Encuesta 1","Opción", "Veces respondida",
                         dataset, PlotOrientation.VERTICAL, true,true, false);
         chart.setBackgroundPaint(Color.pink);
         chart.getTitle().setPaint(Color.black);
@@ -74,7 +61,7 @@ public class Gráfico extends JFrame{
     }
 
     public static void main(int ID_Encuesta) {
-        new Gráfico().setVisible(true);
+        new Gráfico(ID_Encuesta).setVisible(true);
     }
 
 
