@@ -3,6 +3,10 @@ package main.utils;
 import main.models.Usuario;
 
 public class SesionUsuario {
+    /**
+     * Esta clase
+     * */
+
     private static Usuario usr;
     private static SesionUsuario SUsr;
 
