@@ -1,7 +1,7 @@
 package main.GUI;
 
-public class inicio {
+public class Inicio {
     public static void main(String[] args) {
-       Interfaz_Entrada.main();
+       Entrada.main();
     }
 }

@@ -20,7 +20,7 @@ public class Registro {
 
             conn = DBConnection.getConnection();
             stmt = conn.createStatement();
-            String newcontrasenya = encriptacion.cifrar(contrasenya);
+            String newcontrasenya = Encriptacion.cifrar(contrasenya);
 
             String sql = "insert into creador values (?,?,?,?);";
             PreparedStatement prpStatement = conn.prepareStatement(sql);

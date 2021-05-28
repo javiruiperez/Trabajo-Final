@@ -3,18 +3,18 @@ package main.GUI;
 import javax.swing.*;
 import java.awt.*;
 
-class Imagen extends javax.swing.JPanel {
+public class Imagen_Logo extends javax.swing.JPanel {
 
     // Este codigo hace que se pueda añadir una imagen a un boton
 
-    public Imagen() {
+    public Imagen_Logo() {
         this.setSize(250, 500);
     }
 
     public void paint(Graphics grafico) {
         Dimension heigth = getSize();
 
-        java.net.URL imgURL = getClass().getResource("paypal.png");
+        java.net.URL imgURL = getClass().getResource("img/logo_prog.png");
 
         ImageIcon Img = new ImageIcon(imgURL);
 

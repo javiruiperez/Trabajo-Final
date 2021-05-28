@@ -1,7 +1,6 @@
 package main.GUI;
 
 import main.controladores.ControladorEncuesta;
-import main.models.Encuesta;
 import main.models.Pregunta;
 import main.models.Respuesta;
 import main.models.Usuario;
@@ -14,12 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Interfaz_EncuestaPred extends JFrame {
+public class Encuesta extends JFrame {
     private static ArrayList<JRadioButton> RadioButtonRespuestas;
     private ArrayList<JLabel> LabelsPreguntas = new ArrayList<JLabel>();
     private ArrayList<JPanel> PanelesPreguntas = new ArrayList<JPanel>();
     private JPanel panelPrincipal2;
-    private static Encuesta encuesta;
+    private static main.models.Encuesta encuesta;
 
     JButton enviar;
     JButton cancelar;
@@ -30,7 +29,8 @@ public class Interfaz_EncuestaPred extends JFrame {
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
 
-    private void crearPaneles(Encuesta e) {
+    private void crearPaneles(main.models.Encuesta e) {
+        //este método genera las preguntas en un jpanel
         ArrayList<Pregunta> preguntasEncuesta = e.getPreguntas();
         for (int i = 0; i < preguntasEncuesta.size(); i++) {
             Pregunta preg = preguntasEncuesta.get(i);
@@ -49,7 +49,8 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private static void añadirRespuestas(Encuesta e) {
+    private static void añadirRespuestas(main.models.Encuesta e) {
+        //este método genera las respuestas a partir de la longitud del método anterior
         ArrayList<Pregunta> preguntas = e.getPreguntas();
         for (int i = 0; i < preguntas.size(); i++) {
             Pregunta pre = preguntas.get(i);
@@ -64,7 +65,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         }
     }
 
-    private void añadirPreguntas(Encuesta e) {
+    private void añadirPreguntas(main.models.Encuesta e) {
         ArrayList<Pregunta> pregs = e.getPreguntas();
         for (int i = 0; i < pregs.size(); i++) {
             Pregunta pre = pregs.get(i);
@@ -73,7 +74,7 @@ public class Interfaz_EncuestaPred extends JFrame {
     }
 
 
-    Interfaz_EncuestaPred(Encuesta e) {
+    Encuesta(main.models.Encuesta e) {
         // Este metodo es la interfaz
 
         JPanel panelTitulo = new JPanel();
@@ -109,7 +110,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         enviar.setBackground(asulitoresulon);
         enviar.setForeground(Color.white);
 
-
+        //aquí se genera el scrollpane
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(80, 80, 1100, 650);
         scrollPane.getVerticalScrollBar().setUnitIncrement(13);
@@ -128,13 +129,14 @@ public class Interfaz_EncuestaPred extends JFrame {
 
     public static void main(int idEncuesta) {
         RadioButtonRespuestas = new ArrayList<JRadioButton>();
-        Encuesta e = ControladorEncuesta.getEncuesta(idEncuesta);
+        main.models.Encuesta e = ControladorEncuesta.getEncuesta(idEncuesta);
         encuesta = e;
         añadirRespuestas(e);
-        Interfaz_EncuestaPred i = new Interfaz_EncuestaPred(e);
+        Encuesta i = new Encuesta(e);
     }
 
     private static void guardarRespuestas(){
+        //este método guarda las respuestas en la base de datos
         ArrayList<Pregunta> preguntasEncuesta = encuesta.getPreguntas();
         for (int i = 0; i < preguntasEncuesta.size(); i++) {
             Pregunta preg = preguntasEncuesta.get(i);
@@ -163,7 +165,7 @@ public class Interfaz_EncuestaPred extends JFrame {
             if (saldo >= 3) {
                 JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
             }
-           Interfaz1.main();
+           MenuPrincipal.main();
             dispose();
         }
     }
@@ -173,7 +175,7 @@ public class Interfaz_EncuestaPred extends JFrame {
         public void actionPerformed(ActionEvent e) {
             int seleccion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres salir? Se perderán los cambios", "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if(seleccion == JOptionPane.YES_OPTION) {
-                Interfaz1.main();
+                MenuPrincipal.main();
                 dispose();
             }else{
             }

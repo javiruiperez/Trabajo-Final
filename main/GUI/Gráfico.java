@@ -1,6 +1,5 @@
 package main.GUI;
 
-import main.controladores.ControladorEncuesta;
 import main.controladores.ControladorGrafico;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -8,7 +7,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DefaultPieDataset;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -68,7 +67,7 @@ public class Gráfico extends JFrame{
     private class ListenerButton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz1.main();
+            MenuPrincipal.main();
             dispose();
         }
     }

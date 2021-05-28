@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfaz_logIn extends JFrame {
+public class LogIn extends JFrame {
 
     public static double saldo;
     JButton confirmar;
@@ -22,7 +22,7 @@ public class Interfaz_logIn extends JFrame {
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
 
-    Interfaz_logIn() {
+    LogIn() {
         //Este metodo es la interfaz
 
         setLayout(new FlowLayout());
@@ -78,13 +78,13 @@ public class Interfaz_logIn extends JFrame {
         setVisible(true);
     }
     public static void main() {
-        Interfaz_logIn i = new Interfaz_logIn();
+        LogIn i = new LogIn();
     }
 
     private class BotonCrearCuenta implements ActionListener {
         @Override
             public void actionPerformed (ActionEvent e){
-            Interfaz_SignIn.main();
+            SignIn.main();
             dispose();
         }
     }
@@ -92,15 +92,18 @@ public class Interfaz_logIn extends JFrame {
     private class BotonInicioSesion implements ActionListener {
         @Override
         public void actionPerformed (ActionEvent e) {
+            //aqui es donde el login recibe su funcionalidad. Primero recoge las variables de los jtextfields
             String usuarioText = usuario.getText();
             String contrasenyaText = new String(contrasenya.getPassword());
             boolean correcto = Acceso.acceso(usuarioText, contrasenyaText);
+            //una vez se guardan las variables, procedemos a hacer diferentes comparaciones para que el login
+            //funcione correctamente
             if (!usuarioText.equals("") && !contrasenyaText.equals("")) {
                 if (correcto) {
                     Usuario usr = ControladorUsuario.getUsuario(usuarioText);
                     SesionUsuario.iniciarSesion(usr);
                     JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + usuario.getText());
-                    Interfaz1.main();
+                    MenuPrincipal.main();
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error en acceso. Usuario o contraseña incorrectos.");

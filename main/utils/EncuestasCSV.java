@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class encuestasCSV {
+public class EncuestasCSV {
 
     public static void main(String[] args) {
 
