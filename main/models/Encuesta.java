@@ -24,6 +24,7 @@ public class Encuesta {
 
     /**
      * Se obtiene el ID_Encuesta
+     * @return Se devuelve el numero de ID de la encuesta
      * */
     public int getID_Encuesta() {
         return ID_Encuesta;
@@ -42,6 +43,7 @@ public class Encuesta {
     }
     /**
      * Se genera el titulo de la encuesta
+     * @param titulo Nuevo titulo de la encuesta
      * */
     public void setTitulo(String titulo) {
         Titulo = titulo;

@@ -5,13 +5,16 @@ import main.controladores.ControladorEncuesta;
 import main.models.Usuario;
 import java.sql.*;
 
+/**
+ * Esta clase tiene doble funcionalidad. La primera parte (sacarSaldo) tiene la funcion de retirar el saldo
+ * del usuario cuando este decida mediante la interfaz. La otra parte (actualizarSaldo) recoge el saldo que
+ * tenga el usuario en la base de datos y lo actualiza despues de haber respondido a una encuesta con su respectiva
+ * remuneración.
+ */
 public class Saldo {
     /**
-     * Esta clase tiene doble funcionalidad. La primera parte (sacarSaldo) tiene la funcion de retirar el saldo
-     * del usuario cuando este decida mediante la interfaz. La otra parte (actualizarSaldo) recoge el saldo que
-     * tenga el usuario en la base de datos y lo actualiza despues de haber respondido a una encuesta con su respectiva
-     * remuneración.
-     * */
+     *
+     */
     public static void sacarSaldo() {
         Connection conn = null;
         Statement stmt = null;
@@ -39,6 +42,11 @@ public class Saldo {
         } finally {
         }
     }
+
+    /**
+     *
+     * @param ID_Encuesta
+     */
     public static void actualizarSaldo(int ID_Encuesta){
         Connection conn = null;
         Statement stmt = null;
