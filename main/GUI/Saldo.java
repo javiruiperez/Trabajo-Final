@@ -32,7 +32,10 @@ public class Saldo extends JFrame {
     private JButton saldo;
 
     Color asulitoresulon = new Color(0, 79, 255);
-//    Color nuevocolorsitoresulon = new Color(95, 226,)
+
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
 
     Saldo(){
         // Este metodo es la interfaz
@@ -41,7 +44,7 @@ public class Saldo extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
         JLabel l1 = new JLabel("                            SALDO                    ");
-        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
+        l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
@@ -60,7 +63,7 @@ public class Saldo extends JFrame {
         panel2.add(vacio4);
 
         saldo = new JButton(redondeo + "€");
-        saldo.setFont(new Font("Calibri", Font.PLAIN, 25));
+        saldo.setFont(letraBotones);
         panel2.add(saldo);
         saldo.setBackground(asulitoresulon);
         saldo.setForeground(Color.white);
@@ -71,7 +74,7 @@ public class Saldo extends JFrame {
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio6);
         JLabel l2= new JLabel("Elige metodo de retirada");
-        l2.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l2.setFont(letraTexto);
         panel2.add(l2);
         JLabel vacio8 = new JLabel("");
         vacio8.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -90,14 +93,14 @@ public class Saldo extends JFrame {
         JPanel panel3 = new JPanel();
         panel3.setLayout(new GridLayout(1, 2, 150, 400));
         uno = new JButton();
-        uno.setFont(new Font("Calibri", Font.PLAIN, 25));
+        uno.setFont(letraBotones);
         panel3.add(uno);
         uno.setBackground(Color.white);
         Imagen_Paypal Imagen = new Imagen_Paypal();
         uno.add(Imagen);
         uno.addActionListener(new imagen1());
         dos = new JButton();
-        dos.setFont(new Font("Calibri", Font.PLAIN, 25));
+        dos.setFont(letraBotones);
         panel3.add(dos);
         dos.setBackground(Color.white);
         Imagen_Tarjeta Imagen2 = new Imagen_Tarjeta();

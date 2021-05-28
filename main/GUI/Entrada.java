@@ -9,6 +9,10 @@ public class Entrada extends JFrame {
 
     Color asulitoresulon = new Color(0, 79, 255);
 
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+
     JButton logo;
     JButton entrar;
 
@@ -18,7 +22,7 @@ public class Entrada extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(1, 1));
         logo = new JButton();
-        logo.setFont(new Font("Calibri", Font.PLAIN, 25));
+        logo.setFont(letraBotones);
         panelPrincipal.add(logo);
         logo.setBackground(Color.white);
         Imagen_Logo Imagen = new Imagen_Logo();
@@ -27,7 +31,7 @@ public class Entrada extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 1));
         entrar = new JButton("ENTRAR");
-        entrar.setFont(new Font("Calibri", Font.PLAIN, 25));
+        entrar.setFont(letraBotones);
         panel2.add(entrar);
         entrar.setBackground(asulitoresulon);
         entrar.setForeground(Color.white);

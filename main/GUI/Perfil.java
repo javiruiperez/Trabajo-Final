@@ -27,6 +27,10 @@ public class Perfil extends JFrame {
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
 
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+
     JButton cerrarSesion;
 
     Perfil(){
@@ -36,16 +40,16 @@ public class Perfil extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(3, 1));
         JLabel l1 = new JLabel("Nombre de Usuario:  " + nombreUsuario);
-        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
+        l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
         JLabel l2 = new JLabel("Correo Electrónico: " + correo);
-        l2.setFont(new Font("Calibri", Font.PLAIN, 40));
+        l2.setFont(letraTitulos);
         panelPrincipal.add(l2);
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(4, 1));
         JLabel l3 = new JLabel("");
-        l3.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l3.setFont(letraTexto);
         panel2.add(l3);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Calibri", Font.PLAIN, 1));
@@ -54,7 +58,7 @@ public class Perfil extends JFrame {
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
         cerrarSesion = new JButton("CERRAR SESION");
-        cerrarSesion.setFont(new Font("Calibri", Font.PLAIN, 25));
+        cerrarSesion.setFont(letraBotones);
         cerrarSesion.addActionListener(new cerrar());
         panel2.add(cerrarSesion);
         cerrarSesion.setBackground(rojitoresulon);
