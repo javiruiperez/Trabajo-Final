@@ -26,6 +26,11 @@ public class Encuesta extends JFrame {
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
 
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+
+
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
 
@@ -80,7 +85,7 @@ public class Encuesta extends JFrame {
         JPanel panelTitulo = new JPanel();
         panelTitulo.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("                                  CREA TU ENCUESTA");
-        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
+        l1.setFont(letraTitulos);
         panelTitulo.add(l1);
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
@@ -97,14 +102,14 @@ public class Encuesta extends JFrame {
         JPanel panelbotones = new JPanel();
         panelbotones.setLayout(new GridLayout(1, 2));
         cancelar = new JButton("CANCELAR");
-        cancelar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        cancelar.setFont(letraBotones);
         panelbotones.add(cancelar);
         cancelar.addActionListener(new cancelar());
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);
 
         enviar = new JButton("ENVIAR");
-        enviar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        enviar.setFont(letraBotones);
         panelbotones.add(enviar);
         enviar.addActionListener(new enviar());
         enviar.setBackground(asulitoresulon);

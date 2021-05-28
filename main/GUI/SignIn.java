@@ -21,6 +21,10 @@ public class SignIn extends JFrame {
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
 
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 20);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+
     SignIn() {
         // Este metodo es la interfaz
 
@@ -28,13 +32,13 @@ public class SignIn extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(15, 1));
         JLabel l1 = new JLabel("Registro de usuarios");
-        l1.setFont(new Font("Calibri", Font.PLAIN, 35));
+        l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio3);
         JLabel l2 = new JLabel("Nombre de usuario");
-        l2.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l2.setFont(letraTexto);
         panelPrincipal.add(l2);
         usuario = new JTextField();
         panelPrincipal.add(usuario);
@@ -42,7 +46,7 @@ public class SignIn extends JFrame {
         vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio4);
         JLabel l3 = new JLabel("Correo electronico");
-        l3.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l3.setFont(letraTexto);
         panelPrincipal.add(l3);
         correo = new JTextField();
         panelPrincipal.add(correo);
@@ -50,7 +54,7 @@ public class SignIn extends JFrame {
         vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio5);
         JLabel l4 = new JLabel("Contraseña");
-        l4.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l4.setFont(letraTexto);
         panelPrincipal.add(l4);
         contrasenya = new JPasswordField();
         panelPrincipal.add(contrasenya);
@@ -58,7 +62,7 @@ public class SignIn extends JFrame {
         vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panelPrincipal.add(vacio6);
         JLabel l5 = new JLabel("Repita la contraseña");
-        l5.setFont(new Font("Calibri", Font.PLAIN, 20));
+        l5.setFont(letraTexto);
         panelPrincipal.add(l5);
         contrasenya_ok = new JPasswordField();
         panelPrincipal.add(contrasenya_ok);
@@ -69,13 +73,13 @@ public class SignIn extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 2, 75, 0));
         cancelar = new JButton("CANCELAR");
-        cancelar.setFont(new Font("Calibri", Font.PLAIN, 15));
+        cancelar.setFont(letraBotones);
         panel2.add(cancelar);
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);
         cancelar.addActionListener(new SignIn.BotonCancelar());
         registrarse = new JButton("REGISTRARSE");
-        registrarse.setFont(new Font("Calibri", Font.PLAIN, 15));
+        registrarse.setFont(letraBotones);
         panel2.add(registrarse);
         registrarse.setBackground(asulitoresulon);
         registrarse.setForeground(Color.white);

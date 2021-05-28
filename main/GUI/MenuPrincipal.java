@@ -28,7 +28,12 @@ public class MenuPrincipal extends JFrame {
 
     JButton comfirmar;
     JButton grafico;
+
     Color asulitoresulon = new Color(0, 79, 255);
+
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+    Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
+    Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
 
     MenuPrincipal() {
         // Este metodo es la interfaz
@@ -36,7 +41,7 @@ public class MenuPrincipal extends JFrame {
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new GridLayout(2, 1));
         JLabel l1 = new JLabel("ESTAS SON LAS ENCUESTAS DISPONIBLES");
-        l1.setFont(new Font("Calibri", Font.PLAIN, 40));
+        l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
@@ -45,7 +50,7 @@ public class MenuPrincipal extends JFrame {
         vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
         panel2.add(vacio1);
         grafico = new JButton("GRAFICO");
-        grafico.setFont(new Font("Calibri", Font.PLAIN, 20));
+        grafico.setFont(letraBotones);
         grafico.setPreferredSize(new Dimension(100, 50));
         panel2.add(grafico);
         grafico.addActionListener(new graficos());
@@ -55,7 +60,7 @@ public class MenuPrincipal extends JFrame {
         vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
         panel2.add(vacio2);
         comfirmar = new JButton("CONTINUAR");
-        comfirmar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        comfirmar.setFont(letraBotones);
         comfirmar.setPreferredSize(new Dimension(100, 50));
         panel2.add(comfirmar);
         comfirmar.addActionListener(new continuar());
