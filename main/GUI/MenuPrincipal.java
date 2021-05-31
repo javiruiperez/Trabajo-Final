@@ -115,7 +115,6 @@ public class MenuPrincipal extends JFrame {
         menu_perfil.add(menuItem_info);
         menu_inicio.add(menuItem_inicio);
         menu_inicio.addSeparator();
-        menu_inicio.add(menuItem_inicio2);
         menu_saldo.add(menuItem_saldo);
 
 
