@@ -100,8 +100,6 @@ public class MenuPrincipal extends JFrame {
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new verencuestas());
-        menuItem_inicio2 = new JMenuItem("Crear Encuestas");
-        menuItem_inicio2.addActionListener(new crearencuestas());
         menuItem_saldo = new JMenuItem("Mis chukydol ares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
@@ -160,14 +158,6 @@ public class MenuPrincipal extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             MenuPrincipal.main();
-            dispose();
-        }
-    }
-
-    private class crearencuestas implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Interfaz_Creador.main();
             dispose();
         }
     }
