@@ -30,6 +30,7 @@ public class Perfil extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     JButton cerrarSesion;
 
@@ -52,10 +53,10 @@ public class Perfil extends JFrame {
         l3.setFont(letraTexto);
         panel2.add(l3);
         JLabel vacio1 = new JLabel("");
-        vacio1.setFont(new Font("Calibri", Font.PLAIN, 1));
+        vacio1.setFont(vacio);
         panel2.add(vacio1);
         JLabel vacio2 = new JLabel("");
-        vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
+        vacio2.setFont(vacio);
         panel2.add(vacio2);
         cerrarSesion = new JButton("CERRAR SESION");
         cerrarSesion.setFont(letraBotones);

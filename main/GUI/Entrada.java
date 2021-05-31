@@ -12,6 +12,7 @@ public class Entrada extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     JButton logo;
     JButton entrar;

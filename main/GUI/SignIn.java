@@ -24,6 +24,7 @@ public class SignIn extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 20);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     SignIn() {
         // Este metodo es la interfaz
@@ -35,7 +36,7 @@ public class SignIn extends JFrame {
         l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
         JLabel vacio3 = new JLabel("");
-        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio3.setFont(vacio);
         panelPrincipal.add(vacio3);
         JLabel l2 = new JLabel("Nombre de usuario");
         l2.setFont(letraTexto);
@@ -43,7 +44,7 @@ public class SignIn extends JFrame {
         usuario = new JTextField();
         panelPrincipal.add(usuario);
         JLabel vacio4 = new JLabel("");
-        vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio4.setFont(vacio);
         panelPrincipal.add(vacio4);
         JLabel l3 = new JLabel("Correo electronico");
         l3.setFont(letraTexto);
@@ -51,7 +52,7 @@ public class SignIn extends JFrame {
         correo = new JTextField();
         panelPrincipal.add(correo);
         JLabel vacio5 = new JLabel("");
-        vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio5.setFont(vacio);
         panelPrincipal.add(vacio5);
         JLabel l4 = new JLabel("Contraseña");
         l4.setFont(letraTexto);
@@ -59,7 +60,7 @@ public class SignIn extends JFrame {
         contrasenya = new JPasswordField();
         panelPrincipal.add(contrasenya);
         JLabel vacio6 = new JLabel("");
-        vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio6.setFont(vacio);
         panelPrincipal.add(vacio6);
         JLabel l5 = new JLabel("Repita la contraseña");
         l5.setFont(letraTexto);
@@ -67,7 +68,7 @@ public class SignIn extends JFrame {
         contrasenya_ok = new JPasswordField();
         panelPrincipal.add(contrasenya_ok);
         JLabel vacio7 = new JLabel("");
-        vacio7.setFont(new Font("Calibri", Font.PLAIN, 1));
+        vacio7.setFont(vacio);
         panelPrincipal.add(vacio7);
 
         JPanel panel2 = new JPanel();

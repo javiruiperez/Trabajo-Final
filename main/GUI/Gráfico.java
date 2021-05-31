@@ -18,6 +18,8 @@ public class Gráfico extends JFrame{
 
     JButton cancelar;
 
+    Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
+
 
     Color rojitoresulon = new Color(255, 0, 0);
 
@@ -52,7 +54,7 @@ public class Gráfico extends JFrame{
         panel.add(chartPanel);
 
         cancelar = new JButton("CANCELAR");
-        cancelar.setFont(new Font("Calibri", Font.PLAIN, 20));
+        cancelar.setFont(letraBotones);
         cancelar.addActionListener(new ListenerButton());
         cancelar.setBackground(rojitoresulon);
         cancelar.setForeground(Color.white);

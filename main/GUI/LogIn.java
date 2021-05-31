@@ -25,6 +25,7 @@ public class LogIn extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 20);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     LogIn() {
         //Este metodo es la interfaz
@@ -36,7 +37,7 @@ public class LogIn extends JFrame {
         l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
         JLabel vacio3 = new JLabel("");
-        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio3.setFont(vacio);
         panelPrincipal.add(vacio3);
         JLabel l2 = new JLabel("Nombre de Usuario");
         l2.setFont(letraTexto);
@@ -44,7 +45,7 @@ public class LogIn extends JFrame {
         usuario = new JTextField();
         panelPrincipal.add(usuario);
         JLabel vacio4 = new JLabel("");
-        vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio4.setFont(vacio);
         panelPrincipal.add(vacio4);
         JLabel l3 = new JLabel("Contraseña");
         l3.setFont(letraTexto);
@@ -52,7 +53,7 @@ public class LogIn extends JFrame {
         contrasenya = new JPasswordField();
         panelPrincipal.add(contrasenya);
         JLabel vacio5 = new JLabel("");
-        vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio5.setFont(vacio);
         panelPrincipal.add(vacio5);
 
         JPanel panel2 = new JPanel();

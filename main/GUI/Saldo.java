@@ -36,6 +36,7 @@ public class Saldo extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     Saldo(){
         // Este metodo es la interfaz
@@ -50,16 +51,16 @@ public class Saldo extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(4, 3));
         JLabel vacio1 = new JLabel("");
-        vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio1.setFont(vacio);
         panel2.add(vacio1);
         JLabel vacio2 = new JLabel("");
-        vacio2.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio2.setFont(vacio);
         panel2.add(vacio2);
         JLabel vacio3 = new JLabel("");
-        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio3.setFont(vacio);
         panel2.add(vacio3);
         JLabel vacio4 = new JLabel("");
-        vacio4.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio4.setFont(vacio);
         panel2.add(vacio4);
 
         saldo = new JButton(redondeo + "€");
@@ -68,25 +69,25 @@ public class Saldo extends JFrame {
         saldo.setBackground(asulitoresulon);
         saldo.setForeground(Color.white);
         JLabel vacio5 = new JLabel("");
-        vacio5.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio5.setFont(vacio);
         panel2.add(vacio5);
         JLabel vacio6 = new JLabel("");
-        vacio6.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio6.setFont(vacio);
         panel2.add(vacio6);
         JLabel l2= new JLabel("Elige metodo de retirada");
         l2.setFont(letraTexto);
         panel2.add(l2);
         JLabel vacio8 = new JLabel("");
-        vacio8.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio8.setFont(vacio);
         panel2.add(vacio8);
         JLabel vacio9 = new JLabel("");
-        vacio9.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio9.setFont(vacio);
         panel2.add(vacio9);
         JLabel vacio10 = new JLabel("");
-        vacio10.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio10.setFont(vacio);
         panel2.add(vacio10);
         JLabel vacio11 = new JLabel("");
-        vacio11.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio11.setFont(vacio);
         panel2.add(vacio11);
         panelPrincipal.add(panel2);
 

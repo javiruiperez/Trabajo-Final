@@ -34,6 +34,7 @@ public class MenuPrincipal extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
     MenuPrincipal() {
         // Este metodo es la interfaz
@@ -47,7 +48,7 @@ public class MenuPrincipal extends JFrame {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 5, 150, 100));
         JLabel vacio1 = new JLabel("");
-        vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio1.setFont(vacio);
         panel2.add(vacio1);
         grafico = new JButton("GRAFICO");
         grafico.setFont(letraBotones);
@@ -57,7 +58,7 @@ public class MenuPrincipal extends JFrame {
         grafico.setBackground(asulitoresulon);
         grafico.setForeground(Color.white);
         JLabel vacio2 = new JLabel("");
-        vacio2.setFont(new Font("Calibri", Font.PLAIN, 1));
+        vacio2.setFont(vacio);
         panel2.add(vacio2);
         comfirmar = new JButton("CONTINUAR");
         comfirmar.setFont(letraBotones);
@@ -67,7 +68,7 @@ public class MenuPrincipal extends JFrame {
         comfirmar.setBackground(asulitoresulon);
         comfirmar.setForeground(Color.white);
         JLabel vacio3 = new JLabel("");
-        vacio3.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio3.setFont(vacio);
         panel2.add(vacio3);
 
 
@@ -99,8 +100,6 @@ public class MenuPrincipal extends JFrame {
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new verencuestas());
-        menuItem_inicio2 = new JMenuItem("Crear Encuestas");
-        menuItem_inicio2.addActionListener(new crearencuestas());
         menuItem_saldo = new JMenuItem("Mis chukydol ares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
@@ -160,12 +159,6 @@ public class MenuPrincipal extends JFrame {
         public void actionPerformed(ActionEvent e) {
             MenuPrincipal.main();
             dispose();
-        }
-    }
-
-    private class crearencuestas implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
         }
     }
 
