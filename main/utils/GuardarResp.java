@@ -4,11 +4,10 @@ import main.DbConnections.DBConnection;
 import main.models.Usuario;
 
 import java.sql.*;
-
+/**
+ * Esta clase tiene el objetivo de guardar las respuestas de las preguntas en una encuesta en la base de datos.
+ * */
 public class GuardarResp {
-    /**
-     * Esta clase tiene el objetivo de guardar las respuestas de las preguntas en una encuesta en la base de datos.
-     * */
     public static boolean registro(int idpregunta, int respuestapreg) {
         Connection conn = null;
         Statement stmt = null;

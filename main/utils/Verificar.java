@@ -6,11 +6,11 @@ import java.sql.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Esta clase tiene la funcion de verificar el usuario y el correo para ver si existe una cuenta con los mismos datos
+ * en la base de datos y tambien para verificar que el correo es válido y contiene @ y un punto.
+ * */
 public class Verificar {
-    /**
-     * Esta clase tiene la funcion de verificar el usuario y el correo para ver si existe una cuenta con los mismos datos
-     * en la base de datos y tambien para verificar que el correo es válido y contiene @ y un punto.
-     * */
     public static boolean verificarUsuarioCorreo (String nombreUsuario, String correo){
         Connection conn = null;
 

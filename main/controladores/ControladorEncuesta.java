@@ -1,15 +1,18 @@
 package main.controladores;
 
-
 import main.DbConnections.DBConnection;
 import main.models.Encuesta;
 import main.models.EntradaTablaEncuesta;
 import main.models.Pregunta;
 import main.models.Respuesta;
-
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Esta clase hace diferentes consultas con las que se controlan todas las encuestas y sus respectivas funcionalidades. En el
+ * método getEntradas hacemos una consulta que selecciona el titulo, el numero de preguntas  y la remuneracion de las encuestas
+ * para que luego se muestren los datos en la tabla del menu principal. en
+ * */
 public class ControladorEncuesta {
     public static ArrayList<EntradaTablaEncuesta> getEntradas(){
         ArrayList<EntradaTablaEncuesta> entradas = new ArrayList<EntradaTablaEncuesta>();
@@ -23,6 +26,7 @@ public class ControladorEncuesta {
                 int numpregs = rs.getInt("Numero_Preguntas");
                 double remuneracion = rs.getDouble("Remuneracion");
                 String titulo = rs.getString("Titulo");
+
                 EntradaTablaEncuesta ent = new EntradaTablaEncuesta(id_encuesta, numpregs, remuneracion, titulo);
                 entradas.add(ent);
             }

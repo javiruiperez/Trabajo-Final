@@ -8,11 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Esta clase sirve para registrar un usuario en la base de datos mediante 3 variables que el usuario proporciona (nombre,
+ * correo y contraseña) y saldo, que de inicio siempre sera 0.
+ * */
 public class Registro {
-    /**
-     * Esta clase sirve para registrar un usuario en la base de datos mediante 3 variables que el usuario proporciona (nombre,
-     * correo y contraseña) y saldo, que de inicio siempre sera 0.
-     * */
+
     public static boolean registro(String usuario, String correo, String contrasenya) {
         Connection conn = null;
         Statement stmt = null;

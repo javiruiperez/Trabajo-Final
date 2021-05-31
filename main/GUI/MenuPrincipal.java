@@ -166,8 +166,6 @@ public class MenuPrincipal extends JFrame {
     private class crearencuestas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Interfaz_Creador.main();
-            dispose();
         }
     }
 
