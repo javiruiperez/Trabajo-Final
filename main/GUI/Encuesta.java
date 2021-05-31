@@ -29,6 +29,7 @@ public class Encuesta extends JFrame {
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
+    Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
 
     SesionUsuario sesion = SesionUsuario.getInstance();
@@ -88,7 +89,7 @@ public class Encuesta extends JFrame {
         l1.setFont(letraTitulos);
         panelTitulo.add(l1);
         JLabel vacio1 = new JLabel("");
-        vacio1.setFont(new Font("Comic Sans Ms", Font.PLAIN, 1));
+        vacio1.setFont(vacio);
         panelTitulo.add(vacio1);
 
 
