@@ -1,29 +1,22 @@
 package main.GUI;
 
-
-import main.models.Usuario;
-import main.utils.SesionUsuario;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Perfil extends JFrame {
+public class CrearEncuesta extends JFrame {
 
     JMenuBar barra;
     JMenu menu_inicio;
     JMenu menu_saldo;
     JMenu menu_perfil;
+    JMenuItem menuItem_configuracion;
     JMenuItem menuItem_info;
     JMenuItem menuItem_saldo;
     JMenuItem menuItem_inicio;
     JMenuItem menuItem_inicio2;
 
-    SesionUsuario sesion = SesionUsuario.getInstance();
-    Usuario usr = sesion.getUsr();
-
-    String nombreUsuario = usr.getNombre_usuario();
-    String correo = usr.getCorreo();
 
     Color asulitoresulon = new Color(0, 79, 255);
     Color rojitoresulon = new Color(255, 0, 0);
@@ -33,56 +26,54 @@ public class Perfil extends JFrame {
     Font letraTexto = new Font("Calibri", Font.PLAIN, 20);
     Font vacio = new Font("Calibri", Font.PLAIN, 1);
 
-    JButton cerrarSesion;
+    JButton importarCSV;
 
-    Perfil(){
-        // Este metodo es la interfaz perfil que hace que el usuario pueda ver su informacion
-
+    CrearEncuesta(){
         setLayout(new FlowLayout());
         JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new GridLayout(3, 1));
-        JLabel l1 = new JLabel("Nombre de Usuario:  " + nombreUsuario);
+        panelPrincipal.setLayout(new GridLayout(4, 1));
+        JLabel l1 = new JLabel("IMPORTAR NUEVA ENCUESTA");
         l1.setFont(letraTitulos);
         panelPrincipal.add(l1);
-        JLabel l2 = new JLabel("Correo Electrónico: " + correo);
-        l2.setFont(letraTitulos);
-        panelPrincipal.add(l2);
+        JLabel vacio1 = new JLabel();
+        vacio1.setFont(vacio);
+        panelPrincipal.add(vacio1);
+        JLabel vacio2 = new JLabel();
+        vacio2.setFont(vacio);
+        panelPrincipal.add(vacio2);
 
         JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(4, 1));
-        JLabel l3 = new JLabel("");
-        l3.setFont(letraTexto);
-        panel2.add(l3);
-        JLabel vacio1 = new JLabel("");
-        vacio1.setFont(vacio);
-        panel2.add(vacio1);
-        JLabel vacio2 = new JLabel("");
-        vacio2.setFont(vacio);
-        panel2.add(vacio2);
-        cerrarSesion = new JButton("CERRAR SESION");
-        cerrarSesion.setFont(letraBotones);
-        cerrarSesion.addActionListener(new cerrar());
-        panel2.add(cerrarSesion);
-        cerrarSesion.setBackground(rojitoresulon);
-        cerrarSesion.setForeground(Color.white);
+        panel2.setLayout(new GridLayout(2,1));
+        JLabel l2 = new JLabel("Importe su archivo csv para crear una nueva encuesta");
+        l2.setFont(letraTexto);
+        panel2.add(l2);
+        importarCSV = new JButton("IMPORTAR");
+        importarCSV.setFont(letraBotones);
+        importarCSV.setPreferredSize(new Dimension(100, 50));
+        panel2.add(importarCSV);
+        importarCSV.addActionListener(new importarcsv());
+        importarCSV.setBackground(asulitoresulon);
+        importarCSV.setForeground(Color.white);
         panelPrincipal.add(panel2);
 
 
+        add(panelPrincipal);
         crearMenu();
-        setJMenuBar(barra);
-        add(panelPrincipal, BorderLayout.NORTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setJMenuBar(barra);
         this.setResizable(false);
-        setSize(2100, 2100);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(2100, 2100);
         setVisible(true);
     }
 
     public static void main() {
-        Perfil i = new Perfil();
+        CrearEncuesta i = new CrearEncuesta();
     }
 
     private void crearMenu() {
+        //Este metodo es para generar un menu en la interfaz
+
         barra = new JMenuBar();
 
         menu_inicio = new JMenu("Inicio");
@@ -94,18 +85,23 @@ public class Perfil extends JFrame {
         menuItem_inicio2 = new JMenuItem("Crear Encuesta");
         menuItem_inicio2.addActionListener(new crearencuesta());
         menuItem_saldo = new JMenuItem("Mis Chukydolares");
-        menuItem_saldo.addActionListener(new saldo());
+        menuItem_saldo.addActionListener(new versaldo());
+        menuItem_configuracion = new JMenuItem("Configuracion");
+        menuItem_configuracion.addActionListener(new configuracion());
         menuItem_info = new JMenuItem("Información");
         menuItem_info.addActionListener(new informacion());
 
         barra.add(menu_inicio);
         barra.add(menu_saldo);
         barra.add(menu_perfil);
+        menu_perfil.add(menuItem_configuracion);
+        menu_perfil.addSeparator();
         menu_perfil.add(menuItem_info);
         menu_inicio.add(menuItem_inicio);
         menu_inicio.addSeparator();
         menu_inicio.add(menuItem_inicio2);
         menu_saldo.add(menuItem_saldo);
+
     }
 
     private class verencuestas implements ActionListener {
@@ -116,7 +112,7 @@ public class Perfil extends JFrame {
         }
     }
 
-    private class saldo implements ActionListener {
+    private class versaldo implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             Saldo.main();
@@ -133,11 +129,10 @@ public class Perfil extends JFrame {
         }
     }
 
-    private class cerrar implements ActionListener {
+    private class configuracion implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            SesionUsuario.cerrarSesion();
-            LogIn.main();
+            Perfil.main();
             dispose();
         }
     }
@@ -147,6 +142,13 @@ public class Perfil extends JFrame {
         public void actionPerformed(ActionEvent e) {
             CrearEncuesta.main();
             dispose();
+        }
+    }
+
+    private class importarcsv implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
         }
     }
 }

@@ -23,13 +23,15 @@ public class MenuPrincipal extends JFrame {
     JMenuItem menuItem_inicio;
     JMenuItem menuItem_inicio2;
 
-
     JTable encuestas;
 
     JButton comfirmar;
     JButton grafico;
 
     Color asulitoresulon = new Color(0, 79, 255);
+    Color naranjitoGrafico = new Color(255, 114, 51, 255);
+    Color colorTabla = new Color(102, 98, 98);
+
 
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
@@ -55,7 +57,7 @@ public class MenuPrincipal extends JFrame {
         grafico.setPreferredSize(new Dimension(100, 50));
         panel2.add(grafico);
         grafico.addActionListener(new graficos());
-        grafico.setBackground(asulitoresulon);
+        grafico.setBackground(naranjitoGrafico);
         grafico.setForeground(Color.white);
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(vacio);
@@ -100,6 +102,8 @@ public class MenuPrincipal extends JFrame {
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new verencuestas());
+        menuItem_inicio2 = new JMenuItem("Crear Encuesta");
+        menuItem_inicio2.addActionListener(new crearencuesta());
         menuItem_saldo = new JMenuItem("Mis Chukydolares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
@@ -115,6 +119,7 @@ public class MenuPrincipal extends JFrame {
         menu_perfil.add(menuItem_info);
         menu_inicio.add(menuItem_inicio);
         menu_inicio.addSeparator();
+        menu_inicio.add(menuItem_inicio2);
         menu_saldo.add(menuItem_saldo);
 
 
@@ -203,6 +208,14 @@ public class MenuPrincipal extends JFrame {
             EntradaTablaEncuesta entrada = entradasTabla.get(row);
             int idEncuesta = entrada.getID_Encuesta();
             Gráfico.main(idEncuesta);
+            dispose();
+        }
+    }
+
+    private class crearencuesta implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CrearEncuesta.main();
             dispose();
         }
     }

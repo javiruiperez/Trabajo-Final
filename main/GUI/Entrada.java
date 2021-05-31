@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class Entrada extends JFrame {
 
     Color asulitoresulon = new Color(0, 79, 255);
+    Color asulitoresulon1 = new Color(91, 208, 164);
 
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
@@ -25,7 +26,7 @@ public class Entrada extends JFrame {
         logo = new JButton();
         logo.setFont(letraBotones);
         panelPrincipal.add(logo);
-        logo.setBackground(Color.white);
+        logo.setBackground(asulitoresulon1);
         Imagen_Logo Imagen = new Imagen_Logo();
         logo.add(Imagen);
 

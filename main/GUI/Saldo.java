@@ -32,6 +32,7 @@ public class Saldo extends JFrame {
     private JButton saldo;
 
     Color asulitoresulon = new Color(0, 79, 255);
+    Color colorSaldo = new Color(255, 213, 0);
 
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
@@ -66,7 +67,7 @@ public class Saldo extends JFrame {
         saldo = new JButton(redondeo + "€");
         saldo.setFont(letraBotones);
         panel2.add(saldo);
-        saldo.setBackground(asulitoresulon);
+        saldo.setBackground(colorSaldo);
         saldo.setForeground(Color.white);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(vacio);
@@ -131,11 +132,12 @@ public class Saldo extends JFrame {
         menu_perfil = new JMenu("Perfil");
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
-        menuItem_inicio.addActionListener(new Saldo.encuestas());
+        menuItem_inicio.addActionListener(new encuestas());
+        menuItem_inicio2.addActionListener(new crearencuesta());
         menuItem_configuracion = new JMenuItem("Configuracion");
-        menuItem_configuracion.addActionListener(new Saldo.configuracion());
+        menuItem_configuracion.addActionListener(new configuracion());
         menuItem_info = new JMenuItem("Información");
-        menuItem_info.addActionListener(new Saldo.informacion());
+        menuItem_info.addActionListener(new informacion());
 
         barra.add(menu_inicio);
         barra.add(menu_perfil);
@@ -207,6 +209,14 @@ public class Saldo extends JFrame {
             JOptionPane.showMessageDialog(null, "Esta aplicación consiste en crear o contestar " +
                     "encuestas para así ganar dinero. Para poder retirar el saldo necesitaras un saldo mínimo retirable de 3€." +
                     " Si tienes alguna duda,no dudes en contactarnos con nuestro numero de ayuda al cliente (628216335).");
+        }
+    }
+
+    private class crearencuesta implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CrearEncuesta.main();
+            dispose();
         }
     }
 }
