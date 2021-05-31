@@ -100,7 +100,7 @@ public class MenuPrincipal extends JFrame {
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new verencuestas());
-        menuItem_saldo = new JMenuItem("Mis chukydol ares");
+        menuItem_saldo = new JMenuItem("Mis Chukydolares");
         menuItem_saldo.addActionListener(new versaldo());
         menuItem_configuracion = new JMenuItem("Configuracion");
         menuItem_configuracion.addActionListener(new configuracion());
