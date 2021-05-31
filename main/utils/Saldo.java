@@ -40,10 +40,6 @@ public class Saldo {
         }
     }
 
-    /**
-     *
-     * @param ID_Encuesta
-     */
     public static void actualizarSaldo(int ID_Encuesta){
         Connection conn = null;
         Statement stmt = null;
@@ -61,7 +57,7 @@ public class Saldo {
             double remuneracion = ControladorEncuesta.getEncuesta(ID_Encuesta).getRemuneracion();
 
             //aqui se genera la consulta en la que se obtiene el saldo del usuario
-            String sql = "select Saldo from old.creador where Nombre_Usuario = ?;";
+            String sql = "select Saldo from creador where Nombre_Usuario = ?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             //aquí se introduce el nombre del usuario que esté utilizando la aplicación en ese momento
             prpStatement.setString(1, nombre);
@@ -72,7 +68,7 @@ public class Saldo {
                 newsaldo = saldo + remuneracion;
             }
             //aquí se genera la segunda consulta en la que se actualiza el saldo del usuario mediante la nueva variable que se creo anteriormente
-            String sql2 = "UPDATE old.creador SET Saldo = ? where Nombre_Usuario = ?;";
+            String sql2 = "UPDATE creador SET Saldo = ? where Nombre_Usuario = ?;";
             PreparedStatement prpStatement2 = conn.prepareStatement(sql2);
             //aquí se introduce el nombre del usuario que esté utilizando la aplicación en ese momento y la nueva variable
             prpStatement2.setString(2, nombre);

@@ -2,6 +2,10 @@ package main.DbConnections;
 
 import java.sql.*;
 
+/**
+ * Esta clase conecta la base de datos con el Intell IJ y a partir de esta clase se forman todas las consultas y sus respectivas
+ * conexiones
+ * */
 public class DBConnection {
     String JDBC_Driver;
     String DB_URL;

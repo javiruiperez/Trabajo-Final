@@ -8,13 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Esta clase contiene un metodo llamado getUsuario con el que se actualiza la instancia del usuario, es decir, obtenemos
+ * todos los datos disponibles del usuario que está utilizando en ese momento la aplicacion, ya que cuando se cierra sesion
+ * esta instancia se elimina y se vuelve a crear otra con el nuevo usuario en uso.
+ * */
 public class ControladorUsuario {
-
-    /*
-    * Este metodo siempre se ejecuta tras asegurarnos que el Nombre_Usuario esiste en la BD,
-    * ya que este no lo comprueba
-    * */
-
     public static Usuario getUsuario(String nombreUsuario){
         String correo = null;
         double saldo = 0.0;

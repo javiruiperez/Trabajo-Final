@@ -9,6 +9,11 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Esta clase contiene dos metodos diferentos los cuales sirven para controlar y dar funcionalidad al grafico
+ * que recoge todas las respuestas de las encuestas. El metodo getDatosRespuesta realiza una consulta en la que
+ * se obtiene el numero de veces que se ha seleccionado la respuesta de una pregunta de una encuesta.
+ * */
 public class ControladorGrafico {
     public static int getDatosRespuesta(int ID_Respuesta){
         Connection conn = DBConnection.getConnection();
