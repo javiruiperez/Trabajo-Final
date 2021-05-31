@@ -132,9 +132,14 @@ public class Perfil extends JFrame {
     private class cerrar implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            SesionUsuario.cerrarSesion();
-            LogIn.main();
-            dispose();
+            int seleccion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres salir?", "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if(seleccion == JOptionPane.YES_OPTION) {
+                SesionUsuario.cerrarSesion();
+                LogIn.main();
+                dispose();
+            }else{
+            }
+
         }
     }
 }

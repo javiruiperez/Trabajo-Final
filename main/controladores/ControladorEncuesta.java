@@ -11,7 +11,10 @@ import java.util.ArrayList;
 /**
  * Esta clase hace diferentes consultas con las que se controlan todas las encuestas y sus respectivas funcionalidades. En el
  * método getEntradas hacemos una consulta que selecciona el titulo, el numero de preguntas  y la remuneracion de las encuestas
- * para que luego se muestren los datos en la tabla del menu principal. en
+ * para que luego se muestren los datos en la tabla del menu principal. En el metodo getEncuesta se genera una consulta para obtener
+ * diferentes datos a partir de un id de una encuesta seleccionada. En el metodo getPreguntas se realiza una consulta para oobtener
+ * las preguntas a partir del id de la encuesta que haya seleccionado el usuario. Finalmente, en el metodo getRespuestas hacemos una
+ * consulta para obtener las respuestas a partir del id de su respectiva pregunta.
  * */
 public class ControladorEncuesta {
     public static ArrayList<EntradaTablaEncuesta> getEntradas(){
