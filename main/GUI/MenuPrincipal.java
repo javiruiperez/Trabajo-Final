@@ -29,7 +29,7 @@ public class MenuPrincipal extends JFrame {
     JButton grafico;
 
     Color asulitoresulon = new Color(0, 79, 255);
-    Color naranjitoGrafico = new Color(255, 114, 51, 255);
+    Color naranjitoGrafico = new Color(229, 69, 0, 255);
     Color colorTabla = new Color(102, 98, 98);
 
 
