@@ -133,6 +133,7 @@ public class Saldo extends JFrame {
 
         menuItem_inicio = new JMenuItem("Ver Encuestas");
         menuItem_inicio.addActionListener(new encuestas());
+        menuItem_inicio2 = new JMenuItem("Crear encuestas");
         menuItem_inicio2.addActionListener(new crearencuesta());
         menuItem_configuracion = new JMenuItem("Configuracion");
         menuItem_configuracion.addActionListener(new configuracion());
