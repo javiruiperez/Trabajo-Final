@@ -2,6 +2,7 @@ package main.utils;
 
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
+import main.GUI.MenuPrincipal;
 import main.controladores.ControladorCSV;
 import main.models.Encuesta;
 import main.models.Pregunta;
@@ -95,6 +96,7 @@ public class EncuestasCSV {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        MenuPrincipal.main();
     }
 }
 
