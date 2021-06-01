@@ -1,5 +1,7 @@
 package main.GUI;
 
+import main.utils.EncuestasCSV;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -148,7 +150,8 @@ public class CrearEncuesta extends JFrame {
     private class importarcsv implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            EncuestasCSV.ImportarCSV();
+            dispose();
         }
     }
 }

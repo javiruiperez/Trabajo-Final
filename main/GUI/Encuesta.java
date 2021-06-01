@@ -1,6 +1,7 @@
 package main.GUI;
 
-import main.controladores.ControladorEncuesta;
+import 
+        main.controladores.ControladorEncuesta;
 import main.models.Pregunta;
 import main.models.Respuesta;
 import main.models.Usuario;
