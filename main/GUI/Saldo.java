@@ -32,7 +32,7 @@ public class Saldo extends JFrame {
     private JButton saldo;
 
     Color asulitoresulon = new Color(0, 79, 255);
-    Color colorSaldo = new Color(255, 213, 0);
+    Color colorSaldo = new Color(255, 213, 0, 255);
 
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Font letraTitulos = new Font("Calibri", Font.PLAIN, 40);
@@ -68,7 +68,7 @@ public class Saldo extends JFrame {
         saldo.setFont(letraBotones);
         panel2.add(saldo);
         saldo.setBackground(colorSaldo);
-        saldo.setForeground(Color.white);
+        saldo.setForeground(Color.black);
         JLabel vacio5 = new JLabel("");
         vacio5.setFont(vacio);
         panel2.add(vacio5);
