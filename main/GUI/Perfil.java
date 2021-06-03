@@ -83,6 +83,8 @@ public class Perfil extends JFrame {
     }
 
     private void crearMenu() {
+        //Este metodo es para generar un menu en la interfaz
+
         barra = new JMenuBar();
 
         menu_inicio = new JMenu("Inicio");

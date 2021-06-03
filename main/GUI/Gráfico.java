@@ -1,7 +1,5 @@
 package main.GUI;
 
-import main.controladores.ControladorEncuesta;
-import main.models.EntradaTablaEncuesta;
 import main.controladores.ControladorGrafico;
 import main.models.Usuario;
 import main.utils.SesionUsuario;
@@ -15,13 +13,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class Gráfico extends JFrame{
     JPanel panel;
     JButton cancelar;
     Font letraBotones = new Font("Calibri", Font.PLAIN, 25);
     Color rojitoresulon = new Color(255, 0, 0);
+    Color colorGrafico = new Color(71, 153, 255);
+    Color colorLineasGrafico = new Color(0, 0, 0);
 
     SesionUsuario sesion = SesionUsuario.getInstance();
     Usuario usr = sesion.getUsr();
@@ -29,7 +28,7 @@ public class Gráfico extends JFrame{
 
     public Gráfico(int ID_Encuesta){
         setTitle("Respuestas de " + nombre);
-        setSize(1200,1000);
+        setSize(1850,1500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -48,10 +47,10 @@ public class Gráfico extends JFrame{
         JFreeChart chart = ChartFactory.createBarChart3D
                 ("Respuestas encuesta seleccionada","Opción", "Veces respondida",
                         dataset, PlotOrientation.VERTICAL, true,true, false);
-        chart.setBackgroundPaint(Color.pink);
+        chart.setBackgroundPaint(colorGrafico);
         chart.getTitle().setPaint(Color.black);
         CategoryPlot p = chart.getCategoryPlot();
-        p.setRangeGridlinePaint(Color.red);
+        p.setRangeGridlinePaint(colorLineasGrafico);
 
         // Mostrar Grafico
         ChartPanel chartPanel = new ChartPanel(chart);
