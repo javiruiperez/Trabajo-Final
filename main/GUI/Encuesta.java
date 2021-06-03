@@ -86,7 +86,7 @@ public class Encuesta extends JFrame {
 
         JPanel panelTitulo = new JPanel();
         panelTitulo.setLayout(new GridLayout(2, 1));
-        JLabel l1 = new JLabel("                                  CREA TU ENCUESTA");
+        JLabel l1 = new JLabel("                                  Responde a la encuesta");
         l1.setFont(letraTitulos);
         panelTitulo.add(l1);
         JLabel vacio1 = new JLabel("");
