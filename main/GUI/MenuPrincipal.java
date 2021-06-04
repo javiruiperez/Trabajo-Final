@@ -64,16 +64,6 @@ public class MenuPrincipal extends JFrame {
         JLabel vacio2 = new JLabel("");
         vacio2.setFont(vacio);
         panel2.add(vacio2);
-        comfirmar = new JButton("CONTINUAR");
-        comfirmar.setFont(letraBotones);
-        comfirmar.setPreferredSize(new Dimension(100, 50));
-        panel2.add(comfirmar);
-        comfirmar.addActionListener(new continuar());
-        comfirmar.setBackground(asulitoresulon);
-        comfirmar.setForeground(Color.white);
-        JLabel vacio3 = new JLabel("");
-        vacio3.setFont(vacio);
-        panel2.add(vacio3);
         exportarCSV = new JButton("EXPORTAR");
         exportarCSV.setFont(letraBotones);
         exportarCSV.setPreferredSize(new Dimension(100, 50));
@@ -84,6 +74,17 @@ public class MenuPrincipal extends JFrame {
         JLabel vacio4 = new JLabel("");
         vacio4.setFont(vacio);
         panel2.add(vacio4);
+        comfirmar = new JButton("CONTINUAR");
+        comfirmar.setFont(letraBotones);
+        comfirmar.setPreferredSize(new Dimension(100, 50));
+        panel2.add(comfirmar);
+        comfirmar.addActionListener(new continuar());
+        comfirmar.setBackground(asulitoresulon);
+        comfirmar.setForeground(Color.white);
+        JLabel vacio3 = new JLabel("");
+        vacio3.setFont(vacio);
+        panel2.add(vacio3);
+
 
 
         add(panelPrincipal, BorderLayout.NORTH);
@@ -239,6 +240,7 @@ public class MenuPrincipal extends JFrame {
             EntradaTablaEncuesta entrada = entradasTabla.get(row);
             int idEncuesta = entrada.getID_Encuesta();
             EncuestasCSV.ExportarCSV(idEncuesta);
+            JOptionPane.showMessageDialog(null, "¡La encuesta ha sido exportada con exito!");
         }
     }
 }

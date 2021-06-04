@@ -23,21 +23,10 @@ import java.util.List;
  * */
 //Esta clase interpreta el texto del archivo CSV y lo transforma en las variables que se introducen en la base de datos
 public class EncuestasCSV {
-
-
-
-
-    public static void main(String[] args) {
-
-
+     public static void main(String[] args) {
         ExportarCSV(19);
-
-
         ImportarCSV();
-
-
-
-    }
+}
 
     public static void ExportarCSV(int ID_Encuesta) {
         Encuesta enc = ControladorEncuesta.getEncuesta(ID_Encuesta);
@@ -72,12 +61,6 @@ public class EncuestasCSV {
             }
 
             // Recorremos la lista y lo insertamos en el archivo
-
-
-
-
-
-
 
             salidaCSV.close(); // Cierra el archivo
 
