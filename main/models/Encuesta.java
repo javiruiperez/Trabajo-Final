@@ -3,6 +3,7 @@ package main.models;
 import java.util.ArrayList;
 
 public class Encuesta {
+
     int ID_Encuesta;
     String Titulo;
     int Numero_Preguntas;
