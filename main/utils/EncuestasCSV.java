@@ -23,7 +23,7 @@ public class EncuestasCSV {
     public static void main(String[] args) {
 
 
-        ExportarCSV();
+        ExportarCSV(19);
 
 
         ImportarCSV();
@@ -53,7 +53,7 @@ public class EncuestasCSV {
             salidaCSV.write(enc.getTitulo());
             salidaCSV.write(String.valueOf(enc.getRemuneracion()));
             salidaCSV.write(enc.getNombre_Usuario());
-            salidaCSV.flush();
+            salidaCSV.getDelimiter();
             salidaCSV.write(String.valueOf(preguntas));
 
             // Recorremos la lista y lo insertamos en el archivo
