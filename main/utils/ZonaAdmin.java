@@ -1,10 +1,14 @@
 package main.utils;
 
 import main.DbConnections.DBConnection;
-
 import java.sql.*;
 import java.util.Scanner;
 
+/**
+ * Esta clase tiene la función de administrar diferentes funciones de forma sencilla y accesible para el administrador.
+ * Entre las funciones disponibles se encuentran ver las encuestas, cambiar el nombre de una encuesta, cambiar la remuneracion
+ * de una encuesta y borrar una encuesta.
+ */
 public class ZonaAdmin {
     static Connection conn;
     public static void main(String[] args) {
@@ -17,6 +21,7 @@ public class ZonaAdmin {
             int opcion;
             String nombre;
 
+            //aqui se crea el menu principal donde el admin puede elegir
             System.out.println("\n\t\t\t¿Que desea hacer?\n");
             System.out.println("1- Ver encuestas");
             System.out.println("2- Cambiar nombre de encuesta");
@@ -28,9 +33,11 @@ public class ZonaAdmin {
 
             switch (opcion){
                 case 1:
+                    //se inicia el método que muestra las encuestas
                     mostrarEncuestas();
                     break;
                 case 2:
+                    //aqui se pide al admin que introduzca el id y el nuevo nombre de la encuesta a modificar
                     System.out.print("Introduzca el id de la encuesta que desees modificar: ");
                     id = sc.nextInt();
                     sc.nextLine();
@@ -39,6 +46,7 @@ public class ZonaAdmin {
                     cambiarNombre(id,nombre);
                     break;
                 case 3:
+                    //aqui se pide al admin que introduzca el id y la nueva remuneración de la encuesta a modificar
                     System.out.print("Introduzca el id de la encuesta que desees modificar: ");
                     id = sc.nextInt();
                     sc.nextLine();
@@ -48,11 +56,13 @@ public class ZonaAdmin {
 
                     break;
                 case 4:
+                    //aqui se pide al admin que introduzca el id de la encuesta a modificar
                     System.out.print("Introduzca el id de la encuesta que desees borrar: ");
                     id = sc.nextInt();
                     borrarEncuesta(id);
                     break;
                 case 5:
+                    //aqui se cierra el bucle y finaliza el programa
                     System.out.println("\nHasta otra");
                     bucle = false;
                     break;
@@ -66,7 +76,7 @@ public class ZonaAdmin {
         try {
             conn = DBConnection.getConnection();
             stmt = conn.createStatement();
-
+            //aqui se genera la consulta
             String sql = "select * from encuestas";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             ResultSet rs = prpStatement.executeQuery();
@@ -85,7 +95,7 @@ public class ZonaAdmin {
         try {
 
             stmt = conn.createStatement();
-
+            //aqui se genera la consulta
             String sql = "UPDATE encuestas SET Titulo = ? WHERE ID_Encuesta = ?;";
             PreparedStatement prpStatement = conn.prepareStatement(sql);
             prpStatement.setString(1, Nombre);
@@ -99,6 +109,8 @@ public class ZonaAdmin {
     }
     public static void cambiarRemuneracion(int ID_Encuesta, Double remuneracion){
         try {
+
+            //aqui se genera la consulta
             String sql = "update encuestas set Remuneracion=? where ID_Encuesta = ?;";
             PreparedStatement prp = conn.prepareStatement(sql);
 
@@ -113,6 +125,8 @@ public class ZonaAdmin {
     }
     public static void borrarEncuesta(int ID_Encuesta) {
         try {
+
+            //aqui se genera la consulta
             String sql = "DELETE FROM encuestas WHERE ID_Encuesta = ?;";
             PreparedStatement prp = conn.prepareStatement(sql);
             prp.setInt(1,ID_Encuesta);

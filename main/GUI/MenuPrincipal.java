@@ -49,7 +49,7 @@ public class MenuPrincipal extends JFrame {
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(1, 7, 150, 100));
+        panel2.setLayout(new GridLayout(1, 7, 50, 25));
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(vacio);
         panel2.add(vacio1);
@@ -73,7 +73,7 @@ public class MenuPrincipal extends JFrame {
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(vacio);
         panel2.add(vacio3);
-        exportarCSV = new JButton("EXPORTAR CSV");
+        exportarCSV = new JButton("EXPORTAR");
         exportarCSV.setFont(letraBotones);
         exportarCSV.setPreferredSize(new Dimension(100, 50));
         panel2.add(exportarCSV);
