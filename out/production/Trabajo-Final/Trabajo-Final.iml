@@ -40,7 +40,9 @@
           <root url="jar://$MODULE_DIR$/libs/mysql-connector-java-8.0.23.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/mysql-connector-java-8.0.23-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
@@ -103,4 +105,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="mod
+  </component>
+</module>
