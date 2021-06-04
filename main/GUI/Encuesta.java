@@ -168,6 +168,7 @@ public class Encuesta extends JFrame {
             double remuneracion = encuesta.getRemuneracion();
             double saldo = usr.getSaldo();
             saldo += remuneracion;
+            SesionUsuario.getInstance().actualizarSaldo(saldo);
             JOptionPane.showMessageDialog(null, "¡Gracias por responder esta encuesta! Has conseguido " + remuneracion + "€");
             if (saldo >= 3) {
                 JOptionPane.showMessageDialog(null, "¡Enhorabuena! Has superado los 3€ de saldo, por lo tanto, ya puedes retirarlo");
