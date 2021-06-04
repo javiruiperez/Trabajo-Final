@@ -27,6 +27,7 @@ public class MenuPrincipal extends JFrame {
 
     JButton comfirmar;
     JButton grafico;
+    JButton exportarCSV;
 
     Color asulitoresulon = new Color(0, 79, 255);
     Color naranjitoGrafico = new Color(229, 69, 0, 255);
@@ -48,7 +49,7 @@ public class MenuPrincipal extends JFrame {
         panelPrincipal.add(l1);
 
         JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayout(1, 5, 150, 100));
+        panel2.setLayout(new GridLayout(1, 7, 150, 100));
         JLabel vacio1 = new JLabel("");
         vacio1.setFont(vacio);
         panel2.add(vacio1);
@@ -72,6 +73,16 @@ public class MenuPrincipal extends JFrame {
         JLabel vacio3 = new JLabel("");
         vacio3.setFont(vacio);
         panel2.add(vacio3);
+        exportarCSV = new JButton("EXPORTAR CSV");
+        exportarCSV.setFont(letraBotones);
+        exportarCSV.setPreferredSize(new Dimension(100, 50));
+        panel2.add(exportarCSV);
+        exportarCSV.addActionListener(new exportarcsv());
+        exportarCSV.setBackground(asulitoresulon);
+        exportarCSV.setForeground(Color.white);
+        JLabel vacio4 = new JLabel("");
+        vacio4.setFont(vacio);
+        panel2.add(vacio4);
 
 
         add(panelPrincipal, BorderLayout.NORTH);
@@ -217,6 +228,13 @@ public class MenuPrincipal extends JFrame {
         public void actionPerformed(ActionEvent e) {
             CrearEncuesta.main();
             dispose();
+        }
+    }
+
+    private class exportarcsv implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
         }
     }
 }
