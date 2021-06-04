@@ -4,6 +4,7 @@ import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import main.GUI.MenuPrincipal;
 import main.controladores.ControladorCSV;
+import main.controladores.ControladorEncuesta;
 import main.models.Encuesta;
 import main.models.Pregunta;
 import main.models.Respuesta;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 //Esta clase interpreta el texto del archivo CSV y lo transforma en las variables que se introducen en la base de datos
 public class EncuestasCSV {
+
 
 
 
@@ -30,7 +32,9 @@ public class EncuestasCSV {
 
     }
 
-    public static void ExportarCSV() {
+    public static void ExportarCSV(int ID_Encuesta) {
+        Encuesta enc = ControladorEncuesta.getEncuesta(ID_Encuesta);
+        ArrayList<Pregunta> preguntas = enc.getPreguntas();
         //Aquí decimos el nombre del archivo que la clase tiene que interpretar
         String salidaArchivo = "Encuesta.csv"; // Nombre del archivo
         boolean existe = new File(salidaArchivo).exists(); // Verifica si existe
@@ -46,28 +50,19 @@ public class EncuestasCSV {
             CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true), ',');
 
             // Datos para identificar las columnas
-            salidaCSV.write("Titulo");
-            salidaCSV.write("Remuneracion");
-            salidaCSV.write("Nombre_Usuario");
-            salidaCSV.write("Texto");
-            salidaCSV.write("Texto");
-
-            salidaCSV.endRecord(); // Deja de escribir en el archivo
+            salidaCSV.write(enc.getTitulo());
+            salidaCSV.write(String.valueOf(enc.getRemuneracion()));
+            salidaCSV.write(enc.getNombre_Usuario());
+            salidaCSV.flush();
+            salidaCSV.write(String.valueOf(preguntas));
 
             // Recorremos la lista y lo insertamos en el archivo
-            for (Encuesta quest :   ) {
-                salidaCSV.write(quest.getTitulo());
-                salidaCSV.write(String.valueOf(quest.getRemuneracion()));
-                salidaCSV.write(quest.getNombre_Usuario());
 
 
-            }
-            for (Pregunta quest : ) {
-                salidaCSV.write(quest.getTexto());
-            }
-            for(Respuesta quest : ) {
-                salidaCSV.write(quest.getTexto());
-            }
+
+
+
+
             salidaCSV.endRecord(); // Deja de escribir en el archivo
 
             salidaCSV.close(); // Cierra el archivo
