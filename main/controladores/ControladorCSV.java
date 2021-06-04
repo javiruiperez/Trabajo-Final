@@ -4,7 +4,11 @@ import main.DbConnections.DBConnection;
 
 import java.sql.*;
 
-
+/**
+*Esta clase se encarga de convertir las variables java en casillas para MySQL, coge las variables que necesita
+ * de las 3 clases (Encuesta.java, Pregunta.java, y Respuesta.java, una vez las tiene, las convierte en sql,
+ * y se envían a la base de datos
+ * */
 public class ControladorCSV {
     public static int añadirEncuesta(String titulo, double remuneracion, String nombre_usuario, int numeroPreguntas){
         Connection conn = DBConnection.getConnection();
