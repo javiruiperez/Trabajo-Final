@@ -61,8 +61,15 @@ public class EncuestasCSV {
             salidaCSV.write(String.valueOf(enc.getRemuneracion()));
             salidaCSV.write(enc.getNombre_Usuario());
             salidaCSV.endRecord(); // Deja de escribir en el archivo
-            salidaCSV.endRecord(); // Deja de escribir en el archivo
-            salidaCSV.write(String.valueOf(preguntas));
+            //salidaCSV.write(String.valueOf(preguntas));
+            for (Pregunta pre:preguntas) {
+                ArrayList<Respuesta> respuestas = pre.getRespuestas();
+                String r1 = respuestas.get(0).getTexto();
+                String r2 = respuestas.get(1).getTexto();
+                String r3 = respuestas.get(2).getTexto();
+                String[] data = {pre.getTexto(), r1, r2, r3};
+                salidaCSV.writeRecord(data);
+            }
 
             // Recorremos la lista y lo insertamos en el archivo
 
