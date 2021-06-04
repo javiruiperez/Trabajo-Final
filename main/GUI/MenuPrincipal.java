@@ -2,6 +2,7 @@ package main.GUI;
 
 import main.controladores.ControladorEncuesta;
 import main.models.EntradaTablaEncuesta;
+import main.utils.EncuestasCSV;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -234,7 +235,10 @@ public class MenuPrincipal extends JFrame {
     private class exportarcsv implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            int row = encuestas.getSelectedRow();
+            EntradaTablaEncuesta entrada = entradasTabla.get(row);
+            int idEncuesta = entrada.getID_Encuesta();
+            EncuestasCSV.ExportarCSV(idEncuesta);
         }
     }
 }

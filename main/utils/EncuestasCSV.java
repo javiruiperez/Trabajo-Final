@@ -14,6 +14,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Esta clase tiene la función de importar y exportar las encuestas a un archivo CSV y viceversa, así podemos utilizar otros programas con las encuestas
+ * El primer método sirve para exportar los datos de las encuestas a través del ID_Encuesta de la clase Encuesta.java, en el que se definen una serie de variables
+ * ese ID_Encuesta sirve a su vez para conectar con las clases Encuesta.java y respuesta.java.
+ *
+ * */
 //Esta clase interpreta el texto del archivo CSV y lo transforma en las variables que se introducen en la base de datos
 public class EncuestasCSV {
 
@@ -53,8 +59,9 @@ public class EncuestasCSV {
             salidaCSV.write(enc.getTitulo());
             salidaCSV.write(String.valueOf(enc.getRemuneracion()));
             salidaCSV.write(enc.getNombre_Usuario());
-            salidaCSV.getDelimiter();
-            salidaCSV.write(String.valueOf(preguntas));
+            salidaCSV.endRecord(); // Deja de escribir en el archivo
+
+
 
             // Recorremos la lista y lo insertamos en el archivo
 
@@ -63,7 +70,6 @@ public class EncuestasCSV {
 
 
 
-            salidaCSV.endRecord(); // Deja de escribir en el archivo
 
             salidaCSV.close(); // Cierra el archivo
 
